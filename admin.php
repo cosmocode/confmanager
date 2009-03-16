@@ -32,10 +32,15 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
         }
     }
 
+    function _sortConf( $k1 , $k2 ) {
+        return strlen( $k2 ) - strlen( $k1 );
+    }
+
     function _change($file,$conf) {
         if (!is_file(DOKU_INC.'conf/'.$file.'.conf')) return;
         $org = confToHash(DOKU_INC.'conf/'.$file.'.conf');
         $cnftext = "";
+        uksort( $conf , array( &$this , '_sortConf' ));
         foreach ($conf as $k => $v) {
             if ( empty($v) ) {
                 // delete a key
@@ -56,24 +61,22 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
 
     }
 
-	function _add($key,$val) {
-		if (empty($key) || empty($val)) return;
-		$file = $_REQUEST['cnf'];
+    function _add($key,$val) {
+        if (empty($key) || empty($val)) return;
+        $file = $_REQUEST['cnf'];
         $conf = $this->_readConf($file);
         $key = str_replace(' ','',$key);
         $key = str_replace("\t",'',$key);
-		$cnftext = "";
-		foreach ($conf as $k=>$v) {
-			if ($v[1] == 0) continue;
-			if ($k != $key) {
-				$cnftext.= sprintf("%-30s %s\n",$this->_escape($k),$this->_escape($v[0]));
-				continue;
-			}
-		}
-		$cnftext.= sprintf("%-30s %s\n",$this->_escape($key),$this->_escape($val));
-		if (empty($cnftext)) @unlink(DOKU_INC.'conf/'.$file.'.local.conf');
+        $cnftext = "";
+        $conf[$key] = array($val,1);
+        uksort( $conf , array( &$this , '_sortConf' ) );
+        foreach ($conf as $k=>$v) {
+            if ($v[1] == 0) continue;
+            $cnftext.= sprintf("%-30s %s\n",$this->_escape($k),$this->_escape($v[0]));
+        }
+        if (empty($cnftext)) @unlink(DOKU_INC.'conf/'.$file.'.local.conf');
         else file_put_contents(DOKU_INC.'conf/'.$file.'.local.conf',$cnftext);
-	}
+    }
 
     function html() {
         if (isset($_REQUEST['cnf']) && in_array($_REQUEST['cnf'],$this->cnffiles)) {
@@ -86,6 +89,7 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
 
     function display($name) {
         $data = $this->_readConf($name);
+        uksort( $data , 'strnatcmp' );
         ptln('<h1>'.$this->getLang('head_'.$name).'</h1>');
         ptln('<p>'.$this->getLang('text_'.$name).'</p>');
         ptln('<p>'.$this->getLang('edit_desc').'</p>');
