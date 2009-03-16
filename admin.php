@@ -113,7 +113,7 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
             if ($v[1] == 0) ptln('</b>');
             ptln('</td>');
             ptln('<td>');
-            ptln('<input type="text" name="local['.hsc($k).']" value="'.hsc($v[0]).'" class="edit" style="width:400px" /></td>');
+            ptln('<input type="text" name="local['.hsc($k).']" value="'.hsc($v[0]).'" class="edit val" /></td>');
             ptln('</tr>');
         }
         ptln('</table>');
