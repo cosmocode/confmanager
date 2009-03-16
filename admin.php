@@ -36,6 +36,12 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
         return strlen( $k2 ) - strlen( $k1 );
     }
 
+    function _sortHuman( $k1 , $k2 ) {
+        $k1 = strtolower($k1);
+        $k2 = strtolower($k2);
+        return strnatcmp($k1,$k2);
+    }
+
     function _change($file,$conf) {
         if (!is_file(DOKU_INC.'conf/'.$file.'.conf')) return;
         $org = confToHash(DOKU_INC.'conf/'.$file.'.conf');
@@ -89,7 +95,7 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
 
     function display($name) {
         $data = $this->_readConf($name);
-        uksort( $data , 'strnatcmp' );
+        uksort( $data , array( &$this , '_sortHuman' ) );
         ptln('<h1>'.$this->getLang('head_'.$name).'</h1>');
         ptln('<p>'.$this->getLang('text_'.$name).'</p>');
         ptln('<p>'.$this->getLang('edit_desc').'</p>');
