@@ -135,7 +135,8 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
 		ptln('</p>');
     }
 
-	function _escape($s) {
+    function _escape($s) {
+        $s = str_replace("\n",'',$s);
 		return str_replace('#','\#',$s);
 	}
 
