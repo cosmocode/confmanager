@@ -8,15 +8,8 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
 
     var $cnffiles = array('acronyms','entities','interwiki','mime','smileys');
 
-    function getInfo(){
-        return array(
-            'author' => 'Dominik Eckelmann',
-            'email'  => 'dokuwiki@cosmocode.de',
-            'date'   => '2009-01-27',
-            'name'   => 'configuration file manager',
-            'desc'   => 'Plugin to manage variouse .conf files',
-            'url'    => 'http://www.dokuwiki.org/plugin:confmanager',
-        );
+	function getInfo(){
+        return confToHash(dirname(__FILE__).'/plugin.info.txt');
     }
 
     function getMenuSort() {
@@ -113,7 +106,7 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
             if ($v[1] == 0) ptln('</b>');
             ptln('</td>');
             ptln('<td>');
-            ptln('<input type="text" name="local['.hsc($k).']" value="'.hsc($v[0]).'" class="edit val" /></td>');
+            ptln('<input type="text" name="local['.hsc($k).']" value="'.hsc($v[0]).'" class="edit" style="width:400px" /></td>');
             ptln('</tr>');
         }
         ptln('</table>');
@@ -135,8 +128,7 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
 		ptln('</p>');
     }
 
-    function _escape($s) {
-        $s = str_replace("\n",'',$s);
+	function _escape($s) {
 		return str_replace('#','\#',$s);
 	}
 
