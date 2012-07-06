@@ -14,7 +14,7 @@ $lang['welcome']     = 'Willkommen im Konfigurationsdatei Manager<br />'
                      . '<a href="http://www.dokuwiki.org/config#summary_of_the_configuration_files" '
                      . 'class="interwiki iw_doku">DokuWiki Konfiguration</a> zu editieren.';
 
-$lang['welcomehead'] = 'Konfigurations datei Manager';
+$lang['welcomehead'] = 'Konfigurationsdatei Manager';
 
 $lang['edithead']    = 'Bearbeite eine Konfigurationsdatei';
 $lang['editcnf']     = 'bearbeiten';

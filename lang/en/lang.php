@@ -9,12 +9,13 @@ $lang['menu'] = 'Configuration file Manager';
  
 // custom language strings for the plugin
 
-$lang['welcome']     = 'Welcome to the configuration file Manager.<br />'
-                     . ' It allows you to edit the .conf files from the '
-                     . '<a href="http://www.dokuwiki.org/config#summary_of_the_configuration_files" '
-                     . 'class="interwiki iw_doku">dokuwiki configuration</a>.';
+$lang['welcome']     = 'The configuration file manager allows you to edit'
+    . 'various configuration files from DokuWiki and its plug-ins.';
 
 $lang['welcomehead'] = 'Configuration file Manager';
+
+$lang['select_config'] = 'Please select a configuration file to edit:';
+$lang['edit'] = 'edit';
 
 $lang['edithead']    = 'Edit a config file';
 $lang['editcnf']     = 'edit config file';
