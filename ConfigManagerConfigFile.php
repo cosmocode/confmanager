@@ -7,10 +7,11 @@ class ConfigManagerConfigFile {
     private $extension = '';
     private $rows = 2;
     private $imagePos = 2;
+    private $configName = '';
 
     private function __construct() {}
 
-    public static  function create($fileName) {
+    public static function create($fileName) {
         $file = new ConfigManagerConfigFile();
         $file->setFileName($fileName);
         return $file;
@@ -70,6 +71,11 @@ class ConfigManagerConfigFile {
         return $this;
     }
 
+    public function setConfigName($name) {
+        $this->configName = $name;
+        return $this;
+    }
+
     private function isCoreConfig($name) {
         if (strpos($name, '/') !== false) {
             return false;
@@ -107,5 +113,11 @@ class ConfigManagerConfigFile {
         return $this->fileName;
     }
 
+    public function getConfigName() {
+        return $this->configName;
+    }
 
+    public function getId() {
+        return md5($this->fileName);
+    }
 }
