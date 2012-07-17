@@ -1,6 +1,6 @@
 <?php
 
-class action_plugin_confmanager extends Dokuwiki_Action_Plugin {
+class action_plugin_confmanager extends DokuWiki_Action_Plugin {
     var $helper;
 
     /**
