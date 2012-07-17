@@ -9,7 +9,7 @@ $lang['menu'] = 'Configuration file Manager';
  
 // custom language strings for the plugin
 
-$lang['welcome']     = 'The configuration file manager allows you to edit'
+$lang['welcome']     = 'The configuration file manager allows you to edit '
     . 'various configuration files from DokuWiki and its plug-ins.';
 
 $lang['welcomehead'] = 'Configuration file Manager';
