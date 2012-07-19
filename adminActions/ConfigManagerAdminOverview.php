@@ -1,15 +1,14 @@
 <?php
 
-class admin_plugin_confmanager_index extends DokuWiki_Admin_Plugin {
+class ConfigManagerAdminOverview implements ConfigManagerAdminAction {
 
+    /**
+     * @var helper_plugin_confmanager
+     */
     private $helper;
 
     public function __construct() {
         $this->helper = plugin_load('helper', 'confmanager');
-    }
-
-    public function getMenuSort() {
-        return 101;
     }
 
     public function handle() {}
