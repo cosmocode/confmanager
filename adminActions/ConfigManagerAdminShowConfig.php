@@ -33,6 +33,12 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->config->save();
+            $params = array(
+                'do' => 'admin',
+                'page' => 'confmanager',
+                'configFile' => $this->configId
+            );
+            send_redirect(wl($ID, $params, false, '&'));
         }
     }
 
