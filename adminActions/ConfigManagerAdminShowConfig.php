@@ -66,7 +66,7 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
     private function displayDescription() {
         $description = $this->config->getDescription();
         if (empty($description)) {
-            return false;
+            return;
         }
 
         echo $this->helper->render($description);

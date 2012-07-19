@@ -2,9 +2,6 @@
 
 class ConfigManagerSingleLineCoreConfig implements ConfigManagerConfigType {
 
-    /**
-     * @var string
-     */
     private $name;
     private $internalName;
     private $description;

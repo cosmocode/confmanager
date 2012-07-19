@@ -30,7 +30,7 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
     }
 
     public function html() {
-        echo '<div id="confmanager" class="doku">';
+        echo '<div id="confmanager">';
         $this->adminAction->html();
         echo '</div>';
     }
