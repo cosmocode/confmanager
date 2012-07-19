@@ -32,6 +32,10 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!checkSecurityToken()) {
+                msg($this->helper->getLang('invalid request csrf'), -1);
+            }
+
             $this->config->save();
             $params = array(
                 'do' => 'admin',
@@ -56,6 +60,7 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
 
     public function displayConfig() {
         $this->formStart();
+        formSecurityToken();
         $this->config->display();
         $this->formEnd();
     }
