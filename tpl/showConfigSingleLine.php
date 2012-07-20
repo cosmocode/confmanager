@@ -18,6 +18,7 @@
                         name="line[]"
                         value="<?php echo hsc($config) ?>"
                         class="<?php echo $class ?>"
+                        <?php if ($defaultValue) echo 'disabled="disabled"' ?>
                         />
                 </td>
             </tr>
