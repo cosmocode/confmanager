@@ -2,6 +2,7 @@
 
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerConfigType.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerSingleLineConfigCascade.php';
+require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineConfigCascade.php';
 
 class action_plugin_confmanager extends DokuWiki_Action_Plugin {
     var $helper;
@@ -41,6 +42,10 @@ class action_plugin_confmanager extends DokuWiki_Action_Plugin {
         $wordBlock->setName($this->getLang('Blacklisting'));
         $wordBlock->setDescription($this->getDescription('wordblock'));
         $event->data[] = $wordBlock;
+
+        $acronyms = new ConfigManagerTwoLineCoreConfig('acronyms');
+        $acronyms->setName($this->getLang('Acronyms'));
+        $event->data[] = $acronyms;
     }
 
     private function getDescription($id) {

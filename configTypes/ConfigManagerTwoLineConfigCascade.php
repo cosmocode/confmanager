@@ -1,6 +1,6 @@
 <?php
 
-class ConfigManagerSingleLineCoreConfig implements ConfigManagerConfigType {
+class ConfigManagerTwoLineCoreConfig implements ConfigManagerConfigType {
 
     private $name;
     private $internalName;
@@ -30,22 +30,10 @@ class ConfigManagerSingleLineCoreConfig implements ConfigManagerConfigType {
             }
 
             foreach ($config_cascade[$this->internalName][$type] as $file) {
-                $config[$type] = array_merge($config[$type], $this->loadFile($file));
+                $config[$type] = array_merge($config[$type], confToHash($file));
             }
         }
 
-        return $config;
-    }
-
-    private function loadFile($fileName) {
-        if (@!file_exists($fileName)) {
-            return array();
-        }
-        $config = file($fileName);
-        $config = array_map('trim', $config);
-        $config = preg_replace('/^#.*/', '', $config);
-        $config = str_replace('\\#', '#', $config);
-        $config = array_filter($config);
         return $config;
     }
 
@@ -55,14 +43,16 @@ class ConfigManagerSingleLineCoreConfig implements ConfigManagerConfigType {
         $local = $configs['local'];
         $configs = array_merge($default, $local);
 
-        usort($configs, array($this->helper, '_sortHuman'));
-        include DOKU_PLUGIN . 'confmanager/tpl/showConfigSingleLine.php';
+        uksort($configs, array($this->helper, '_sortHuman'));
+        include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLine.php';
     }
 
     public function save() {
         global $INPUT;
-        $lines = $INPUT->arr('line');
         $config = $this->readConfig();
+        $lines = $INPUT->arr('line');
+        $lines = array_merge($lines, $this->getNewValues());
+
         $custom = $this->getCustomEntries($lines, $config['default']);
 
         $this->saveToFile($custom);
@@ -70,16 +60,20 @@ class ConfigManagerSingleLineCoreConfig implements ConfigManagerConfigType {
 
     private function getCustomEntries($input, $default) {
         $save = array();
-        foreach ($input as $line) {
-            if (in_array($line, $default)) {
-                continue;
-            }
-            $line = $this->prepareEntity($line);
-            if ($line === '') {
-                continue;
+        foreach ($input as $key => $value) {
+
+            if (array_key_exists($key, $default)) {
+                if ($default[$key] === $value) {
+                    continue;
+                }
             }
 
-            $save[] = $line;
+            $key = $this->prepareEntity($key);
+            $value = $this->prepareEntity($value);
+            if ($key === '' || $value === '') {
+                continue;
+            }
+            $save[$key] = $value;
         }
 
         return $save;
@@ -112,12 +106,23 @@ class ConfigManagerSingleLineCoreConfig implements ConfigManagerConfigType {
 
         uksort($config, array($this->helper, '_sortConf'));
         $content = $this->helper->getCoreConfigHeader();
-        foreach ($config as $item) {
-            $content .= "$item\n";
+        foreach ($config as $key => $value) {
+            $content .= "$key\t$value\n";
         }
 
         file_put_contents($file, $content);
         msg($this->helper->getLang('changes applied'), 1);
+    }
+
+    private function getNewValues() {
+        global $INPUT;
+        $newKey = $INPUT->arr('newKey');
+        $newValue = $INPUT->arr('newValue');
+        if (count($newKey) !== count($newValue)) {
+            return array();
+        }
+
+        return array_combine($newKey, $newValue);
     }
 
     public function getName() {
