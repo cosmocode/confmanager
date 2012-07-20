@@ -10,6 +10,7 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
         if ($configs === null) {
             $configs = array();
             trigger_event('CONFMANAGER_CONFIGFILES_REGISTER', $configs, null, false);
+            usort($configs, array($this, '_sortByConfigName'));
         }
         return $configs;
     }
@@ -58,6 +59,10 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
         $k1 = strtolower($k1);
         $k2 = strtolower($k2);
         return strnatcmp($k1,$k2);
+    }
+
+    public function _sortByConfigName(ConfigManagerConfigType $left, ConfigManagerConfigType $right) {
+        return strnatcasecmp($left->getName(), $right->getName());
     }
 }
 
