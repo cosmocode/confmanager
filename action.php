@@ -1,6 +1,7 @@
 <?php
 
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerConfigType.php';
+require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerAbstractCascadeConfig.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerSingleLineConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineConfigCascade.php';
 
