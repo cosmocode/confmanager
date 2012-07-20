@@ -6,12 +6,12 @@
         </tr>
         <?php foreach ($configs as $config): ?>
             <?php
-            $class = 'edit';
+            $defaultValue = false;
             if (in_array($config, $default)) {
-                $class .= ' default';
+                $defaultValue = true;
             }
             ?>
-            <tr>
+            <tr<?php if ($defaultValue) echo ' class="confmanager_defaultValue"' ?>>
                 <td>
                     <input
                         type="text"
