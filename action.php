@@ -17,20 +17,15 @@ class action_plugin_confmanager extends DokuWiki_Action_Plugin {
 
     public function addCoreConfigFiles(&$event, $param) {
         /*
-        $event->data[] = ConfigManagerConfigFile::create('acronyms')
-            ->setConfigName('Abbreviations and Acronyms');
-        $event->data[] = ConfigManagerConfigFile::create('entities')
-            ->setConfigName('Entity replacements');
         $event->data[] = ConfigManagerConfigFile::create('interwiki')
             ->setImageFolder(DOKU_INC . 'lib/images/interwiki/')
             ->setExtension('.gif')
             ->setImagePosLeft()
             ->setConfigName('InterWiki Links');
-        $event->data[] = ConfigManagerConfigFile::create('mime')
-            ->setConfigName('MIME configuration');
         $event->data[] = ConfigManagerConfigFile::create('smileys')
             ->setImageFolder(DOKU_INC . 'lib/images/smileys/')
             ->setConfigName('Smileys');
+        mime - fileicons
         */
 
         $scheme = new ConfigManagerSingleLineCoreConfig('scheme');
@@ -45,7 +40,13 @@ class action_plugin_confmanager extends DokuWiki_Action_Plugin {
 
         $acronyms = new ConfigManagerTwoLineCoreConfig('acronyms');
         $acronyms->setName($this->getLang('Acronyms'));
+        $acronyms->setDescription($this->getDescription('acronyms'));
         $event->data[] = $acronyms;
+
+        $entities = new ConfigManagerTwoLineCoreConfig('entities');
+        $entities->setName($this->getLang('Entity replacements'));
+        $entities->setDescription($this->getDescription('entities'));
+        $event->data[] = $entities;
     }
 
     private function getDescription($id) {
