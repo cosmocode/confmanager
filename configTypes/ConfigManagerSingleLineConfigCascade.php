@@ -44,6 +44,7 @@ class ConfigManagerSingleLineCoreConfig implements ConfigManagerConfigType {
         $config = file($fileName);
         $config = array_map('trim', $config);
         $config = preg_replace('/^#.*/', '', $config);
+        $config = str_replace('\\#', '#', $config);
         $config = array_filter($config);
         return $config;
     }
