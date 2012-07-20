@@ -1,8 +1,5 @@
 <?php
 
-require_once DOKU_INC . 'lib/plugins/confmanager/ConfigManagerConfigFile.php';
-require_once DOKU_INC . 'lib/plugins/confmanager/ConfigManagerConfigFileContent.php';
-
 class helper_plugin_confmanager extends DokuWiki_Plugin {
 
     public function getConfigFiles() {
@@ -30,10 +27,6 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
             $hash .= $file;
         }
         return md5($hash);
-    }
-
-    public function writeConfig(ConfigManagerConfigFile $file, array $content) {
-        str_repeat('%s', $file->getRows());
     }
 
     public function areWriteable($files) {
