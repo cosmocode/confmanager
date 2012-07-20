@@ -81,6 +81,8 @@ class ConfigManagerTwoLineCoreConfig implements ConfigManagerConfigType {
 
     private function prepareEntity($str) {
         $str = trim($str);
+        $str = str_replace("\n", '', $str);
+        $str = str_replace("\r", '', $str);
         $str = str_replace('#', '\\#', $str);
         return $str;
     }
