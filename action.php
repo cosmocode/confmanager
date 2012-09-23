@@ -19,15 +19,9 @@ class action_plugin_confmanager extends DokuWiki_Action_Plugin {
 
     public function addCoreConfigFiles(&$event, $param) {
         /*
-        $event->data[] = ConfigManagerConfigFile::create('interwiki')
-            ->setImageFolder(DOKU_INC . 'lib/images/interwiki/')
-            ->setExtension('.gif')
-            ->setImagePosLeft()
-            ->setConfigName('InterWiki Links');
         $event->data[] = ConfigManagerConfigFile::create('smileys')
             ->setImageFolder(DOKU_INC . 'lib/images/smileys/')
             ->setConfigName('Smileys');
-        mime - fileicons
         */
 
         $scheme = new ConfigManagerSingleLineCoreConfig('scheme');
