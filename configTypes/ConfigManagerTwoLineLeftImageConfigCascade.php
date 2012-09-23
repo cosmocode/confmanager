@@ -33,7 +33,9 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
                 $icon[$key] = $_FILES['icon'][$key][$config];
             }
             if ($icon['error'] != UPLOAD_ERR_OK) {
-                $this->signalUploadError($config, $icon['error']);
+                if (!empty($icon['name'])) {
+                    $this->signalUploadError($config, $icon['error']);
+                }
                 continue;
             }
 
