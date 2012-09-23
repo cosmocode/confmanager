@@ -52,7 +52,13 @@ class action_plugin_confmanager extends DokuWiki_Action_Plugin {
 
         $mime = new ConfigManagerTwoLineLeftImageConfigCascade('mime', 'lib/images/fileicons/', 'png');
         $mime->setName($this->getLang('MIME configuration'));
+        $mime->setDescription($this->getDescription('mime'));
         $event->data[] = $mime;
+
+        $interwiki = new ConfigManagerTwoLineLeftImageConfigCascade('interwiki', 'lib/images/interwiki', 'gif');
+        $interwiki->setName($this->getLang('InterWiki Links'));
+        $interwiki->setDescription($this->getDescription('interwiki'));
+        $event->data[] = $interwiki;
     }
 
     private function getDescription($id) {
