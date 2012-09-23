@@ -1,6 +1,6 @@
 <?php
 
-class ConfigManagerTwoLineCoreConfig extends ConfigManagerAbstractCascadeConfig {
+class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConfig {
 
     protected function loadFile($fileName) {
         return confToHash($fileName);
@@ -25,7 +25,10 @@ class ConfigManagerTwoLineCoreConfig extends ConfigManagerAbstractCascadeConfig 
         $custom = $this->getCustomEntries($lines, $config['default']);
 
         $this->saveToFile($custom);
+        $this->handleSave($config['default']);
     }
+
+    protected function handleSave() {}
 
     private function getCustomEntries($input, $default) {
         $save = array();

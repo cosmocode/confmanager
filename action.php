@@ -4,6 +4,7 @@ require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerConfigType.php'
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerAbstractCascadeConfig.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerSingleLineConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineConfigCascade.php';
+require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineLeftImageConfigCascade.php';
 
 class action_plugin_confmanager extends DokuWiki_Action_Plugin {
     var $helper;
@@ -39,15 +40,19 @@ class action_plugin_confmanager extends DokuWiki_Action_Plugin {
         $wordBlock->setDescription($this->getDescription('wordblock'));
         $event->data[] = $wordBlock;
 
-        $acronyms = new ConfigManagerTwoLineCoreConfig('acronyms');
+        $acronyms = new ConfigManagerTwoLineCascadeConfig('acronyms');
         $acronyms->setName($this->getLang('Acronyms'));
         $acronyms->setDescription($this->getDescription('acronyms'));
         $event->data[] = $acronyms;
 
-        $entities = new ConfigManagerTwoLineCoreConfig('entities');
+        $entities = new ConfigManagerTwoLineCascadeConfig('entities');
         $entities->setName($this->getLang('Entity replacements'));
         $entities->setDescription($this->getDescription('entities'));
         $event->data[] = $entities;
+
+        $mime = new ConfigManagerTwoLineLeftImageConfigCascade('mime', 'lib/images/fileicons/', 'png');
+        $mime->setName($this->getLang('MIME configuration'));
+        $event->data[] = $mime;
     }
 
     private function getDescription($id) {
