@@ -7,7 +7,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
 
     public function __construct($name, $imageFolder, $extension) {
         parent::__construct($name);
-        $this->imageFolder = $imageFolder;
+         $this->setImageFolder($imageFolder);
         $this->extension = $extension;
     }
 
@@ -56,7 +56,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
                 continue;
             }
 
-            if (move_uploaded_file($icon['tmp_name'], $this->imageFolder . "$config." . $this->extension)) {
+            if (move_uploaded_file($icon['tmp_name'], DOKU_INC . $this->imageFolder . "$config." . $this->extension)) {
                 msg(sprintf($this->helper->getLang('changed image of'), $config), 1);
                 continue;
             }
@@ -81,5 +81,12 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
             return DOKU_BASE . $path;
         }
         return '';
+    }
+
+    public function setImageFolder($imageFolder) {
+        if (substr($imageFolder, strlen($imageFolder) -1) !== '/') {
+            $imageFolder = "$imageFolder/";
+        }
+        $this->imageFolder = $imageFolder;
     }
 }
