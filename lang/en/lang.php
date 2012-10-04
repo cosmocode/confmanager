@@ -1,51 +1,46 @@
 <?php
-// settings must be present and set appropriately for the language
+
+
+// These settings must be present and set appropriately for the language.
+// Do not change, if you don't know what it does!
 $lang['encoding']   = 'utf-8';
 $lang['direction']  = 'ltr';
  
-// for admin plugins, the menu prompt to be displayed in the admin menu
-// if set here, the plugin doesn't need to override the getMenuText() method
-$lang['menu'] = 'Configuration file Manager'; 
- 
-// custom language strings for the plugin
 
-$lang['welcome']     = 'The configuration file manager allows you to edit '
+// For admin plugins, the menu prompt to be displayed in the admin menu.
+// If set here, the plugin doesn't need to override the getMenuText() method
+$lang['menu'] = 'Configuration File Manager'; 
+ 
+
+// Page header
+$lang['welcomehead'] = 'Configuration File Manager';
+$lang['welcome']     = 'The Configuration File Manager allows you to edit '
     . 'various configuration files from DokuWiki and its plug-ins.';
 
-$lang['welcomehead'] = 'Configuration file Manager';
 
-$lang['select_config'] = 'Please select a configuration file to edit:';
-$lang['edit'] = 'edit';
+// Page controls (buttons, labels, etc.)
+$lang['save'] = 'Save';
+$lang['select_config'] = 'Select a configuration file';
+$lang['edit'] = 'Edit';
+$lang['cannot change default file icon'] = 'Cannot change default icons';
+$lang['delete_action'] = 'delete';
+$lang['delete_action_tooltip'] = 'Click here to delete this entry';
+$lang['toggle_description'] = 'Toggle description on/off';
 
-$lang['edithead']    = 'Edit a config file';
-$lang['editcnf']     = 'edit config file';
 
-$lang['cnf_acronyms']  = 'acronyms';
-$lang['cnf_entities']  = 'entities';
-$lang['cnf_interwiki'] = 'interwiki links';
-$lang['cnf_mime']      = 'mime types';
-$lang['cnf_smileys']   = 'smileys';
+// Table headers
+$lang['key'] = 'Key';
+$lang['value'] = 'Value';
+$lang['actions'] = 'Actions';
 
-$lang['head_acronyms']  = 'Abbreviations and Acronyms';
-$lang['head_entities']  = 'Entities';
-$lang['head_interwiki'] = 'InterWiki Links';
-$lang['head_mime']      = 'MIME configuration';
-$lang['head_smileys']   = 'Smileys';
 
-$lang['edit_desc'] = 'You can edit the current settings by simply changing there value in the listing below.'
-                   . '<br /> To delete a config line just clear the value.  If you want to <a href="#__add">add a value</a> use the form below';
+// Names of DokuWiki's default config files
+$lang['URL Schemes'] = 'URL Schemes';
+$lang['Blacklisting'] = 'Blacklisting';
+$lang['Acronyms'] = 'Acronyms';
+$lang['Entity replacements'] = 'Entity replacements';
+$lang['MIME configuration'] = 'MIME configuration';
+$lang['InterWiki Links'] = 'InterWiki Links';
 
-$lang['text_acronyms']  = 'Here you can edit all the acronym hints. For more details see <a class="interwiki iw_doku" href="http://www.dokuwiki.org/abbreviations">abbreviations and acronyms</a>';
-$lang['text_entities']  = 'Here you can edit all entities replacements. For more details see <a class="interwiki iw_doku" href="http://www.dokuwiki.org/entities">entities</a>';
-$lang['text_interwiki'] = 'Here you can edit all availible interwiki links. For more details see <a class="interwiki iw_doku" href="http://www.dokuwiki.org/interwiki">interwiki</a>';
-$lang['text_mime']      = 'Here you can edit all the allowed mime types. For more details see <a class="interwiki iw_doku" href="http://www.dokuwiki.org/mime">mime</a>';
-$lang['text_smileys']   = 'Here you can edit all availible smileys. For more details see <a class="interwiki iw_doku" href="http://www.dokuwiki.org/smileys">smileys</a>';
-
-$lang['submitchanges']  = 'Submit changes';
-$lang['reset']          = 'Reset';
-
-$lang['addvarhead'] = 'Add a line';
-$lang['additem'] = 'Add';
-$lang['addvartext'] = 'Here you may add a new item pair.';
-
-$lang['editdesc'] = 'Select another file to edit. (Unsaved changes will be lost)';
+// Error Messages
+$lang['invalid request csrf'] = 'Warning: cross site scripting attempt detected';

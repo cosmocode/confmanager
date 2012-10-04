@@ -2,7 +2,9 @@
 <div class="table">
     <table class="inline confmanager_twoLine">
         <tr>
-            <th colspan="2"><?php echo $helper->getLang('config values') ?></th>
+            <th><?php echo $helper->getLang('key') ?></th>
+            <th><?php echo $helper->getLang('value') ?></th>
+            <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
         <?php $configCounter = 0 ?>
         <?php foreach ($configs as $key => $value): ?>
@@ -27,6 +29,12 @@
                         value="<?php echo hsc($value) ?>"
                         class="edit"
                         id="confmanager_item<?php echo $configCounter ?>"
+                        />
+                </td>
+                <td>
+                	<img src="icons/delete.png"
+                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>"
                         />
                 </td>
             </tr>

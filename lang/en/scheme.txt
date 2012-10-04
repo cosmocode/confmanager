@@ -1,6 +1,6 @@
 ===== URL Schemes =====
 
 DokuWiki allows linking to external URLs but only to known protocols.
-More information on [[doku>urlschemes]].
+[[doku>urlschemes|More information on URL schemes]].
 
-The following protocols currently enabled:
+The following protocols are currently enabled:

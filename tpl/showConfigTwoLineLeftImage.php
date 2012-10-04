@@ -2,7 +2,9 @@
 <div class="table">
     <table class="inline confmanager_twoLineLeftImage">
         <tr>
-            <th colspan="3"><?php echo $helper->getLang('config values') ?></th>
+            <th><?php echo $helper->getLang('key') ?></th>
+            <th><?php echo $helper->getLang('value') ?></th>
+            <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
         <?php $configCounter = 0 ?>
         <?php foreach ($configs as $key => $value): ?>
@@ -34,7 +36,7 @@
                         id="confmanager_item<?php echo $configCounter ?>"
                         />
                 </td>
-                <td>
+                <td <?php if($defaultValue): ?> class="default_value"<?php endif ?>>
                     <?php if ($defaultValue): ?>
                         <?php echo hsc($helper->getLang('cannot change default file icon')) ?>
                     <?php else: ?>
@@ -43,6 +45,10 @@
                             name="icon[<?php echo hsc($key) ?>]"
                             class="edit"
                             />
+                        <img src="icons/delete.png"
+                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>"
+                        />
                     <?php endif ?>
                 </td>
             </tr>

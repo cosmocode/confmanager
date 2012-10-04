@@ -16,3 +16,6 @@ input.key {
 input.val {
     width:600px;
 }
+.default_value {
+	color:#777;
+}
