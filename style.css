@@ -10,12 +10,33 @@ table.confmanager td {
     padding-left:5px;
     padding-right:5px;
 }
+
 input.key {
     width:100px;
 }
+
 input.val {
     width:600px;
 }
+
 .default_value {
 	color:#777;
+}
+
+#confmanager .defaultValue {
+	overflow:auto;
+	color: gray;
+}
+
+table.confmanager {
+    overflow: hidden;
+}
+
+.dokuwiki #confmanager div.table {
+    overflow-x: visible;
+}
+
+#confmanager div.table td div {
+    overflow: auto;
+    width: 300px;
 }

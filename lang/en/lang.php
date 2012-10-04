@@ -25,6 +25,7 @@ $lang['edit'] = 'Edit';
 $lang['cannot change default file icon'] = 'Cannot change default icons';
 $lang['delete_action'] = 'delete';
 $lang['delete_action_tooltip'] = 'Click here to delete this entry';
+$lang['delete_action_tooltip_disabled'] = 'Cannot delete default values';
 $lang['toggle_description'] = 'Toggle description on/off';
 
 
@@ -41,6 +42,7 @@ $lang['Acronyms'] = 'Acronyms';
 $lang['Entity replacements'] = 'Entity replacements';
 $lang['MIME configuration'] = 'MIME configuration';
 $lang['InterWiki Links'] = 'InterWiki Links';
+
 
 // Error Messages
 $lang['invalid request csrf'] = 'Warning: cross site scripting attempt detected';

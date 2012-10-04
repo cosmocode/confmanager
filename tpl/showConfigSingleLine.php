@@ -12,21 +12,34 @@
                 $defaultValue = true;
             }
             ?>
-            <tr<?php if ($defaultValue) echo ' class="confmanager_defaultValue"' ?>>
+            <tr>
                 <td>
-                    <input
+                <?php if ($defaultValue): ?>
+                	<div class="defaultValue">
+                    <?php echo hsc($config) ?>
+                    </div>
+                <?php else: ?>
+                <input
                         type="text"
                         name="line[]"
                         value="<?php echo hsc($config) ?>"
                         class="<?php echo $class ?>"
                         <?php if ($defaultValue) echo 'disabled="disabled"' ?>
-                        />
+ 				/>
+                <?php endif ?>
                 </td>
                 <td>
-                	<img src="<?php echo DOKU_PLUGIN . 'icons/delete.png' ?>"
+                	<?php if ($defaultValue): ?>
+                	<img src="<?php echo 'lib/plugins/confmanager/icons/delete_disabled.png' ?>"
                         	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>"
-                        />
+                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
+                    <?php else: ?>
+                    <a href="#">
+	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
+	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
+                    </a>
+                    <?php endif ?>
                 </td>
             </tr>
         <?php endforeach ?>
