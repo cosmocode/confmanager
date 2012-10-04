@@ -24,9 +24,16 @@ $lang['select_config'] = 'Select a configuration file';
 $lang['edit'] = 'Edit';
 $lang['cannot change default file icon'] = 'Cannot change default icons';
 $lang['delete_action'] = 'delete';
+$lang['edit_key_action'] = 'edit';
+$lang['edit_key_action_tooltip'] = 'Click here to rename this entry';
 $lang['delete_action_tooltip'] = 'Click here to delete this entry';
 $lang['delete_action_tooltip_disabled'] = 'Cannot delete default values';
+$lang['edit_key_action_tooltip_disabled'] = 'Cannot edit default values';
 $lang['toggle_description'] = 'Toggle description on/off';
+$lang['default_value_tooltip'] = 'This is a default value that cannot be changed';
+$lang['edit_icon_action'] = 'edit icon';
+$lang['edit_icon_action_tooltip'] = 'Click here to choose another icon';
+$lang['edit_icon_action_tooltip_disabled'] = 'Cannot change default icons';
 
 
 // Table headers

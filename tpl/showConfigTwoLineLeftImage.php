@@ -18,16 +18,30 @@
 
             $image = $this->getImage($key);
             ?>
-            <tr<?php if ($defaultValue) echo ' class="confmanager_defaultValue"' ?>>
+            <tr>
                 <td>
+                	<?php if ($defaultValue): ?>
+                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
+                		<?php if ($image !== ''): ?>
+                            <img src="<?php echo hsc($image) ?>" alt="" />
+                        <?php endif ?>
+                        <?php echo hsc($key) ?>
+                	</div>
+                	<?php else: ?>
                     <label for="confmanager_item<?php echo $configCounter ?>">
                         <?php if ($image !== ''): ?>
                             <img src="<?php echo hsc($image) ?>" alt="" />
                         <?php endif ?>
                         <?php echo hsc($key) ?>
                     </label>
+                    <?php endif ?>
                 </td>
                 <td>
+                 <?php if ($defaultValue): ?>
+                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
+                        <?php echo hsc($value) ?>
+                    </div>
+                <?php else: ?>
                     <input
                         type="text"
                         name="line[<?php echo hsc($key) ?>]"
@@ -35,20 +49,43 @@
                         class="edit"
                         id="confmanager_item<?php echo $configCounter ?>"
                         />
+                <?php endif ?>
                 </td>
                 <td <?php if($defaultValue): ?> class="default_value"<?php endif ?>>
                     <?php if ($defaultValue): ?>
-                        <?php echo hsc($helper->getLang('cannot change default file icon')) ?>
-                    <?php else: ?>
-                        <input
-                            type="file"
-                            name="icon[<?php echo hsc($key) ?>]"
-                            class="edit"
-                            />
-                        <img src="icons/delete.png"
+                       <img src="lib/plugins/confmanager/icons/delete_disabled.png"
                         	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>"
-                        />
+                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
+                        <img src="<?php echo 'lib/plugins/confmanager/icons/textfield_key_disabled.png' ?>"
+                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+                        	title="<?php echo hsc($helper->getLang('edit_key_action_tooltip_disabled')) ?>" />
+                        <img src="<?php echo 'lib/plugins/confmanager/icons/picture_edit_disabled.png' ?>"
+                        	alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
+                        	title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip_disabled')) ?>" />
+                    <?php else: ?>
+                        <!--
+                        	<input
+	                            type="file"
+	                            name="icon[<?php echo hsc($key) ?>]"
+	                            class="edit"
+	                            />
+	                    -->
+	                    <a href="#">
+	                        <img src="lib/plugins/confmanager/icons/delete.png"
+	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>"
+	                        />
+                        </a>
+                        <a href="#">
+	                    	<img src="<?php echo 'lib/plugins/confmanager/icons/textfield_key.png' ?>"
+	                        	alt="<?php echo hsc($helper->getLang('edit_key_action')) ?>"
+	                        	title="<?php echo hsc($helper->getLang('edit_key_action_tooltip')) ?>" />
+                    	</a>
+                    	<a href="#">
+	                    	<img src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
+	                        	alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
+	                        	title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
+                    	</a>
                     <?php endif ?>
                 </td>
             </tr>

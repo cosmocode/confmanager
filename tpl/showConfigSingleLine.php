@@ -15,7 +15,7 @@
             <tr>
                 <td>
                 <?php if ($defaultValue): ?>
-                	<div class="defaultValue">
+                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
                     <?php echo hsc($config) ?>
                     </div>
                 <?php else: ?>
