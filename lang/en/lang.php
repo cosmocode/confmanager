@@ -30,11 +30,11 @@ $lang['edit_key_action_tooltip'] = 'Click here to rename this entry';
 $lang['delete_action_tooltip'] = 'Click here to delete this entry';
 $lang['delete_action_tooltip_disabled'] = 'Cannot delete default values';
 $lang['edit_key_action_tooltip_disabled'] = 'Cannot edit default values';
-$lang['toggle_description'] = 'Toggle description on/off';
 $lang['default_value_tooltip'] = 'This is a default value that cannot be changed';
 $lang['edit_icon_action'] = 'edit icon';
 $lang['edit_icon_action_tooltip'] = 'Click here to choose another icon';
 $lang['edit_icon_action_tooltip_disabled'] = 'Cannot change default icons';
+$lang['toggle_description'] = 'Toggle description on/off';
 
 
 // Table headers
@@ -46,7 +46,7 @@ $lang['actions'] = 'Actions';
 // Names of DokuWiki's default config files
 $lang['URL Schemes'] = 'URL Schemes';
 $lang['Blacklisting'] = 'Blacklisting';
-$lang['Acronyms'] = 'Acronyms';
+$lang['Acronyms'] = 'Abbreviations and Acronyms';
 $lang['Entity replacements'] = 'Entity replacements';
 $lang['MIME configuration'] = 'MIME configuration';
 $lang['InterWiki Links'] = 'InterWiki Links';

@@ -1,5 +1,3 @@
-====== Entities ======
-
 [[doku>DokuWiki]] can replace certain characters or strings with other strings based on a configuration file. By default this is used to convert various character combinations to their typographical equivalent.
 
 e.g.

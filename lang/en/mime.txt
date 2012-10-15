@@ -1,5 +1,3 @@
-====== MIME configuration ======
-
 Which file types you can upload via the [[doku>mediamanager]] is configured through the ''conf/mime.conf'' file. It also configures the file extension <-> mimetype association.
 
 For security reasons it is not possible to configure [[doku>DokuWiki]] to allow any file type.

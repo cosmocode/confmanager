@@ -1,5 +1,3 @@
-====== InterWiki Links ======
-
 The original idea of InterWiki was to have one large distributed [[wp>Wiki]] over the whole net. Today its more of an easy way to link from one wiki to another by having some simple link syntax to do so.
 
 In [[doku>DokuWiki]] this is done by prefixing Wiki [[doku>pagenames]] with a shortcut separated by a ''>'' character.

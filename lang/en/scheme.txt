@@ -1,5 +1,3 @@
-===== URL Schemes =====
-
 DokuWiki allows linking to external URLs but only to known protocols.
 [[doku>urlschemes|More information on URL schemes]].
 

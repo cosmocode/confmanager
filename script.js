@@ -10,14 +10,19 @@ jQuery(document).ready(function() {
 	showDescription = (cookie == 'false' ? false : true);
 	if(!showDescription) {
 		jQuery('#description').hide();
+		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
+		return;
 	}
+	jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
 });
 
 function toggleDescription() {
 	if(!showDescription) {
 		jQuery('#description').show();
+		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
 	} else {
 		jQuery('#description').hide();
+		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
 	}
 	showDescription = !showDescription;
 	setCookie(COOKIE_DESCRIPTION_NAME, showDescription);
