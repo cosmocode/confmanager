@@ -80,8 +80,8 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
             return;
         }
 
-        echo '<div class="description_wrapper" id="description">';
         include DOKU_PLUGIN . 'confmanager/tpl/descriptionHeader.php';
+        echo '<div class="description_wrapper" id="description">';
         echo $this->helper->render($description);
         echo '</div>';
     }

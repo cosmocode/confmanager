@@ -1,4 +1,5 @@
 <?php $helper = plugin_load('helper', 'confmanager'); ?>
+<?php $lineCounter = 0; ?>
 <div class="table">
     <table class="inline confmanager_singleLine">
         <tr>
@@ -12,7 +13,7 @@
                 $defaultValue = true;
             }
             ?>
-            <tr>
+            <tr id="tableLine<?php echo $lineCounter++ ?>">
                 <td>
                 <?php if ($defaultValue): ?>
                 	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
@@ -20,6 +21,7 @@
                     </div>
                 <?php else: ?>
                 <input
+                		id="value<?php echo $lineCounter-1 ?>"
                         type="text"
                         name="line[]"
                         value="<?php echo hsc($config) ?>"
@@ -34,7 +36,7 @@
                         	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
                         	title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
                     <?php else: ?>
-                    <a href="#">
+                    <a onclick="deleteLine(<?php echo $lineCounter-1 ?>)">
 	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
