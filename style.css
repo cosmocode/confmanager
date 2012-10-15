@@ -39,3 +39,16 @@ table.confmanager {
     overflow: auto;
     width: 300px;
 }
+
+#confmanager .heading_appendix {
+	font-size: small;
+	font-weight: normal;
+}
+
+#confmanager .level1 {
+	background-color: #eee;
+	padding: 1em;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin-bottom: 2em;
+}
