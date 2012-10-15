@@ -11,6 +11,9 @@
             <?php echo $this->helper->getLang('select_config') ?>
         </label>
         <select name="configFile" id="confmanager__config__files" class="edit" onchange="submitForm('select_config_form');">
+            <option>
+            	<?php echo $this->helper->getLang('please_select') ?>
+            </option>
             <?php foreach ($configFiles as $config): ?>
             <?php $id = $this->helper->getConfigId($config) ?>
             <option value="<?php echo hsc($id) ?>"

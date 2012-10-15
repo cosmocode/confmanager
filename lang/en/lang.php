@@ -21,6 +21,7 @@ $lang['welcome']     = 'The Configuration File Manager allows you to edit '
 // Page controls (buttons, labels, etc.)
 $lang['save'] = 'Save';
 $lang['select_config'] = 'Select a configuration file';
+$lang['please_select'] = '--- Please select an entry ---';
 $lang['edit'] = 'Edit';
 $lang['cannot change default file icon'] = 'Cannot change default icons';
 $lang['delete_action'] = 'delete';
