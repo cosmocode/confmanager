@@ -50,3 +50,7 @@ table.confmanager {
 #confmanager table {
 	margin-bottom: 2em;
 }
+
+#confmanager #toggleDescription {
+    cursor: pointer;
+}
