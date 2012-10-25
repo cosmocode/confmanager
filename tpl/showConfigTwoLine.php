@@ -46,6 +46,7 @@
             </td>
         </tr>
     </table>
+    <?php $this->helper->tplSaveButton() ?>
     <h3><?php echo $helper->getLang('default_values') ?></h3>
 	<table class="inline confmanager_twoLine">
 		<tr>

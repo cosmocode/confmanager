@@ -1,3 +1,3 @@
-        <input type="submit" value="<?php echo $this->helper->getLang('save') ?>" class="button">
+        <?php $this->helper->tplSaveButton() ?>
     </form>
 </div>

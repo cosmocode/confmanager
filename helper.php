@@ -57,5 +57,14 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
     public function _sortByConfigName(ConfigManagerConfigType $left, ConfigManagerConfigType $right) {
         return strnatcasecmp($left->getName(), $right->getName());
     }
+
+    public function tplSaveButton() {
+        static $called = false;
+        if ($called) {
+            return;
+        }
+        printf('<input type="submit" value="%s" class="button">', hsc($this->getLang('save')));
+        $called = true;
+    }
 }
 
