@@ -63,7 +63,7 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
         if ($called) {
             return;
         }
-        printf('<input type="submit" value="%s" class="button">', hsc($this->getLang('save')));
+        include DOKU_PLUGIN . 'confmanager/tpl/formControls.php';
         $called = true;
     }
 }
