@@ -1,7 +1,7 @@
 <?php $helper = plugin_load('helper', 'confmanager'); ?>
-<h2><?php echo $configHeadLine ?>
+<h2 id="toggleDescription"><?php echo $configHeadLine ?>
 	<span class="heading_appendix">
-		<a id="toggleDescription" href="">
+		<a href="">
 			<img id="description_toggle_button" title="<?php echo $helper->getLang('toggle_description') ?>" />
 		</a>
 	</span>

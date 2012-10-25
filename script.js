@@ -14,25 +14,23 @@ jQuery(document).ready(function() {
 		}
 	};
 	
+	var cookie = readCookie(COOKIE_DESCRIPTION_NAME);
+	if(cookie == null) {
+		cookie = true;
+	}
+	var showDescription = cookie != 'false';
+	if(!showDescription) {
+		jQuery('#description').hide();
+		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
+	} else {
+		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
+	}
+	
 	var setCookie = function(key, value) {
 		var expirationDate = new Date();
 		expirationDate.setDate(expirationDate.getDate()+365);
 		document.cookie = escape(key) + '=' + escape(value) + '; expires=' + expirationDate.toUTCString();
 	};
-	
-	var cookie = readCookie(COOKIE_DESCRIPTION_NAME);
-	if(cookie == null) {
-		cookie = true;
-	}
-	
-	var showDescription = (cookie == 'false' ? false : true);
-	if(!showDescription) {
-		jQuery('#description').hide();
-		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
-		return;
-	}
-	
-	jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
 	
 	jQuery('#toggleDescription').click(function() {
 		if(!showDescription) {
