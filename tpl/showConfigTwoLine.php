@@ -23,7 +23,7 @@
                         />
                 </td>
                 <td>
-                    <a onclick="deleteLine(<?php echo $lineCounter ?>)">
+                    <a class="deleteButton">
 	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
