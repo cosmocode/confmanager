@@ -14,6 +14,12 @@ jQuery(document).ready(function() {
 		}
 	};
 	
+	var setCookie = function(key, value) {
+		var expirationDate = new Date();
+		expirationDate.setDate(expirationDate.getDate()+365);
+		document.cookie = escape(key) + '=' + escape(value) + '; expires=' + expirationDate.toUTCString();
+	};
+	
 	var cookie = readCookie(COOKIE_DESCRIPTION_NAME);
 	if(cookie == null) {
 		cookie = true;
@@ -25,12 +31,6 @@ jQuery(document).ready(function() {
 	} else {
 		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
 	}
-	
-	var setCookie = function(key, value) {
-		var expirationDate = new Date();
-		expirationDate.setDate(expirationDate.getDate()+365);
-		document.cookie = escape(key) + '=' + escape(value) + '; expires=' + expirationDate.toUTCString();
-	};
 	
 	jQuery('#toggleDescription').click(function() {
 		if(!showDescription) {
@@ -45,18 +45,7 @@ jQuery(document).ready(function() {
 		return false;
 	});
 	
-	var submitForm = function(name) {
-		document.forms[name].submit();
-	};
-	
-	var deleteLine = function(nr) {
-		jQuery('#value'+nr).val('');
-		jQuery('#tableLine'+nr).toggle();
-	};
-
-	var renameLine = function(nr) {
-		var key = jQuery('#key'+nr).text();
-		jQuery('#value'+nr).val('');
-		jQuery('#tableLine'+nr).toggle();
-	};
+	jQuery('.deleteButton').click(function(nr) {
+		jQuery(this).parent().parent().remove();
+	});
 });
