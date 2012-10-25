@@ -7,7 +7,6 @@
             <th><?php echo $helper->getLang('value') ?></th>
             <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
-        <?php $configCounter = 0 ?>
         <?php foreach ($configs as $key => $value): ?>
             <?php
             $defaultValue = false;
@@ -17,14 +16,14 @@
                 }
             }
             ?>
-            <tr id="tableLine<?php echo $lineCounter++ ?>">
+            <tr id="tableLine<?php echo $lineCounter ?>">
                 <td>
                 <?php if ($defaultValue): ?>
                 	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
                         <?php echo hsc($key) ?>
                     </div>
                 <?php else: ?>
-                	<label for="confmanager_item<?php echo $configCounter ?>" id="key<?php echo $lineCounter-1 ?>">
+                	<label for="value<?php echo $lineCounter ?>" id="key<?php echo $lineCounter ?>">
                         <?php echo hsc($key) ?>
                     </label>
                 <?php endif ?>
@@ -36,12 +35,11 @@
                     </div>
                 <?php else: ?>
                     <input
-                    	id="value<?php echo $lineCounter-1 ?>"
+                    	id="value<?php echo $lineCounter ?>"
                         type="text"
                         name="line[<?php echo hsc($key) ?>]"
                         value="<?php echo hsc($value) ?>"
                         class="edit"
-                        id="confmanager_item<?php echo $configCounter ?>"
                         />
                 <?php endif ?>
                 </td>
@@ -54,12 +52,12 @@
                         	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
                         	title="<?php echo hsc($helper->getLang('edit_key_action_tooltip_disabled')) ?>" />
                     <?php else: ?>
-                    <a onclick="deleteLine(<?php echo $lineCounter-1 ?>)">
+                    <a onclick="deleteLine(<?php echo $lineCounter ?>)">
 	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
                     </a>
-                    <a onclick="renameLine(<?php echo $lineCounter-1 ?>)">
+                    <a onclick="renameLine(<?php echo $lineCounter ?>)">
 	                    <img src="<?php echo 'lib/plugins/confmanager/icons/textfield_key.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('edit_key_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('edit_key_action_tooltip')) ?>" />
@@ -67,7 +65,7 @@
                     <?php endif ?>
                 </td>
             </tr>
-            <?php $configCounter++ ?>
+            <?php $lineCounter++ ?>
         <?php endforeach ?>
         <tr>
             <td>
