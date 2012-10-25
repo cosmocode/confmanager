@@ -19,7 +19,12 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
     public function save() {
         global $INPUT;
         $config = $this->readConfig();
-        $lines = $INPUT->arr('line');
+        $keys = $INPUT->arr('keys');
+        $values = $INPUT->arr('values');
+        if (count($keys) !== count($values)) {
+            msg('invalid save arguments', -1);
+        }
+        $lines = array_combine($keys, $values);
         $lines = array_merge($lines, $this->getNewValues());
 
         $custom = $this->getCustomEntries($lines, $config['default']);

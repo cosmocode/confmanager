@@ -54,3 +54,8 @@ $lang['InterWiki Links'] = 'InterWiki Links';
 
 // Error Messages
 $lang['invalid request csrf'] = 'Warning: cross site scripting attempt detected';
+
+
+// TODO:
+$lang['invalid save arguments'] = 'FIXME Invalid save data provided - shouldn\'t happen :oO';
+$lang['changes applied'] = '';

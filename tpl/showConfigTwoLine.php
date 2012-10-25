@@ -11,15 +11,13 @@
         <?php foreach ($local as $key => $value): ?>
             <tr id="tableLine<?php echo $lineCounter ?>">
                 <td>
-                	<label for="value<?php echo $lineCounter ?>" id="key<?php echo $lineCounter ?>">
-                        <?php echo hsc($key) ?>
-                    </label>
+                	<input type="text" name="keys[]" id="key<?php echo $lineCounter ?>" value="<?php echo hsc($key) ?>">
                 </td>
                 <td>
                     <input
                     	id="value<?php echo $lineCounter ?>"
                         type="text"
-                        name="line[<?php echo hsc($key) ?>]"
+                        name="values[<?php echo hsc($key) ?>]"
                         value="<?php echo hsc($value) ?>"
                         class="edit"
                         />
