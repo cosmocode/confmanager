@@ -24,7 +24,13 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         if (count($keys) !== count($values)) {
             msg('invalid save arguments', -1);
         }
-        $lines = array_combine($keys, $values);
+
+        if (empty($keys)) {
+            $lines = array();
+        } else {
+            $lines = array_combine($keys, $values);
+        }
+
         $lines = array_merge($lines, $this->getNewValues());
 
         $custom = $this->getCustomEntries($lines, $config['default']);
