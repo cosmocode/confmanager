@@ -41,6 +41,8 @@ $lang['toggle_description'] = 'Toggle description on/off';
 $lang['key'] = 'Key';
 $lang['value'] = 'Value';
 $lang['actions'] = 'Actions';
+$lang['user_defined_values'] = 'User defined values';
+$lang['default_values'] = 'Default values';
 
 
 // Names of DokuWiki's default config files

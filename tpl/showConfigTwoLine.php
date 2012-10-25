@@ -1,6 +1,6 @@
 <?php $helper = plugin_load('helper', 'confmanager'); ?>
 <div class="table">
-	<h3>User defined values</h3>
+	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
     <table class="inline confmanager_twoLine">
         <tr>
             <th><?php echo $helper->getLang('key') ?></th>
@@ -48,7 +48,7 @@
             </td>
         </tr>
     </table>
-    <h3>Default values</h3>
+    <h3><?php echo $helper->getLang('default_values') ?></h3>
 	<table class="inline confmanager_twoLine">
 		<tr>
 			<th><?php echo $helper->getLang('key') ?></th>
