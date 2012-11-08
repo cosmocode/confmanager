@@ -70,3 +70,7 @@ table.confmanager {
   	background-position: 2px;
   	padding-left: 20px;
 }
+
+#confmanager .clickable {
+	cursor: pointer;
+}

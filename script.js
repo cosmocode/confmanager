@@ -44,6 +44,9 @@ jQuery(document).ready(function() {
 		setCookie(COOKIE_DESCRIPTION_NAME, showDescription);
 		return false;
 	});
+});
+
+jQuery(document).ready(function() {
 	
 	jQuery('.deleteButton').click(function(nr) {
 		jQuery(this).parent().parent().remove();
