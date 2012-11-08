@@ -1,12 +1,13 @@
 <?php $helper = plugin_load('helper', 'confmanager'); ?>
 <?php $lineCounter = 0; ?>
 <div class="table">
-    <table class="inline confmanager_singleLine">
+	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
+	<table class="inline confmanager_singleLine">
         <tr>
             <th><?php echo $helper->getLang('value') ?></th>
             <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
-        <?php foreach ($configs as $config): ?>
+        <?php foreach ($local as $config): ?>
             <?php
             $defaultValue = false;
             if (in_array($config, $default)) {
@@ -15,11 +16,6 @@
             ?>
             <tr id="tableLine<?php echo $lineCounter++ ?>">
                 <td>
-                <?php if ($defaultValue): ?>
-                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
-                    <?php echo hsc($config) ?>
-                    </div>
-                <?php else: ?>
                 <input
                 		id="value<?php echo $lineCounter-1 ?>"
                         type="text"
@@ -28,20 +24,13 @@
                         class="<?php echo $class ?>"
                         <?php if ($defaultValue) echo 'disabled="disabled"' ?>
  				/>
-                <?php endif ?>
                 </td>
                 <td>
-                	<?php if ($defaultValue): ?>
-                	<img src="<?php echo 'lib/plugins/confmanager/icons/delete_disabled.png' ?>"
-                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
-                    <?php else: ?>
                     <a onclick="deleteLine(<?php echo $lineCounter-1 ?>)">
 	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
                     </a>
-                    <?php endif ?>
                 </td>
             </tr>
         <?php endforeach ?>
@@ -51,4 +40,26 @@
             </td>
         </tr>
     </table>
+    <?php $this->helper->tplSaveButton() ?>
+	<h3><?php echo $helper->getLang('default_values') ?></h3>
+	<table class="inline confmanager_singleLine">
+		<tr>
+			<th><?php echo $helper->getLang('value') ?></th>
+            <th><?php echo $helper->getLang('actions') ?></th>
+		</tr>
+		<?php foreach($default as $item): ?>
+			<tr>
+				<td>
+					<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
+                    <?php echo hsc($item) ?>
+                    </div>
+				</td>
+				<td>
+					<img src="<?php echo 'lib/plugins/confmanager/icons/delete_disabled.png' ?>"
+                        alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+                        title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
+                </td>
+			</tr>
+		<?php endforeach ?>
+	</table>
 </div>
