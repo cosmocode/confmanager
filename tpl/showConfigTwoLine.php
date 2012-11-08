@@ -7,15 +7,15 @@
             <th><?php echo $helper->getLang('value') ?></th>
             <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
-        <?php $lineCounter = 0; ?>
+        <?php $configCounter = 0; ?>
         <?php foreach ($local as $key => $value): ?>
-            <tr id="tableLine<?php echo $lineCounter ?>">
+            <tr id="tableLine<?php echo $configCounter ?>">
                 <td>
-                	<input type="text" name="keys[]" id="key<?php echo $lineCounter ?>" value="<?php echo hsc($key) ?>">
+                	<input type="text" name="keys[]" id="key<?php echo $configCounter ?>" value="<?php echo hsc($key) ?>">
                 </td>
                 <td>
                     <input
-                    	id="value<?php echo $lineCounter ?>"
+                    	id="value<?php echo $configCounter ?>"
                         type="text"
                         name="values[<?php echo hsc($key) ?>]"
                         value="<?php echo hsc($value) ?>"
@@ -28,14 +28,9 @@
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
                     </a>
-                    <a onclick="renameLine(<?php echo $lineCounter ?>)">
-	                    <img src="<?php echo 'lib/plugins/confmanager/icons/textfield_key.png' ?>"
-	                        	alt="<?php echo hsc($helper->getLang('edit_key_action')) ?>"
-	                        	title="<?php echo hsc($helper->getLang('edit_key_action_tooltip')) ?>" />
-                    </a>
                 </td>
             </tr>
-            <?php $lineCounter++ ?>
+            <?php $configCounter++ ?>
         <?php endforeach ?>
         <tr>
             <td>

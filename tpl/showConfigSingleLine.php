@@ -1,5 +1,4 @@
 <?php $helper = plugin_load('helper', 'confmanager'); ?>
-<?php $lineCounter = 0; ?>
 <div class="table">
 	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
 	<table class="inline confmanager_singleLine">
@@ -7,6 +6,7 @@
             <th><?php echo $helper->getLang('value') ?></th>
             <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
+        <?php $lineCounter = 0; ?>
         <?php foreach ($local as $config): ?>
             <?php
             $defaultValue = false;
@@ -14,10 +14,10 @@
                 $defaultValue = true;
             }
             ?>
-            <tr id="tableLine<?php echo $lineCounter++ ?>">
+            <tr id="tableLine<?php echo $lineCounter ?>">
                 <td>
                 <input
-                		id="value<?php echo $lineCounter-1 ?>"
+                		id="value<?php echo $lineCounter ?>"
                         type="text"
                         name="line[]"
                         value="<?php echo hsc($config) ?>"
@@ -26,13 +26,14 @@
  				/>
                 </td>
                 <td>
-                    <a onclick="deleteLine(<?php echo $lineCounter-1 ?>)">
+                    <a class="deleteButton">
 	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
                     </a>
                 </td>
             </tr>
+            <?php $lineCounter++; ?>
         <?php endforeach ?>
         <tr>
             <td>

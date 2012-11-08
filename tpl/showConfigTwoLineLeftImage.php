@@ -15,19 +15,19 @@
                 	<?php if ($image !== ''): ?>
                 		<img src="<?php echo hsc($image) ?>" alt="" />
                 	<?php endif ?>
-                	<input id="confmanager_item_key<?php echo $configCounter ?>" value="<?php echo hsc($key) ?>" />
+                	<input name="key[<?php echo hsc($key) ?>]" value="<?php echo hsc($key) ?>" />
                 </td>
                 <td>
                     <input
                         type="text"
-                        name="line[<?php echo hsc($key) ?>]"
+                        name="value[<?php echo hsc($key) ?>]"
                         value="<?php echo hsc($value) ?>"
                         class="edit"
                         id="confmanager_item<?php echo $configCounter ?>"
                         />
                 </td>
                 <td>
-	                    <a href="#">
+	                    <a class="deleteButton">
 	                        <img src="lib/plugins/confmanager/icons/delete.png"
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>"
