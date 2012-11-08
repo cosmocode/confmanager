@@ -48,4 +48,8 @@ jQuery(document).ready(function() {
 	jQuery('.deleteButton').click(function(nr) {
 		jQuery(this).parent().parent().remove();
 	});
+	
+	jQuery('#confmanager__config__files').change(function(){
+		document.forms['select_config_form'].submit();
+	});
 });

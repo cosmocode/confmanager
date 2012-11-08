@@ -10,7 +10,7 @@
         <label for="confmanager__config__files">
             <?php echo $this->helper->getLang('select_config') ?>
         </label>
-        <select name="configFile" id="confmanager__config__files" class="edit" onchange="submitForm('select_config_form');">
+        <select name="configFile" id="confmanager__config__files" class="edit">
             <option>
             	<?php echo $this->helper->getLang('please_select') ?>
             </option>
