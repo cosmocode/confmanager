@@ -74,3 +74,8 @@ table.confmanager {
 #confmanager .clickable {
 	cursor: pointer;
 }
+
+#confmanager .hoverFeedback:hover {
+	color: #777;
+	text-decoration: underline;
+}

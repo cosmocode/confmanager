@@ -42,21 +42,31 @@
         </tr>
     </table>
     <?php $this->helper->tplSaveButton() ?>
-    <h3><?php echo $helper->getLang('default_values') ?></h3>
-	<table class="inline confmanager_twoLine">
-		<tr>
-			<th><?php echo $helper->getLang('key') ?></th>
-            <th><?php echo $helper->getLang('value') ?></th>
-		</tr>
-		<?php foreach($default as $key => $value): ?>
+    <h3 class="clickable hoverFeedback" title="<?php echo $helper->getLang('toggle_defaults') ?>">
+		<a id="toggleDefaults">
+			<?php echo $helper->getLang('default_values') ?>
+			<img id="defaults_toggle_button"/>
+		</a>
+	</h3>
+	<div class="defaults">
+		<p>
+			<?php echo hsc($helper->getLang('defaults_description')) ?>
+		</p>
+		<table class="inline confmanager_twoLine">
 			<tr>
-				<td class="defaultValue">
-					<?php echo hsc($key); ?>
-				</td>
-				<td class="defaultValue">
-					<?php echo hsc($value); ?>
-				</td>
+				<th><?php echo $helper->getLang('key') ?></th>
+	            <th><?php echo $helper->getLang('value') ?></th>
 			</tr>
-		<?php endforeach ?>
-	</table>
+			<?php foreach($default as $key => $value): ?>
+				<tr>
+					<td class="defaultValue">
+						<?php echo hsc($key); ?>
+					</td>
+					<td class="defaultValue">
+						<?php echo hsc($value); ?>
+					</td>
+				</tr>
+			<?php endforeach ?>
+		</table>
+	</div>
 </div>
