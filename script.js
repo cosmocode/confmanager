@@ -20,28 +20,32 @@ jQuery(document).ready(function() {
 		document.cookie = escape(key) + '=' + escape(value) + '; expires=' + expirationDate.toUTCString();
 	};
 	
-	var cookie = readCookie(COOKIE_DESCRIPTION_NAME);
-	if(cookie == null) {
-		cookie = true;
-	}
-	var showDescription = cookie != 'false';
-	if(!showDescription) {
-		jQuery('#description').hide();
-		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
-	} else {
-		jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
-	}
-	
-	jQuery('#toggleDescription').click(function() {
-		if(!showDescription) {
+	var setDescriptionVisible = function(show) {
+		if(show) {
 			jQuery('#description').show();
 			jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
 		} else {
 			jQuery('#description').hide();
 			jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
 		}
+	};
+	
+	var cookie = readCookie(COOKIE_DESCRIPTION_NAME);
+	if(cookie == null) {
+		cookie = true;
+	}
+	var showDescription = cookie != 'false';
+	
+	setDescriptionVisible(showDescription);
+	
+	jQuery('#toggleDescription').click(function() {
 		showDescription = !showDescription;
+		setDescriptionVisible(showDescription);
 		setCookie(COOKIE_DESCRIPTION_NAME, showDescription);
+		return false;
+	});
+	
+	jQuery('#toggleDefaults').click(function(){
 		return false;
 	});
 });
