@@ -22,7 +22,6 @@
                         name="line[]"
                         value="<?php echo hsc($config) ?>"
                         class="<?php echo $class ?>"
-                        <?php if ($defaultValue) echo 'disabled="disabled"' ?>
  				/>
                 </td>
                 <td>
@@ -42,25 +41,32 @@
         </tr>
     </table>
     <?php $this->helper->tplSaveButton() ?>
-	<h3><?php echo $helper->getLang('default_values') ?></h3>
-	<table class="inline confmanager_singleLine">
-		<tr>
-			<th><?php echo $helper->getLang('value') ?></th>
-            <th><?php echo $helper->getLang('actions') ?></th>
-		</tr>
-		<?php foreach($default as $item): ?>
+	<h3 class="clickable" title="<?php echo $helper->getLang('toggle_defaults') ?>">
+		<a id="toggleDefaults">
+			<?php echo $helper->getLang('default_values') ?>
+			<img id="defaults_toggle_button"/>
+		</a>
+	</h3>
+	<div class="defaults">
+		<table class="inline confmanager_singleLine">
 			<tr>
-				<td>
-					<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
-                    <?php echo hsc($item) ?>
-                    </div>
-				</td>
-				<td>
-					<img src="<?php echo 'lib/plugins/confmanager/icons/delete_disabled.png' ?>"
-                        alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-                        title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
-                </td>
+				<th><?php echo $helper->getLang('value') ?></th>
+	            <th><?php echo $helper->getLang('actions') ?></th>
 			</tr>
-		<?php endforeach ?>
-	</table>
+			<?php foreach($default as $item): ?>
+				<tr>
+					<td>
+						<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
+	                    <?php echo hsc($item) ?>
+	                    </div>
+					</td>
+					<td>
+						<img src="<?php echo 'lib/plugins/confmanager/icons/delete_disabled.png' ?>"
+	                        alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+	                        title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
+	                </td>
+				</tr>
+			<?php endforeach ?>
+		</table>
+	</div>
 </div>

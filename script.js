@@ -1,6 +1,7 @@
 jQuery(document).ready(function() {
 	
 	var COOKIE_DESCRIPTION_NAME = 'DW_Admin_ConfManager_showDescription';
+	var COOKIE_DEFAULTS_NAME = 'DW_Admin_ConfManager_showDefaults';
 	
 	var readCookie = function(cookieKey) {
 		var ARRcookies=document.cookie.split(";");
@@ -20,16 +21,6 @@ jQuery(document).ready(function() {
 		document.cookie = escape(key) + '=' + escape(value) + '; expires=' + expirationDate.toUTCString();
 	};
 	
-	var setDescriptionVisible = function(show) {
-		if(show) {
-			jQuery('#description').show();
-			jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
-		} else {
-			jQuery('#description').hide();
-			jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
-		}
-	};
-	
 	/*
 	 * defaultValue is a boolean value the function should return if the cookie is not set (undefined).
 	 * returns false if cookie is undefined and defaultValue not specified
@@ -42,9 +33,31 @@ jQuery(document).ready(function() {
 		return cookie == 'true' ? true : false;
 	};
 	
+	var setDescriptionVisible = function(show) {
+		if(show) {
+			jQuery('#description').show();
+			jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
+		} else {
+			jQuery('#description').hide();
+			jQuery('#description_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
+		}
+	};
+	
+	var setDefaultsVisible = function(show) {
+		if(show) {
+			jQuery('.defaults').show();
+			jQuery('#defaults_toggle_button').attr('src', 'lib/plugins/confmanager/icons/collapse.png');
+		} else {
+			jQuery('.defaults').hide();
+			jQuery('#defaults_toggle_button').attr('src', 'lib/plugins/confmanager/icons/expand.png');
+		}
+	};
+	
 	var showDescription = getBooleanFromCookie(COOKIE_DESCRIPTION_NAME, true);
+	var showDefaults = getBooleanFromCookie(COOKIE_DEFAULTS_NAME, true);
 	
 	setDescriptionVisible(showDescription);
+	setDefaultsVisible(showDefaults);
 	
 	jQuery('#toggleDescription').click(function() {
 		showDescription = !showDescription;
@@ -53,7 +66,10 @@ jQuery(document).ready(function() {
 		return false;
 	});
 	
-	jQuery('#toggleDefaults').click(function(){
+	jQuery('#toggleDefaults').click(function() {
+		showDefaults = !showDefaults;
+		setDefaultsVisible(showDefaults);
+		setCookie(COOKIE_DEFAULTS_NAME, showDefaults);
 		return false;
 	});
 });

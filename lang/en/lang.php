@@ -35,6 +35,7 @@ $lang['edit_icon_action'] = 'edit icon';
 $lang['edit_icon_action_tooltip'] = 'Click here to choose another icon';
 $lang['edit_icon_action_tooltip_disabled'] = 'Cannot change default icons';
 $lang['toggle_description'] = 'Toggle description on/off';
+$lang['toggle_defaults'] = 'Toggle display of default values on/off';
 
 
 // Table headers
