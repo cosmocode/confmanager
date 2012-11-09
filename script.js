@@ -30,11 +30,19 @@ jQuery(document).ready(function() {
 		}
 	};
 	
-	var cookie = readCookie(COOKIE_DESCRIPTION_NAME);
-	if(cookie == null) {
-		cookie = true;
-	}
-	var showDescription = cookie != 'false';
+	/*
+	 * defaultValue is a boolean value the function should return if the cookie is not set (undefined).
+	 * returns false if cookie is undefined and defaultValue not specified
+	 */
+	var getBooleanFromCookie = function(key, defaultValue) {
+		var cookie = readCookie(key);
+		if(cookie == null || cookie == undefined) {
+			return defaultValue == undefined ? false : defaultValue;
+		}
+		return cookie == 'true' ? true : false;
+	};
+	
+	var showDescription = getBooleanFromCookie(COOKIE_DESCRIPTION_NAME, true);
 	
 	setDescriptionVisible(showDescription);
 	
