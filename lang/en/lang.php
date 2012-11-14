@@ -37,6 +37,8 @@ $lang['edit_icon_action_tooltip_disabled'] = 'Cannot change default icons';
 $lang['toggle_description'] = 'Toggle description on/off';
 $lang['toggle_defaults'] = 'Toggle display of default values on/off';
 $lang['defaults_description'] = 'Please note: default values define the basic behavior of DokuWiki and cannot be changed.';
+$lang['add_action'] = 'add';
+$lang['add_action_tooltip'] = 'Click here to accept and add the new item';
 
 
 // Table headers

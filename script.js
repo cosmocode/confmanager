@@ -76,11 +76,45 @@ jQuery(document).ready(function() {
 
 jQuery(document).ready(function() {
 	
+	var addButtonEnabled = false;
+	
+	var isInputValid = function() {
+		var inputString = jQuery('.newItem').val();
+		if(inputString == null || inputString == '') {
+			return false;
+		}
+		return true;
+	};
+	
+	var submitForm = function(id) {
+		document.forms[id].submit();
+	};
+	
 	jQuery('.deleteButton').click(function(nr) {
 		jQuery(this).parent().parent().remove();
+		submitForm('configForm');
 	});
 	
 	jQuery('#confmanager__config__files').change(function(){
-		document.forms['select_config_form'].submit();
+		submitForm('select_config_form');
 	});
+	
+	jQuery('.newItemButton').click(function() {
+		if(!addButtonEnabled) {
+			return false;
+		}
+		submitForm('configForm');
+		return true;
+	});
+	
+	jQuery('.newItem').keyup(function(e) {
+		if(!isInputValid()) {
+			jQuery('.newItemButton').attr('src', 'lib/plugins/confmanager/icons/accept_disabled.png');
+			addButtonEnabled = false;
+			return true;
+		}
+		jQuery('.newItemButton').attr('src', 'lib/plugins/confmanager/icons/accept.png');
+		addButtonEnabled = true;
+	});
+	jQuery('.newItem').focus();
 });

@@ -1,7 +1,7 @@
 <?php $helper = plugin_load('helper', 'confmanager'); ?>
 <div class="table">
 	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
-	<table class="inline confmanager_singleLine">
+	<table class="inline confmanager_singleLine" id="local">
         <tr>
             <th><?php echo $helper->getLang('value') ?></th>
             <th><?php echo $helper->getLang('actions') ?></th>
@@ -14,7 +14,7 @@
                 $defaultValue = true;
             }
             ?>
-            <tr id="tableLine<?php echo $lineCounter ?>">
+            <tr>
                 <td>
                 <input
                 		id="value<?php echo $lineCounter ?>"
@@ -26,9 +26,9 @@
                 </td>
                 <td>
                     <a class="deleteButton clickable">
-	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
-	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
+	                    <img src="lib/plugins/confmanager/icons/delete.png"
+                        	 alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
+                             title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
                     </a>
                 </td>
             </tr>
@@ -36,7 +36,13 @@
         <?php endforeach ?>
         <tr>
             <td>
-                <input type="text" name="line[]" />
+                <input type="text" name="line[]" class="newItem" />
+            </td>
+            <td>
+            	<img class="clickable newItemButton"
+            		src="<?php echo 'lib/plugins/confmanager/icons/accept_disabled.png' ?>"
+            		alt="<?php echo hsc($helper->getLang('add_action')) ?>"
+            		title="<?php echo hsc($helper->getLang('add_action_tooltip')) ?>" />
             </td>
         </tr>
     </table>
