@@ -39,7 +39,8 @@ $lang['toggle_defaults'] = 'Toggle display of default values on/off';
 $lang['defaults_description'] = 'Please note: default values define the basic behavior of DokuWiki and cannot be changed.';
 $lang['add_action'] = 'add';
 $lang['add_action_tooltip'] = 'Click here to accept and add the new item';
-
+$lang['no_script_title'] = 'JavaScript is disabled!';
+$lang['no_script_message'] = 'As long as JavaScript is disabled, confmanager offers only basic functionality. To benefit from convenience functions like collapsing sections, quick actions on items, etc. turn on your JavaScript. We won\'t hurt you. Promise.';
 
 // Table headers
 $lang['key'] = 'Key';

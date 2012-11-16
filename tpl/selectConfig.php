@@ -1,5 +1,13 @@
 <?php global $ID; ?>
 <h1><?php echo $this->helper->getLang('welcomehead') ?></h1>
+<noscript>
+	<div class="noscript">
+		<h2><?php echo $this->helper->getLang('no_script_title')?></h2>
+		<p>
+			<?php echo $this->helper->getLang('no_script_message')?>
+		</p>
+	</div>
+</noscript>
 <div class="level1">
     <p>
         <?php echo $this->helper->getLang('welcome') ?>
