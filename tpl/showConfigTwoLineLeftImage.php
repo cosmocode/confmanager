@@ -42,7 +42,7 @@
                 <input class="newItem" type="text" name="newKey[]">
             </td>
             <td>
-                <input type="text" name="newValue[]" />
+                <input class="newItem submitOnTab" type="text" name="newValue[]" />
             </td>
             <td/>
         </tr>

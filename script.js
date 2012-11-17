@@ -77,11 +77,14 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
 	
 	var isInputValid = function() {
-		var inputString = jQuery('.newItem').val();
-		if(inputString == null || inputString == '') {
-			return false;
-		}
-		return true;
+		var result = true;
+		jQuery('.newItem').each(function(){
+			var inputString = jQuery(this).val();
+			if(inputString == null || inputString == '') {
+				result = false;
+			}
+		});
+		return result;
 	};
 	
 	var submitForm = function(id) {
@@ -97,13 +100,17 @@ jQuery(document).ready(function() {
 		submitForm('select_config_form');
 	});
 	
-	jQuery('.newItem').keydown(function(event){
-		if(event.which == 9) {
-			submitForm('configForm');
+	jQuery('.submitOnTab').keydown(function(event){
+		if(event.which != 9) {
+			return true;
 		}
+		if(!isInputValid()) {
+			return true;
+		}
+		submitForm('configForm');
 	});
 });
 
 jQuery(document).ready(function(){
-	jQuery('.newItem').focus();
+	jQuery('.newItem').first().focus();
 });

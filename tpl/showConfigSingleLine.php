@@ -32,7 +32,7 @@
         <?php endforeach ?>
         <tr>
             <td>
-                <input type="text" name="line[]" class="newItem" />
+                <input type="text" name="line[]" class="newItem submitOnTab" />
             </td>
             <td/>
         </tr>
