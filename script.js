@@ -30,7 +30,7 @@ jQuery(document).ready(function() {
 		if(cookie == null || cookie == undefined) {
 			return defaultValue == undefined ? false : defaultValue;
 		}
-		return cookie == 'true' ? true : false;
+		return cookie == 'true';
 	};
 	
 	var setDescriptionVisible = function(show) {
