@@ -76,8 +76,6 @@ jQuery(document).ready(function() {
 
 jQuery(document).ready(function() {
 	
-	var addButtonEnabled = false;
-	
 	var isInputValid = function() {
 		var inputString = jQuery('.newItem').val();
 		if(inputString == null || inputString == '') {
@@ -99,22 +97,13 @@ jQuery(document).ready(function() {
 		submitForm('select_config_form');
 	});
 	
-	jQuery('.newItemButton').click(function() {
-		if(!addButtonEnabled) {
-			return false;
+	jQuery('.newItem').keydown(function(event){
+		if(event.which == 9) {
+			submitForm('configForm');
 		}
-		submitForm('configForm');
-		return true;
 	});
-	
-	jQuery('.newItem').keyup(function(e) {
-		if(!isInputValid()) {
-			jQuery('.newItemButton').attr('src', 'lib/plugins/confmanager/icons/accept_disabled.png');
-			addButtonEnabled = false;
-			return true;
-		}
-		jQuery('.newItemButton').attr('src', 'lib/plugins/confmanager/icons/accept.png');
-		addButtonEnabled = true;
-	});
+});
+
+jQuery(document).ready(function(){
 	jQuery('.newItem').focus();
 });

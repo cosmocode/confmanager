@@ -27,12 +27,7 @@
                         />
                 </td>
                 <td>
-	                    <a class="deleteButton clickable">
-	                        <img src="lib/plugins/confmanager/icons/delete.png"
-	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>"
-	                        />
-                        </a>
+	                    <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
                     	<a href="#">
 	                    	<img src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"

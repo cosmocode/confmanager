@@ -23,11 +23,7 @@
                         />
                 </td>
                 <td>
-                    <a class="deleteButton clickable">
-	                    <img src="<?php echo 'lib/plugins/confmanager/icons/delete.png' ?>"
-	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
-                    </a>
+                    <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
                 </td>
             </tr>
             <?php $configCounter++ ?>
@@ -39,8 +35,7 @@
             <td>
                 <input type="text" name="newValue[]" />
             </td>
-            <td>
-            </td>
+            <td/>
         </tr>
     </table>
     <?php $this->helper->tplSaveButton() ?>

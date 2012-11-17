@@ -25,11 +25,7 @@
  				/>
                 </td>
                 <td>
-                    <a class="deleteButton clickable">
-	                    <img src="lib/plugins/confmanager/icons/delete.png"
-                        	 alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-                             title="<?php echo hsc($helper->getLang('delete_action_tooltip')) ?>" />
-                    </a>
+                    <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
                 </td>
             </tr>
             <?php $lineCounter++; ?>
@@ -38,12 +34,7 @@
             <td>
                 <input type="text" name="line[]" class="newItem" />
             </td>
-            <td>
-            	<img class="clickable newItemButton"
-            		src="<?php echo 'lib/plugins/confmanager/icons/accept_disabled.png' ?>"
-            		alt="<?php echo hsc($helper->getLang('add_action')) ?>"
-            		title="<?php echo hsc($helper->getLang('add_action_tooltip')) ?>" />
-            </td>
+            <td/>
         </tr>
     </table>
     <?php $this->helper->tplSaveButton() ?>
