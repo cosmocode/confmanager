@@ -93,6 +93,9 @@ jQuery(document).ready(function() {
 	
 	jQuery('.deleteButton').click(function(nr) {
 		jQuery(this).parent().parent().remove();
+		jQuery('.newItem').each(function(){
+			jQuery(this).val('');
+		});
 		submitForm('configForm');
 	});
 	
