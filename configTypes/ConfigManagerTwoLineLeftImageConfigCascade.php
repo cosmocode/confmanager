@@ -1,6 +1,6 @@
 <?php
 
-class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCascadeConfig {
+class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCascadeConfig implements ConfigManagerUploadable {
 
     private $imageFolder;
     private $extension;
@@ -88,5 +88,9 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
             $imageFolder = "$imageFolder/";
         }
         $this->imageFolder = $imageFolder;
+    }
+
+    public function upload() {
+        return false;
     }
 }

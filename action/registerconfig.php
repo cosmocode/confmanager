@@ -1,12 +1,13 @@
 <?php
 
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerConfigType.php';
+require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerUploadable.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerAbstractCascadeConfig.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerSingleLineConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineLeftImageConfigCascade.php';
 
-class action_plugin_confmanager extends DokuWiki_Action_Plugin {
+class action_plugin_confmanager_registerconfig extends DokuWiki_Action_Plugin {
     var $helper;
 
     /**

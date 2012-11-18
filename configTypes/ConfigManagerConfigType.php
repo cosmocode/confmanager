@@ -49,5 +49,4 @@ interface ConfigManagerConfigType {
      * @return
      */
     function save();
-
 }

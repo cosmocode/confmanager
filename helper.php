@@ -12,6 +12,10 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
         return $configs;
     }
 
+    /**
+     * @param string $id Config ID
+     * @return ConfigManagerConfigType
+     */
     public function getConfigById($id) {
         foreach ($this->getConfigFiles() as $config) {
             if ($this->getConfigId($config) === $id) {
