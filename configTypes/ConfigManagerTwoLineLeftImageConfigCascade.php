@@ -21,60 +21,6 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineLeftImage.php';
     }
 
-    protected function handleSave($defaultConfig) {
-        if (!isset($_FILES['icon'])) {
-            return;
-        }
-
-        $files = array_keys($_FILES['icon']['name']);
-        foreach ($files as $config) {
-            $icon = array();
-            foreach (array('name', 'type', 'tmp_name', 'error', 'size') as $key) {
-                $icon[$key] = $_FILES['icon'][$key][$config];
-            }
-            if ($icon['error'] != UPLOAD_ERR_OK) {
-                if (!empty($icon['name'])) {
-                    $this->signalUploadError($config, $icon['error']);
-                }
-                continue;
-            }
-
-            if (array_key_exists($config, $defaultConfig)) {
-                msg(sprintf($this->helper->getLang('cannot overwrite default icons'), $config), -1);
-                continue;
-            }
-
-            $extension = strrpos($icon['name'], '.');
-            if ($extension === false) {
-                msg(sprintf($this->helper->getLang('cannot determine file type'), $config), -1);
-                continue;
-            }
-            $extension = substr($icon['name'], $extension+1);
-
-            if ($extension !== $this->extension) {
-                msg(sprintf($this->helper->getLang('error wrong extension'), $config, $this->extension), -1);
-                continue;
-            }
-
-            if (move_uploaded_file($icon['tmp_name'], DOKU_INC . $this->imageFolder . "$config." . $this->extension)) {
-                msg(sprintf($this->helper->getLang('changed image of'), $config), 1);
-                continue;
-            }
-
-            msg(sprintf($this->helper->getLang('server error upload failed'), $config), -1);
-        }
-    }
-
-    private function signalUploadError($config, $error) {
-        if ($error === UPLOAD_ERR_INI_SIZE || $error === UPLOAD_ERR_FORM_SIZE) {
-            msg(sprintf($this->helper->getLang('file is to big'), $config), -1);
-        } elseif ($error === UPLOAD_ERR_PARTIAL || $error === UPLOAD_ERR_NO_FILE) {
-            msg(sprintf($this->helper->getLang('upload incomplete'), $config), -1);
-        } else {
-            msg(sprintf($this->helper->getLang('server error upload failed'), $config), -1);
-        }
-    }
-
     private function getImage($key) {
         $path = $this->imageFolder . "$key." . $this->extension;
         if (is_file($path)) {
@@ -91,6 +37,37 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
     }
 
     public function upload() {
-        return false;
+        global $INPUT;
+        if (!isset($_FILES['icon'])) {
+            return false;
+        }
+        $icon = $_FILES['icon'];
+        $key = $INPUT->str('key');
+        if ($key === '') {
+            return false;
+        }
+        $configs = $this->readConfig();
+        if (!in_array($key, $configs['local'])) {
+            return false;
+        }
+
+        if ($icon['error'] != UPLOAD_ERR_OK) {
+            return false;
+        }
+
+        $extension = strrpos($icon['name'], '.');
+        if ($extension === false) {
+            return false;
+        }
+        $extension = substr($icon['name'], $extension+1);
+        if ($extension !== $this->extension) {
+            return false;
+        }
+
+        if (!move_uploaded_file($icon['tmp_name'], DOKU_INC . $this->imageFolder . "$key." . $this->extension)) {
+            return false;
+        }
+
+        return true;
     }
 }
