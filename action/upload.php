@@ -7,10 +7,6 @@ class action_plugin_confmanager_upload extends DokuWiki_Action_Plugin {
      */
     var $helper;
 
-    /**
-     * Register its handlers with the dokuwiki's event controller
-     * @param Doku_Event_Handler $controller
-     */
     public function register(Doku_Event_Handler &$controller) {
         $controller->register_hook('AJAX_CALL_UNKNOWN', 'BEFORE',  $this, 'upload', array());
         $this->helper = plugin_load('helper', 'confmanager');
@@ -29,24 +25,10 @@ class action_plugin_confmanager_upload extends DokuWiki_Action_Plugin {
             return;
         }
 
-        global $INPUT;
-        $configId = $INPUT->str($_POST['configId'], null, true);
-        if ($configId === null) {
+        $config = $this->getConfig();
+        if ($config === false) {
             header('HTTP/1.1 405 Method Not Allowed');
-            echo '0';
-            return;
-        }
-
-        $config = $this->helper->getConfigById($configId);
-        if (!$config) {
-            header('HTTP/1.1 405 Method Not Allowed');
-            echo '0';
-            return;
-        }
-
-        if (!($config instanceof ConfigManagerUploadable)) {
-            header('HTTP/1.1 405 Method Not Allowed');
-            echo '0';
+            echo '0;';
             return;
         }
 
@@ -56,5 +38,26 @@ class action_plugin_confmanager_upload extends DokuWiki_Action_Plugin {
             return;
         }
         echo '1';
+    }
+
+    /**
+     * @return bool|ConfigManagerUploadable
+     */
+    private function getConfig() {
+        global $INPUT;
+        $configId = $INPUT->str($_POST['configId'], null, true);
+        if ($configId === null) {
+            return false;
+        }
+
+        $config = $this->helper->getConfigById($configId);
+        if (!$config) {
+            return false;
+        }
+
+        if (!($config instanceof ConfigManagerUploadable)) {
+            return false;
+        }
+        return $config;
     }
 }
