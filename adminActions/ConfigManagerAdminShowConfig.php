@@ -20,6 +20,7 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
     public function handle() {
         global $INPUT;
         global $ID;
+        global $JSINFO;
 
         $this->configId = $INPUT->str('configFile');
         $this->config = $this->helper->getConfigById($this->configId);
@@ -44,6 +45,7 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
             );
             send_redirect(wl($ID, $params, false, '&'));
         }
+        $JSINFO['configId'] = $this->configId;
     }
 
     public function html() {
