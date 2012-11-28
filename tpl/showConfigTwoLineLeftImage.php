@@ -14,12 +14,12 @@
                 	<?php if ($image !== ''): ?>
                 		<img src="<?php echo hsc($image) ?>" alt="" />
                 	<?php endif ?>
-                	<input name="key[]" value="<?php echo hsc($key) ?>" />
+                	<input name="keys[]" value="<?php echo hsc($key) ?>" />
                 </td>
                 <td>
                     <input
                         type="text"
-                        name="value[]"
+                        name="values[]"
                         value="<?php echo hsc($value) ?>"
                         class="edit"
                         />
