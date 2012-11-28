@@ -41,6 +41,9 @@ $lang['add_action'] = 'add';
 $lang['add_action_tooltip'] = 'Click here to add the new item to the list';
 $lang['no_script_title'] = 'JavaScript is disabled!';
 $lang['no_script_message'] = 'As long as JavaScript is disabled, confmanager offers only basic functionality. To benefit from convenience functions like collapsing sections, quick actions on items, etc. turn on your JavaScript. We won\'t hurt you. Promise.';
+$lang['file_upload_prompt'] = 'Please select an image file to upload';
+$lang['upload'] = 'Upload';
+$lang['cancel'] = 'Cancel';
 
 // Table headers
 $lang['key'] = 'Key';

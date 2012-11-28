@@ -92,3 +92,40 @@ table.confmanager {
   	-webkit-box-shadow: inset 0 0 15px #f00;
   	box-shadow:         inset 0 0 15px #f00;
 }
+
+#confmanager .right {
+	float: right;
+	margin-left: .3em;
+}
+
+#confmanager .popup {
+	width: 350px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-box-shadow:     0 0 9px #777;
+  	-webkit-box-shadow:  0 0 9px #777;
+  	box-shadow:          0 0 9px #777;
+  	padding: 0 0 1em;
+  	display: none;
+  	position: absolute;
+  	top: 100px;
+  	left: 100px;
+}
+
+#confmanager .popupheader {
+	background-color: #ccc;
+	color: white;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	padding: 1em 1.7em 1.5em;
+}
+
+#confmanager .popupcontent {
+	background-color: white;
+	padding: 1em 2em 3em;
+}
+
+#confmanager .popupprompt {
+	padding: 0 0 1em;
+}

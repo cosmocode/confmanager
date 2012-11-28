@@ -28,11 +28,10 @@
                 </td>
                 <td>
 	                    <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
-                    	<a href="#">
-	                    	<img src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
-	                        	alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
-	                        	title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
-                    	</a>
+                    	<img class="upload_image_button clickable"
+                    		 src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
+                        	 alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
+                        	 title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
                 </td>
             </tr>
             <?php $configCounter++ ?>
@@ -48,6 +47,28 @@
         </tr>
 	</table>
 	<?php $this->helper->tplSaveButton() ?>
+	<div class="popup">
+		<h3 class="popupheader">File Upload</h3>
+		<div class="popupcontent">
+			<form id="fileuploadform" enctype="multipart/form-data" method="post" action="<?php echo 'lib/exe/ajax.php' ?>">
+				<div class="popupprompt"><?php echo $helper->getLang('file_upload_prompt') ?></div>
+				<input type="file" name="icon" />
+				<br/>
+				<br/>
+				<input type="submit" class="button saveButton right" value="<?php echo $helper->getLang('upload') ?>" />
+				<span class="right spacer"></span>
+				<input id="popup_cancel" type="submit" class="right"  value="<?php echo $helper->getLang('cancel') ?>" />
+				<input type="hidden" name="call" value="confmanager_upload" />
+				<input type="hidden" name="configId" id="configIdParam" />
+				<input type="hidden" name="key" id="keyParam" />
+			</form>
+			<div class="progress">
+		        <div class="bar"></div>
+		        <div class="percent"></div>
+	        </div>
+        </div>
+    </div>
+</div>
 	<h3 class="clickable hoverFeedback" title="<?php echo $helper->getLang('toggle_defaults') ?>">
 		<a id="toggleDefaults">
 			<?php echo $helper->getLang('default_values') ?>

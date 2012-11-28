@@ -1,3 +1,5 @@
+/* DOKUWIKI:include jquery.form.js */
+
 jQuery(document).ready(function() {
 	
 	var COOKIE_DESCRIPTION_NAME = 'DW_Admin_ConfManager_showDescription';
@@ -116,4 +118,23 @@ jQuery(document).ready(function() {
 
 jQuery(document).ready(function(){
 	jQuery('.newItem').first().focus();
+});
+
+jQuery(document).ready(function(){
+	
+	var getEntryKey = function(element) {
+		return jQuery(element).parent().parent().children().first()
+				.children().first().attr('value');
+	};
+	
+	jQuery('.upload_image_button').click(function(){
+		var key = getEntryKey(this);
+		jQuery('#keyParam').val(key);
+		jQuery('.popup').show();
+	});
+	
+	jQuery('#popup_cancel').click(function() {
+		jQuery('.popup').hide();
+		return false;
+	});
 });
