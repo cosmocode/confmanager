@@ -127,14 +127,53 @@ jQuery(document).ready(function(){
 				.children().first().attr('value');
 	};
 	
+	var unloadPopup = function() {
+		jQuery('.popup').hide();
+		jQuery('#keyParam').removeAttr('value');
+		jQuery('#configIdParam').removeAttr('value');
+	};
+	
+	var validate = function() {
+		var file = jQuery('#file_upload_input').val();
+		if(file == '' || file == null || file == undefined) {
+			return false;
+		}
+		jQuery('#popup_select_file').hide();
+		jQuery('#popup_show_progress').show();
+		jQuery('.popup').css('cursor', 'wait');
+		return true;
+	};
+	
+	var submitOk = function() {
+		jQuery('#popup_show_progress').hide();
+		jQuery('#popup_success').show();
+		jQuery('.popup').css('cursor', 'default');
+	};
+	
+	var onError = function() {
+		jQuery('#popup_show_progress').hide();
+		jQuery('#popup_error').show();
+		jQuery('.popup').css('cursor', 'default');
+	};
+	
+	var options = {
+		beforeSubmit : validate,
+		success : submitOk,
+		error : onError
+	};
+	jQuery('#fileuploadform').ajaxForm(options);
+	
 	jQuery('.upload_image_button').click(function(){
 		var key = getEntryKey(this);
 		jQuery('#keyParam').val(key);
+		jQuery('#configIdParam').val(CONFIG_ID);
 		jQuery('.popup').show();
 	});
 	
 	jQuery('#popup_cancel').click(function() {
-		jQuery('.popup').hide();
+		unloadPopup();
 		return false;
 	});
+	
+	jQuery('.continue').attr('href', window.location);
 });

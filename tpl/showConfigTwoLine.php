@@ -7,9 +7,8 @@
             <th><?php echo $helper->getLang('value') ?></th>
             <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
-        <?php $configCounter = 0; ?>
         <?php foreach ($local as $key => $value): ?>
-            <tr id="tableLine<?php echo $configCounter ?>">
+            <tr>
                 <td>
                 	<input type="text" name="keys[]" id="key<?php echo $configCounter ?>" value="<?php echo hsc($key) ?>">
                 </td>
@@ -26,7 +25,6 @@
                     <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
                 </td>
             </tr>
-            <?php $configCounter++ ?>
         <?php endforeach ?>
         <tr>
             <td>

@@ -111,6 +111,7 @@ table.confmanager {
   	position: absolute;
   	top: 100px;
   	left: 100px;
+  	background-color: white;
 }
 
 #confmanager .popupheader {
@@ -128,4 +129,34 @@ table.confmanager {
 
 #confmanager .popupprompt {
 	padding: 0 0 1em;
+}
+
+#confmanager .progress {
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-top: 2em;
+}
+
+#confmanager .progress .percent {
+	
+}
+
+#confmanager .progress .bar {
+	width: 50%;
+	background-color: red;
+}
+
+#popup_show_progress {
+	display: none;
+}
+
+#popup_error {
+	display: none;
+}
+
+#popup_success {
+	display: none;
 }

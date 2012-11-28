@@ -44,6 +44,10 @@ $lang['no_script_message'] = 'As long as JavaScript is disabled, confmanager off
 $lang['file_upload_prompt'] = 'Please select an image file to upload';
 $lang['upload'] = 'Upload';
 $lang['cancel'] = 'Cancel';
+$lang['uploading'] = 'Uploading file...';
+$lang['upload_success'] = 'The upload was successful';
+$lang['upload_error'] = 'The upload has failed';
+$lang['continue'] = 'Continue';
 
 // Table headers
 $lang['key'] = 'Key';
