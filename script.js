@@ -128,6 +128,7 @@ jQuery(document).ready(function(){
 	};
 	
 	var unloadPopup = function() {
+		jQuery('.popup_mask').hide();
 		jQuery('.popup').hide();
 		jQuery('#keyParam').removeAttr('value');
 		jQuery('#configIdParam').removeAttr('value');
@@ -156,6 +157,21 @@ jQuery(document).ready(function(){
 		jQuery('.popup').css('cursor', 'default');
 	};
 	
+	var showPopup = function() {
+		var width = jQuery('.popup').width();
+		var height = jQuery('.popup').height();
+		jQuery('.popup').css('left', jQuery(window).width() / 2 - width / 2);
+		jQuery('.popup').css('top', jQuery(window).height() / 2 - height / 2);
+		jQuery('.popup').show();
+	};
+	
+	var showPopupMask = function() {
+		var width = jQuery(window).width();
+		jQuery('.popup_mask').css('width', jQuery(window).width());
+		jQuery('.popup_mask').css('height', jQuery(window).height());
+		jQuery('.popup_mask').show();
+	};
+	
 	var options = {
 		beforeSubmit : validate,
 		success : submitOk,
@@ -166,8 +182,9 @@ jQuery(document).ready(function(){
 	jQuery('.upload_image_button').click(function(){
 		var key = getEntryKey(this);
 		jQuery('#keyParam').val(key);
-		jQuery('#configIdParam').val(CONFIG_ID);
-		jQuery('.popup').show();
+		jQuery('#configIdParam').val("CONFIG_ID");
+		showPopup();
+		showPopupMask();
 	});
 	
 	jQuery('#popup_cancel').click(function() {

@@ -103,15 +103,11 @@ table.confmanager {
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
-	-moz-box-shadow:     0 0 9px #777;
-  	-webkit-box-shadow:  0 0 9px #777;
-  	box-shadow:          0 0 9px #777;
   	padding: 0 0 1em;
   	display: none;
-  	position: absolute;
-  	top: 100px;
-  	left: 100px;
+  	position: fixed;
   	background-color: white;
+  	z-index: 1000;
 }
 
 #confmanager .popupheader {
@@ -140,10 +136,6 @@ table.confmanager {
 	margin-top: 2em;
 }
 
-#confmanager .progress .percent {
-	
-}
-
 #confmanager .progress .bar {
 	width: 50%;
 	background-color: red;
@@ -159,4 +151,22 @@ table.confmanager {
 
 #popup_success {
 	display: none;
+}
+
+#confmanager .popup_mask {
+	padding: 0;
+	margin: 0;
+	display: none;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 999;
+	background-color: black;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	cursor: wait;
 }

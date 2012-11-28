@@ -4,6 +4,7 @@
     </form>
     
     <?php $helper = plugin_load('helper', 'confmanager'); ?>
+    <div class="popup_mask"></div>
     <div class="popup">
 		<h3 class="popupheader">File Upload</h3>
 		<div class="popupcontent" id="popup_select_file">
@@ -36,5 +37,4 @@
         	<a class="button continue right"><?php echo $helper->getLang('continue') ?></a>
         </div>
 	</div>
-    
 </div>
