@@ -182,7 +182,7 @@ jQuery(document).ready(function(){
 	jQuery('.upload_image_button').click(function(){
 		var key = getEntryKey(this);
 		jQuery('#keyParam').val(key);
-		jQuery('#configIdParam').val("CONFIG_ID");
+		jQuery('#configIdParam').val(JSINFO.configId);
 		showPopup();
 		showPopupMask();
 	});
