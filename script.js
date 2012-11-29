@@ -193,6 +193,4 @@ jQuery(document).ready(function(){
 	});
 	
 	jQuery('.continue').attr('href', window.location);
-	
-	alert(JSINFO.configId);
 });
