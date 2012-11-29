@@ -37,7 +37,7 @@ table.confmanager {
 	font-weight: normal;
 }
 
-#confmanager .level1 {
+#confmanager div.level1 {
     background-color: #FBFAF9;
 	margin-bottom: 2em;
     border: 1px solid #CCC;
