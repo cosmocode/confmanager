@@ -28,7 +28,7 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
     public function getConfigId(ConfigManagerConfigType $config) {
         $hash = '';
         foreach ($config->getPaths() as $file) {
-            $hash .= $file;
+            $hash .= realpath($file);
         }
         return md5($hash);
     }

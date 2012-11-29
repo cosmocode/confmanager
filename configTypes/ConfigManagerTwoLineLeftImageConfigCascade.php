@@ -47,7 +47,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
             return false;
         }
         $configs = $this->readConfig();
-        if (!in_array($key, $configs['local'])) {
+        if (in_array($key, $configs['local'])) {
             return false;
         }
 
