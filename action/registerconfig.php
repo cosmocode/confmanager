@@ -50,10 +50,10 @@ class action_plugin_confmanager_registerconfig extends DokuWiki_Action_Plugin {
         $mime->setDescription($this->getDescription('mime'));
         $event->data[] = $mime;
 
-        $interwiki = new ConfigManagerTwoLineLeftImageConfigCascade('interwiki', 'lib/images/interwiki', 'gif');
-        $interwiki->setName($this->getLang('InterWiki Links'));
-        $interwiki->setDescription($this->getDescription('interwiki'));
-        $event->data[] = $interwiki;
+        $interWiki = new ConfigManagerTwoLineLeftImageConfigCascade('interwiki', 'lib/images/interwiki', 'gif');
+        $interWiki->setName($this->getLang('InterWiki Links'));
+        $interWiki->setDescription($this->getDescription('interwiki'));
+        $event->data[] = $interWiki;
     }
 
     private function getDescription($id) {
