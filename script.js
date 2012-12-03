@@ -122,6 +122,8 @@ jQuery(document).ready(function(){
 
 jQuery(document).ready(function(){
 	
+	var popupVisible = false;
+	
 	var getEntryKey = function(element) {
 		return jQuery(element).parent().parent().children().first()
 				.children().first().attr('value');
@@ -132,6 +134,7 @@ jQuery(document).ready(function(){
 		jQuery('.popup').hide();
 		jQuery('#keyParam').removeAttr('value');
 		jQuery('#configIdParam').removeAttr('value');
+		popupVisible = false;
 	};
 	
 	var validate = function() {
@@ -163,6 +166,7 @@ jQuery(document).ready(function(){
 		jQuery('.popup').css('left', jQuery(window).width() / 2 - width / 2);
 		jQuery('.popup').css('top', jQuery(window).height() / 2 - height / 2);
 		jQuery('.popup').show();
+		popupVisible = true;
 	};
 	
 	var showPopupMask = function() {
@@ -190,6 +194,14 @@ jQuery(document).ready(function(){
 	jQuery('#popup_cancel').click(function() {
 		unloadPopup();
 		return false;
+	});
+	
+	jQuery(window).resize(function() {
+		if(!popupVisible) {
+			return true;
+		}
+		showPopup();
+		showPopupMask();
 	});
 	
 	jQuery('.continue').attr('href', window.location);
