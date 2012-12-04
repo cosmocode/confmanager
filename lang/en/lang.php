@@ -71,7 +71,18 @@ $lang['invalid request csrf'] = 'Warning: cross site scripting attempt detected'
 
 
 // TODO:
-$lang['invalid save arguments'] = 'FIXME Invalid save data provided - shouldn\'t happen :oO';
+$lang['invalid save arguments'] = 'FIXME Beim config speichern ist ein "fehler" aufgetreten';
 $lang['changes applied'] = 'Changes have been applied successfully';
 $lang['cannot apply changes'] = 'Could not apply changes';
-$lang['no local file given'] = '';
+$lang['no local file given'] = 'Beim laden der config - kein ort für die lokale config datei angegeben -- fehlermeldung hauptsächlich für entwickler von plug-ins';
+
+// Fehler beim upload
+$lang['upload_errNoAdmin'] = 'user ist kein admin';
+$lang['upload_errNoConfig'] = 'keine config gefunden/angegeben';
+$lang['upload_errNoFileSend'] = 'keine datei übertragen';
+$lang['upload_errNoConfigKeySend'] = 'key parameter nicht angegeben';
+$lang['upload_errCannotOverwriteDefaultKey'] = 'kann default icon nicht überschreiben';
+$lang['upload_errUploadError'] = 'fehler beim upload';
+$lang['upload_errNoFileExtension'] = 'keine datei extension';
+$lang['upload_errWrongFileExtension'] = 'falsche datei extension';
+$lang['upload_errCannotMoveUploadedFileToFolder'] = 'kann hochgeladene datei nicht in images ordner verschieben (mögl. rechte problematik)';

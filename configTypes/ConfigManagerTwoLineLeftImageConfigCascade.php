@@ -39,39 +39,46 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
     public function upload() {
         global $INPUT;
         if (!isset($_FILES['icon'])) {
-            dbglog('no icon send', 'confmanager upload');
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errNoFileSend');
             return false;
         }
         $icon = $_FILES['icon'];
         $key = $INPUT->str('key');
         if ($key === '') {
-            dbglog('no key send', 'confmanager upload');
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errNoConfigKeySend');
             return false;
         }
         $configs = $this->readConfig();
         if (in_array($key, $configs['local'])) {
-            dbglog('cannot overwrite default key', 'confmanager upload');
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errCannotOverwriteDefaultKey');
             return false;
         }
 
         if ($icon['error'] != UPLOAD_ERR_OK) {
-            dbglog('some upload error ' . $icon['error'], 'confmanager upload');
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errUploadError');
             return false;
         }
 
         $extension = strrpos($icon['name'], '.');
         if ($extension === false) {
-            dbglog('no extension', 'confmanager upload');
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errNoFileExtension');
             return false;
         }
         $extension = substr($icon['name'], $extension+1);
         if ($extension !== $this->extension) {
-            dbglog('wrong extension', 'confmanager upload');
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errWrongFileExtension');
             return false;
         }
 
-        if (!move_uploaded_file($icon['tmp_name'], DOKU_INC . $this->imageFolder . "$key." . $this->extension)) {
-            dbglog('cannot move it to according folder', 'confmanager upload');
+        if (!@move_uploaded_file($icon['tmp_name'], DOKU_INC . $this->imageFolder . "$key." . $this->extension)) {
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errCannotMoveUploadedFileToFolder');
             return false;
         }
 

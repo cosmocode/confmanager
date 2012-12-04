@@ -21,19 +21,21 @@ class action_plugin_confmanager_upload extends DokuWiki_Action_Plugin {
         $event->stopPropagation();
         if (!auth_isadmin()) {
             header('HTTP/1.1 403 Forbidden');
+            header('Content-Type: text/plain');
+            echo $this->getLang('upload_errNoAdmin');
             return;
         }
 
         $config = $this->getConfig();
         if ($config === false) {
             header('HTTP/1.1 405 Method Not Allowed');
-            echo '0';
+            header('Content-Type: text/plain');
+            echo $this->getLang('upload_errNoConfig');
             return;
         }
 
         if (!$config->upload()) {
-            header('HTTP/1.1 500 Internal Server Error');
-            echo '0';
+            header('HTTP/1.1 400 Bad Request');
             return;
         }
         echo '1';
