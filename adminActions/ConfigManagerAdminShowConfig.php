@@ -38,6 +38,8 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
             }
 
             $this->config->save();
+            @touch(DOKU_INC . 'conf/local.php');
+
             $params = array(
                 'do' => 'admin',
                 'page' => 'confmanager',
