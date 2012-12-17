@@ -84,4 +84,31 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
 
         return true;
     }
+
+    function deleteIcon() {
+        global $INPUT;
+
+        $key = $INPUT->str('key');
+        if ($key === '') {
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errNoConfigKeySend');
+            return false;
+        }
+
+        $configs = $this->readConfig();
+        if (in_array($key, $configs['local'])) {
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errCannotOverwriteDefaultKey');
+            return false;
+        }
+
+        if (!@unlink(DOKU_INC . $this->imageFolder . "$key." . $this->extension)) {
+            echo $this->helper->getLang('iconDelete_error');
+            return false;
+        }
+
+        return true;
+    }
+
+
 }

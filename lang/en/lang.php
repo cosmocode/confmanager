@@ -86,3 +86,4 @@ $lang['upload_errUploadError'] = 'fehler beim upload';
 $lang['upload_errNoFileExtension'] = 'keine datei extension';
 $lang['upload_errWrongFileExtension'] = 'falsche datei extension';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'kann hochgeladene datei nicht in images ordner verschieben (mögl. rechte problematik)';
+$lang['iconDelete_error'] = 'Fehler beim löschen des icons (mögl. rechteproblematik)';
