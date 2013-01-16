@@ -96,7 +96,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         }
 
         $configs = $this->readConfig();
-        if (in_array($key, $configs['local'])) {
+        if (isset($configs['default'][$key])) {
             header('Content-Type: text/plain');
             echo $this->helper->getLang('upload_errCannotOverwriteDefaultKey');
             return false;
