@@ -127,7 +127,7 @@ jQuery(document).ready(function(){
 	var getEntryKey = function(element) {
 		var parent = jQuery(element).parent().parent().children().first();
 		var input = jQuery(parent).children('input').first();
-		var value = input.attr('value');
+		var value = jQuery(input).attr('value');
 		return value;
 	};
 	
