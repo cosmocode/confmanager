@@ -25,13 +25,23 @@
                         />
                 </td>
                 <td>
+                <?php $isDefault = array_key_exists($key, $default) ?>
                     <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
-					<img class="upload_image_button clickable"
-						src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
-						alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
-						title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
+                    
+                    <?php if($isDefault) : ?>
+	                    <img class="upload_image_button"
+							src="<?php echo 'lib/plugins/confmanager/icons/picture_edit_disabled.png' ?>"
+							alt="<?php echo hsc($helper->getLang('edit_icon_action_disabled')) ?>"
+							title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip_disabled')) ?>" />
+                    <?php else : ?>
+	                    <img class="upload_image_button clickable"
+							src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
+							alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
+							title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
+                    <?php endif ?>
+					
                         	 
-					<?php if($image !== '') : ?>
+					<?php if($image !== '' && !$isDefault) : ?>
 						<img class="delete_image_button clickable"
                        		src="<?php echo 'lib/plugins/confmanager/icons/picture_delete.png' ?>"
                        		alt="<?php echo hsc($helper->getLang('delete_icon_action')) ?>"
@@ -73,6 +83,11 @@
 	            <th><?php echo $helper->getLang('actions') ?></th>
 	        </tr>
 	        <?php foreach ($default as $key => $value): ?>
+	        	<?php
+	        		if(array_key_exists($key, $local)) {
+	        			continue;
+	        		}
+	        	?>
 	            <?php $image = $this->getImage($key); ?>
 	            <tr>
 	                <td>

@@ -32,6 +32,7 @@ $lang['delete_action_tooltip_disabled'] = 'Cannot delete default values';
 $lang['edit_key_action_tooltip_disabled'] = 'Cannot edit default values';
 $lang['default_value_tooltip'] = 'This is a default value that cannot be changed';
 $lang['edit_icon_action'] = 'edit icon';
+$lang['edit_icon_action_disabled'] = 'cannot edit icon';
 $lang['edit_icon_action_tooltip'] = 'Click here to choose another icon';
 $lang['edit_icon_action_tooltip_disabled'] = 'Cannot change default icons';
 $lang['toggle_description'] = 'Toggle description on/off';
