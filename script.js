@@ -125,8 +125,10 @@ jQuery(document).ready(function(){
 	var popupVisible = false;
 	
 	var getEntryKey = function(element) {
-		return jQuery(element).parent().parent().children().first()
-				.children().first().attr('value');
+		var parent = jQuery(element).parent().parent().children().first();
+		var input = jQuery(parent).children('input').first();
+		var value = input.attr('value');
+		return value;
 	};
 	
 	var unloadPopup = function() {
