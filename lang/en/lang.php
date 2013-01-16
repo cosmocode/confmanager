@@ -72,22 +72,19 @@ $lang['InterWiki Links'] = 'InterWiki Links';
 
 // Error Messages
 $lang['invalid request csrf'] = 'Warning: cross site scripting attempt detected';
-
-
-// TODO:
-$lang['invalid save arguments'] = 'FIXME Beim config speichern ist ein "fehler" aufgetreten';
+$lang['invalid save arguments'] = 'En error occured while saving the config file';
 $lang['changes applied'] = 'Changes have been applied successfully';
 $lang['cannot apply changes'] = 'Could not apply changes';
-$lang['no local file given'] = 'Beim laden der config - kein ort für die lokale config datei angegeben -- fehlermeldung hauptsächlich für entwickler von plug-ins';
+$lang['no local file given'] = 'Error loading config file: no path specified';
 
 // Fehler beim upload
-$lang['upload_errNoAdmin'] = 'user ist kein admin';
-$lang['upload_errNoConfig'] = 'keine config gefunden/angegeben';
-$lang['upload_errNoFileSend'] = 'keine datei übertragen';
-$lang['upload_errNoConfigKeySend'] = 'key parameter nicht angegeben';
-$lang['upload_errCannotOverwriteDefaultKey'] = 'kann default icon nicht überschreiben';
-$lang['upload_errUploadError'] = 'fehler beim upload';
-$lang['upload_errNoFileExtension'] = 'keine datei extension';
-$lang['upload_errWrongFileExtension'] = 'falsche datei extension';
-$lang['upload_errCannotMoveUploadedFileToFolder'] = 'kann hochgeladene datei nicht in images ordner verschieben (mögl. rechte problematik)';
-$lang['iconDelete_error'] = 'Fehler beim löschen des icons (mögl. rechteproblematik)';
+$lang['upload_errNoAdmin'] = 'This operation requires administrator rights';
+$lang['upload_errNoConfig'] = 'No config was specified';
+$lang['upload_errNoFileSend'] = 'No file submitted';
+$lang['upload_errNoConfigKeySend'] = 'Missing key parameter';
+$lang['upload_errCannotOverwriteDefaultKey'] = 'Cannot overwrite default icon';
+$lang['upload_errUploadError'] = 'Error while uploading';
+$lang['upload_errNoFileExtension'] = 'Missing file extension';
+$lang['upload_errWrongFileExtension'] = 'Wrong file extension specified';
+$lang['upload_errCannotMoveUploadedFileToFolder'] = 'Uploaded file could not be moved into images folder. This could be due to a lack of permissions';
+$lang['iconDelete_error'] = 'Error deleting the icon. This could be due to a lack of permissions';
