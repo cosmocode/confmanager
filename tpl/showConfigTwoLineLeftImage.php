@@ -25,11 +25,22 @@
                         />
                 </td>
                 <td>
-	                    <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
-                    	<img class="upload_image_button clickable"
-                    		 src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
-                        	 alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
-                        	 title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
+                    <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
+					<img class="upload_image_button clickable"
+						src="<?php echo 'lib/plugins/confmanager/icons/picture_edit.png' ?>"
+						alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
+						title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
+                        	 
+					<?php if($image !== '') : ?>
+						<img class="delete_image_button clickable"
+                       		src="<?php echo 'lib/plugins/confmanager/icons/picture_delete.png' ?>"
+                       		alt=""
+                       		title="" />
+                    <?php else : ?>
+                       	<img src="<?php echo 'lib/plugins/confmanager/icons/picture_delete_disabled.png' ?>"
+                       		 alt=""
+                       		 title="" />
+                    <?php endif ?>
                 </td>
             </tr>
         <?php endforeach ?>
@@ -81,7 +92,7 @@
 	                       <img src="lib/plugins/confmanager/icons/delete_disabled.png"
 	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
-	                        <img src="<?php echo 'lib/plugins/confmanager/icons/picture_edit_disabled.png' ?>"
+	                       <img src="<?php echo 'lib/plugins/confmanager/icons/picture_edit_disabled.png' ?>"
 	                        	alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
 	                        	title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip_disabled')) ?>" />
 	                </td>

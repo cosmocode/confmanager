@@ -193,6 +193,28 @@ jQuery(document).ready(function(){
 		showPopupMask();
 	});
 	
+	var delete_image_success = function() {
+		document.forms['configForm'].submit();
+	};
+	
+	var delete_image_failed = function() {
+		alert('it failed :(');
+	};
+	
+	jQuery('.delete_image_button').click(function() {
+		jQuery.ajax({
+			url : DOKU_BASE + 'lib/exe/ajax.php',
+			type : 'POST',
+			data : {
+				call : 'confmanager_deleteIcon',
+				configId : JSINFO.configId,
+				key : getEntryKey(this)
+			},
+			success : delete_image_success,
+			error : delete_image_failed
+		});
+	});
+	
 	jQuery('#popup_cancel').click(function() {
 		unloadPopup();
 		return false;
