@@ -48,6 +48,10 @@ $lang['uploading'] = 'Uploading file...';
 $lang['upload_success'] = 'The upload was successful';
 $lang['upload_error'] = 'The upload has failed';
 $lang['continue'] = 'Continue';
+$lang['delete_icon_action'] = 'delete icon';
+$lang['delete_icon_action_tooltip'] = 'Click here to delete the icon';
+$lang['delete_icon_action_disabled'] = 'cannot delete icon';
+$lang['delete_icon_action_tooltip_disabled'] = 'Cannot delete the icon';
 
 // Table headers
 $lang['key'] = 'Key';

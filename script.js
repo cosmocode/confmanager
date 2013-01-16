@@ -197,8 +197,8 @@ jQuery(document).ready(function(){
 		document.forms['configForm'].submit();
 	};
 	
-	var delete_image_failed = function() {
-		alert('it failed :(');
+	var delete_image_failed = function(jqXHR, textStatus, errorThrown) {
+		alert(errorThrown);
 	};
 	
 	jQuery('.delete_image_button').click(function() {

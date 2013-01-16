@@ -34,12 +34,12 @@
 					<?php if($image !== '') : ?>
 						<img class="delete_image_button clickable"
                        		src="<?php echo 'lib/plugins/confmanager/icons/picture_delete.png' ?>"
-                       		alt=""
-                       		title="" />
+                       		alt="<?php echo hsc($helper->getLang('delete_icon_action')) ?>"
+                       		title="<?php echo hsc($helper->getLang('delete_icon_action_tooltip')) ?>" />
                     <?php else : ?>
                        	<img src="<?php echo 'lib/plugins/confmanager/icons/picture_delete_disabled.png' ?>"
-                       		 alt=""
-                       		 title="" />
+                       		 alt="<?php echo hsc($helper->getLang('delete_icon_action_disabled')) ?>"
+                       		title="<?php echo hsc($helper->getLang('delete_icon_action_tooltip_disabled')) ?>" />
                     <?php endif ?>
                 </td>
             </tr>
