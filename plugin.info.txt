@@ -1,5 +1,5 @@
 base    confmanager
-author  Dominik Eckelmann
+author  Dominik Eckelmann, Julian Heise
 email   dokuwiki@cosmocode.de
 date    2011-08-18
 name    configuration file manager
