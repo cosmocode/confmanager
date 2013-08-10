@@ -1,15 +1,14 @@
-[[doku>DokuWiki]] can replace certain characters or strings with other strings based on a configuration file. By default this is used to convert various character combinations to their typographical equivalent.
+[[doku>DokuWiki]] kan bepaalde tekens of tekst vervangen met andere tekst gebaseerd op een configuratiebestand. Standaard wordt dit gebruikt om verschillende tekencombinaties om te zetten naar hun typografische equivalent.
 
-e.g.
-
+bijvoorbeeld:
 <code>
-<<  to «
->>  to »
-=>  to ⇒
+<< naar «
+>> naar »
+=> naar ⇒
 </code>
 
-see also [[doku>syntax#text_to_html_conversions]].
+zie ook [[doku>nl:wiki:syntax#tekst naar html conversie]].
 
-Even though by default it is used with simple character replacements only, the entity system can also be used to insert more complex constructs into your pages. This includes HTML. However you should be aware that doing so is bound to break when used in combination with non-HTML renderers.
+Hoewel het standaard alleen wordt gebruikt voor simpele tekstvervanging, kan het entiteitensysteem ook worden gebruikt om meer ingewikkelde constructies in te voegen in je pagina. Inclusief HTML. Hoewel je bewust moet zijn dat dit beperkt is doordat het stuk gaat als het wordt gebruikt in combinatie met andere niet-HTML renderers.
 
-More information can be found at [[doku>entities]].
+Meer informatie kan worden gevonden op [[doku>nl:entities]].

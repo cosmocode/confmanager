@@ -1,23 +1,28 @@
-The original idea of InterWiki was to have one large distributed [[wp>Wiki]] over the whole net. Today its more of an easy way to link from one wiki to another by having some simple link syntax to do so.
+Het originele idee van InterWiki was om één grote verspreide [[wp>Wiki]] over het hele internet te hebben. Vandaag is het meer een makkelijke manier om van de ene naar de andere wiki te verwijzen met simpele link syntax.
 
-In [[doku>DokuWiki]] this is done by prefixing Wiki [[doku>pagenames]] with a shortcut separated by a ''>'' character.
+In [[doku>DokuWiki]] wordt dit gedaan door een afkorting als voorvoegsel voor Wiki [[doku>nl:pagenames|paginanamen]] te plaatsen gescheiden met een ">" teken.
 
-Examples:
-  [[wp>Wiki]] links to Wikipedia,
-  [[Meatball>TourBusStop]] links to the MeatBall wiki TourBusStop,
-  [[google>Wiki]] links to a Google search,
-  [[doku>interwiki]] links to this page
+Voorbeelden:
+<code>
+[[wp>Wiki]] linkt naar Wikipedia,
+[[Meatball>TourBusStop]] linkt naar deMeatBall wiki TourBusStop,
+[[google>Wiki]] linkt naar een Google zoekactie,
+[[doku>interwiki]] linkt naar deze pagina
+</code>
 
-[[wp>Wiki]] links to Wikipedia, [[Meatball>TourBusStop]] links to the MeatBall wiki TourBusStop, [[google>Wiki]] links to a Google search.
-[[doku>interwiki]] links to this page.
+[[wp>Wiki]] linkt naar Wikipedia, [[Meatball>TourBusStop]] naar deMeatBall wiki TourBusStop,
+[[google>Wiki]]  naar een Google zoekactie,
+[[doku>interwiki]] deze tekst maar dan in de DokuWiki wiki.
 
-There is one special interwiki shortcut called **''this''**. It always links to the webserver directory DokuWiki is installed in. You can use this to construct relative URLs. For example the following always links to the local [[doku>syndication|XML feed]]: [[this>feed.php]]
+Er is een speciale interwiki afkorting genaamd **''this''**. Het verwijst altijd naar de webserver locatie waar jouw DokuWiki is geïnstalleerd. Je kunt het gebruiken om relatieve URLs te maken. Bijvoorbeeld het volgende verwijst altijd naar de lokale [[doku>nl:syndication|XML feed]]: [[this>feed.php]]
 
-  [[this>feed.php]]
+<code>
+[[this>feed.php]]
+</code>
 
-**More Info on InterWiki:**
+**Meer informatie over InterWiki:**
 
-  * [[wp>InterWiki]] at Wikipedia
-  * [[MeatBall>InterWiki]] at MeatBall
-  * [[Wiki>InterWiki]] at c2.com Wiki
+  * [[wp>InterWiki]] op Wikipedia
+  * [[MeatBall>InterWiki]] op MeatBall
+  * [[Wiki>InterWiki]] op c2.com Wiki
   * [[doku>interwiki]]
