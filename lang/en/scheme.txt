@@ -1,4 +1,3 @@
-DokuWiki allows linking to external URLs but only to known protocols.
-[[doku>urlschemes|More information on URL schemes]].
+DokuWiki staat het toe om te verwijzen naar externe URLs maar alleen voor bekende protocollen. [[doku>nl:urlschemes|Meer informatie over URL schema's]].
 
-The following protocols are currently enabled:
+De volgende protocollen zijn op dit moment toegestaan:
