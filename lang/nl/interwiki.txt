@@ -16,11 +16,13 @@ Voorbeelden:
 
 Er is een speciale interwiki afkorting genaamd **''this''**. Het verwijst altijd naar de webserver locatie waar jouw DokuWiki is geïnstalleerd. Je kunt het gebruiken om relatieve URLs te maken. Bijvoorbeeld het volgende verwijst altijd naar de lokale [[doku>nl:syndication|XML feed]]: [[this>feed.php]]
 
+<code>
 [[this>feed.php]]
+</code>
 
 **Meer informatie over InterWiki:**
 
-* [[wp>InterWiki]] op Wikipedia
-* [[MeatBall>InterWiki]] op MeatBall
-* [[Wiki>InterWiki]] op c2.com Wiki
-* [[doku>interwiki]]
+  * [[wp>InterWiki]] op Wikipedia
+  * [[MeatBall>InterWiki]] op MeatBall
+  * [[Wiki>InterWiki]] op c2.com Wiki
+  * [[doku>interwiki]]
