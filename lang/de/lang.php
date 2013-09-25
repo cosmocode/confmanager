@@ -61,3 +61,4 @@ $lang['cannot apply changes']  = 'Konnte Änderungen nicht anwenden.';
 $lang['no local file given']   = 'Fehler beim laden der Konfigurationsdatei: Kein Pfad angegeben';
 $lang['upload_errNoAdmin']     = 'Die angeforderte Aktion benötigt Admin rechte';
 $lang['upload_errNoConfig']    = 'Keine Konfiguration angegeben';
+$lang['upload_errWrongFileExtension'] = 'Falsche Dateiendung';
