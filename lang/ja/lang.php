@@ -62,3 +62,13 @@ $lang['cannot apply changes']  = '変更を反映しませんでした。';
 $lang['no local file given']   = '設定ファイルの読み込みエラー：パスが未指定';
 $lang['upload_errNoAdmin']     = 'この操作には管理者権限が必要です。';
 $lang['upload_errNoConfig']    = '指定された設定がありません。';
+$lang['upload_errNoConfigKeySend'] = 'キーパラメータがありません';
+$lang['upload_errCannotOverwriteDefaultKey'] = 'デフォルトアイコンは上書き不可';
+$lang['upload_errUploadError'] = 'アップロード中にエラーが発生しました。';
+$lang['upload_errNoFileExtension'] = 'ファイル拡張子がありません';
+$lang['upload_errWrongFileExtension'] = '間違ったファイル拡張子が指定されました';
+$lang['upload_errCannotMoveUploadedFileToFolder'] = 'アップロードされたファイルは、画像フォルダに移動できませんでした。
+アクセス許可不足が原因の可能性があります。';
+$lang['iconDelete_error']      = 'アイコンの削除中にエラーが発生しました。
+アクセス許可不足が原因の可能性があります。
+';
