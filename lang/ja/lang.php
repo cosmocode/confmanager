@@ -62,6 +62,7 @@ $lang['cannot apply changes']  = '変更を反映しませんでした。';
 $lang['no local file given']   = '設定ファイルの読み込みエラー：パスが未指定';
 $lang['upload_errNoAdmin']     = 'この操作には管理者権限が必要です。';
 $lang['upload_errNoConfig']    = '指定された設定がありません。';
+$lang['upload_errNoFileSend']  = 'ファイルが存在しません';
 $lang['upload_errNoConfigKeySend'] = 'キーパラメータがありません';
 $lang['upload_errCannotOverwriteDefaultKey'] = 'デフォルトアイコンは上書き不可';
 $lang['upload_errUploadError'] = 'アップロード中にエラーが発生しました。';
