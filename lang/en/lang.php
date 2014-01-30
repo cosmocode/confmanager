@@ -3,6 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * 
+ * @author Schplurtz le Déboulonné <schplurtz@laposte.net>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -55,7 +56,7 @@ $lang['Entity replacements']   = 'Entity replacements';
 $lang['MIME configuration']    = 'MIME configuration';
 $lang['InterWiki Links']       = 'InterWiki Links';
 $lang['invalid request csrf']  = 'Warning: cross site scripting attempt detected';
-$lang['invalid save arguments'] = 'En error occured while saving the config file';
+$lang['invalid save arguments'] = 'An error occured while saving the config file';
 $lang['changes applied']       = 'Changes have been applied successfully';
 $lang['cannot apply changes']  = 'Could not apply changes';
 $lang['no local file given']   = 'Error loading config file: no path specified';
