@@ -4,6 +4,7 @@
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * 
  * @author Dominik Eckelmann <deckelmann@gmail.com>
+ * @author Thor Weinreich <thorweinreich@nefkom.net>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -61,4 +62,11 @@ $lang['cannot apply changes']  = 'Konnte Änderungen nicht anwenden.';
 $lang['no local file given']   = 'Fehler beim laden der Konfigurationsdatei: Kein Pfad angegeben';
 $lang['upload_errNoAdmin']     = 'Die angeforderte Aktion benötigt Admin rechte';
 $lang['upload_errNoConfig']    = 'Keine Konfiguration angegeben';
+$lang['upload_errNoFileSend']  = 'Keine Datei übertragen';
+$lang['upload_errNoConfigKeySend'] = 'Fehlender Schlüssel-Parameter';
+$lang['upload_errCannotOverwriteDefaultKey'] = 'Standard-Icon konnte nicht überschrieben werden';
+$lang['upload_errUploadError'] = 'Fehler beim Upload';
+$lang['upload_errNoFileExtension'] = 'Fehlende Datei-Erweiterung';
 $lang['upload_errWrongFileExtension'] = 'Falsche Dateiendung';
+$lang['upload_errCannotMoveUploadedFileToFolder'] = 'Die hochgeladene Datei konnte nicht in den Bilder-Ordner verschoben werden. Möglicherweise fehlt dir dazu die Berechtigung.';
+$lang['iconDelete_error']      = 'Fehler beim Löschen des Icons. Möglicherweise fehlt dir dazu die Berechtigung.';
