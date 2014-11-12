@@ -87,8 +87,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
             $content .= "$key\t$value\n";
         }
 
-        file_put_contents($file, $content);
-        msg($this->helper->getLang('changes applied'), 1);
+        $this->helper->actuallySaveFile($file, $content);
     }
 
     private function getNewValues() {
