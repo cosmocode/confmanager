@@ -43,8 +43,8 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
         return true;
     }
 
-    public function actuallySaveFile($file, $content) {
-        $success = file_put_contents($file, $content);
+    public function saveFile($file, $content) {
+        $success = io_saveFile($file, $content);
         if ($success !== false ) {
             msg($this->getLang('changes applied'), 1);
         } elseif (!is_writable($file)) {
