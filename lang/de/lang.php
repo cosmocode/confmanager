@@ -5,6 +5,7 @@
  * 
  * @author Dominik Eckelmann <deckelmann@gmail.com>
  * @author Thor Weinreich <thorweinreich@nefkom.net>
+ * @author ParoTheParrot <parotheparrot@gmail.com>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -45,7 +46,7 @@ $lang['delete_icon_action']    = 'Lösche Icon';
 $lang['delete_icon_action_tooltip'] = 'Klicke hier zum Icon löschen';
 $lang['delete_icon_action_disabled'] = 'Konnte das Icon nicht löschen';
 $lang['delete_icon_action_tooltip_disabled'] = 'Konnte das Icon nicht löschen';
-$lang['key']                   = 'Schlüßel';
+$lang['key']                   = 'Schlüssel';
 $lang['value']                 = 'Wert';
 $lang['actions']               = 'Aktionen';
 $lang['user_defined_values']   = 'Benutzerdefinierte Werte';
