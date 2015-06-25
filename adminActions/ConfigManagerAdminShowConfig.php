@@ -90,11 +90,11 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
             return;
         }
 
-        
+
         $configHeadLine = $this->config->getName();
         include DOKU_PLUGIN . 'confmanager/tpl/descriptionHeader.php';
         echo '<div class="description_wrapper" id="description">';
-        echo $this->helper->render($description);
+        echo $this->helper->render_text($description);
         echo '</div>';
     }
 }
