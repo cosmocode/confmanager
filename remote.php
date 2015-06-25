@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class remote_plugin_confmanager
+ */
 class remote_plugin_confmanager extends DokuWiki_Remote_Plugin {
 
     /**
@@ -7,11 +10,21 @@ class remote_plugin_confmanager extends DokuWiki_Remote_Plugin {
      */
     private $helper;
 
-    function __construct() {
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        parent::__construct();
+
         $this->helper = $this->loadHelper('confmanager', null);
     }
 
-    function _getMethods() {
+    /**
+     * Get all available methods with remote access.
+     *
+     * @return array Information about all provided methods.
+     */
+    public function _getMethods() {
         return array(
             'getConfigs' => array(
                 'args' => array(),
@@ -20,7 +33,11 @@ class remote_plugin_confmanager extends DokuWiki_Remote_Plugin {
         );
     }
 
-    function getConfigs() {
+    /**
+     * @return mixed
+     * @throws RemoteAccessDeniedException
+     */
+    public function getConfigs() {
         $this->ensureAdmin();
         $this->helper->getConfigFiles();
         return $this->getApi()->toDate(time());
