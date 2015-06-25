@@ -8,18 +8,27 @@ require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineConfigCa
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineLeftImageConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLine.php';
 
+/**
+ * Class action_plugin_confmanager_registerconfig
+ */
 class action_plugin_confmanager_registerconfig extends DokuWiki_Action_Plugin {
     var $helper;
 
     /**
      * Register its handlers with the dokuwiki's event controller
+     *
      * @param Doku_Event_Handler $controller
      */
-    public function register(&$controller) {
+    public function register(Doku_Event_Handler $controller) {
         $controller->register_hook('CONFMANAGER_CONFIGFILES_REGISTER', 'BEFORE',  $this, 'addCoreConfigFiles', array());
     }
 
-    public function addCoreConfigFiles(&$event, $param) {
+    /**
+     * Add configs for different configuration files
+     *
+     * @param Doku_Event $event
+     */
+    public function addCoreConfigFiles(Doku_Event $event) {
         /*
         $event->data[] = ConfigManagerConfigFile::create('smileys')
             ->setImageFolder(DOKU_INC . 'lib/images/smileys/')
@@ -57,6 +66,12 @@ class action_plugin_confmanager_registerconfig extends DokuWiki_Action_Plugin {
         $event->data[] = $interWiki;
     }
 
+    /**
+     * Retrieve localized description
+     *
+     * @param string $id
+     * @return string localized wikitext description
+     */
     private function getDescription($id) {
         $fn = $this->localFN($id);
         if (!@file_exists($fn)) {

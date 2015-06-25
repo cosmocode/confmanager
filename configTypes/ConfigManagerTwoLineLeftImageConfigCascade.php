@@ -1,10 +1,19 @@
 <?php
 
+/**
+ * Like ConfigManagerTwoLineCascadeConfig but with image support.
+ * An image can be assigned for every key. I.e. the mime or interwiki config
+ */
 class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCascadeConfig implements ConfigManagerUploadable {
 
     private $imageFolder;
     private $extension;
 
+    /**
+     * @param $name
+     * @param $imageFolder
+     * @param $extension
+     */
     public function __construct($name, $imageFolder, $extension) {
         parent::__construct($name);
          $this->setImageFolder($imageFolder);
@@ -61,6 +70,9 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         $this->imageFolder = $imageFolder;
     }
 
+    /**
+     * @return bool
+     */
     public function upload() {
         global $INPUT;
         if (!isset($_FILES['icon'])) {
@@ -110,6 +122,9 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         return true;
     }
 
+    /**
+     * @return bool
+     */
     function deleteIcon() {
         global $INPUT;
 
