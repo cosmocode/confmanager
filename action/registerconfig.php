@@ -6,6 +6,7 @@ require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerAbstractCascade
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerSingleLineConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineLeftImageConfigCascade.php';
+require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLineRightImageConfigCascade.php';
 require_once DOKU_PLUGIN . 'confmanager/configTypes/ConfigManagerTwoLine.php';
 
 /**
@@ -64,6 +65,11 @@ class action_plugin_confmanager_registerconfig extends DokuWiki_Action_Plugin {
         $interWiki->setName($this->getLang('InterWiki Links'));
         $interWiki->setDescription($this->getDescription('interwiki'));
         $event->data[] = $interWiki;
+
+        $smileys = new ConfigManagerTwoLineRightImageConfigCascade('smileys', 'lib/images/smileys/', 'png,jpg,gif');
+        $smileys->setName($this->getLang('Smileys'));
+        $smileys->setDescription($this->getDescription('smileys'));
+        $event->data[] = $smileys;
     }
 
     /**

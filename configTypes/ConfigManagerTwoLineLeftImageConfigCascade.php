@@ -6,8 +6,8 @@
  */
 class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCascadeConfig implements ConfigManagerUploadable {
 
-    private $imageFolder;
-    private $extension;
+    protected $imageFolder;
+    protected $extension;
 
     /**
      * @param $name
@@ -21,13 +21,20 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
     }
 
     public function display() {
+        $this->displayTpl(DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineLeftImage.php');
+    }
+
+    /**
+     * @param string $tpl file path
+     */
+    protected function displayTpl($tpl) {
         $configs = $this->readConfig();
         $default = $configs['default'];
         $local = $configs['local'];
         $configs = array_merge($default, $local);
 
         uksort($configs, array($this->helper, '_sortHuman'));
-        include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineLeftImage.php';
+        include $tpl;
     }
 
     /**
@@ -36,7 +43,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
      * @param string $key
      * @return string
      */
-    private function getImagePath($key) {
+    protected function getImagePath($key) {
         foreach($this->extension as $ext){
             $path = $this->imageFolder . "$key." . $ext;
              if (is_file(DOKU_INC . $path)) {
@@ -52,7 +59,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
      * @param string $key
      * @return string
      */
-    private function getImage($key) {
+    protected function getImage($key) {
         $path = $this->getImagePath($key);
         if($path) {
             return DOKU_BASE . $path;
@@ -82,6 +89,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         }
         $icon = $_FILES['icon'];
         $key = $INPUT->str('key');
+        $value = $INPUT->str('value');
         if ($key === '') {
             header('Content-Type: text/plain');
             echo $this->helper->getLang('upload_errNoConfigKeySend');
@@ -113,7 +121,8 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
             return false;
         }
 
-        if (!@move_uploaded_file($icon['tmp_name'], DOKU_INC . $this->imageFolder . "$key." . $extension)) {
+        $destination = $this->getImageDestination($key, $value, $extension, $icon['name']);
+        if (!@move_uploaded_file($icon['tmp_name'], $destination)) {
             header('Content-Type: text/plain');
             echo $this->helper->getLang('upload_errCannotMoveUploadedFileToFolder');
             return false;
@@ -123,9 +132,21 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
     }
 
     /**
+     * Build path to file location
+     *
+     * @param string $key
+     * @param string $value
+     * @param string $extension
+     * @return string
+     */
+    protected function getImageDestination($key, $value, $extension, $filename) {
+         return DOKU_INC . $this->imageFolder . "$key." . $extension;
+    }
+
+    /**
      * @return bool
      */
-    function deleteIcon() {
+    public function deleteIcon() {
         global $INPUT;
 
         $key = $INPUT->str('key');

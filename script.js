@@ -134,6 +134,12 @@ jQuery(document).ready(function(){
 		var value = jQuery(input).attr('value');
 		return value;
 	};
+    var getEntryValue = function(element) {
+        var parent = jQuery(element).parent().parent().children().first().next();
+        var input = jQuery(parent).children('input').first();
+        var value = jQuery(input).attr('value');
+        return value;
+    };
 
 	var unloadPopup = function() {
 		jQuery('.popup_mask').hide();
@@ -191,8 +197,10 @@ jQuery(document).ready(function(){
 
 	jQuery('.upload_image_button').click(function(){
 		var key = getEntryKey(this);
+        var value = getEntryValue(this);
 		jQuery('#keyParam').val(key);
-		jQuery('#configIdParam').val(JSINFO.configId);
+        jQuery('#valueParam').val(value);
+        jQuery('#configIdParam').val(JSINFO.configId);
 		showPopup();
 		showPopupMask();
 	});
