@@ -21,16 +21,39 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineLeftImage.php';
     }
 
-    private function getImage($key) {
+    /**
+     * Returns path to image file
+     *
+     * @param string $key
+     * @return string
+     */
+    private function getImagePath($key) {
         foreach($this->extension as $ext){
-        $path = $this->imageFolder . "$key." . $ext;
-        if (is_file($path)) {
-            return DOKU_BASE . $path;
-        }
+            $path = $this->imageFolder . "$key." . $ext;
+             if (is_file(DOKU_INC . $path)) {
+                return $path;
+            }
         }
         return '';
     }
 
+    /**
+     * Returns url to image file
+     *
+     * @param string $key
+     * @return string
+     */
+    private function getImage($key) {
+        $path = $this->getImagePath($key);
+        if($path) {
+            return DOKU_BASE . $path;
+        }
+        return '';
+    }
+
+    /**
+     * @param string $imageFolder
+     */
     public function setImageFolder($imageFolder) {
         if (substr($imageFolder, strlen($imageFolder) -1) !== '/') {
             $imageFolder = "$imageFolder/";
@@ -103,7 +126,9 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
             echo $this->helper->getLang('upload_errCannotOverwriteDefaultKey');
             return false;
         }
-        if (!@unlink(DOKU_INC . $this->imageFolder . "$key." . $extension)) {
+
+        $path = $this->getImagePath($key);
+        if (!@unlink(DOKU_INC . $path)) {
             echo $this->helper->getLang('iconDelete_error');
             return false;
         }
