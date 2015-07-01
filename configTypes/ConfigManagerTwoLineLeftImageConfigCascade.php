@@ -106,23 +106,35 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
             return false;
         }
 
-        $extension = strrpos($icon['name'], '.');
-        if ($extension === false) {
+        $extension_position = strrpos($icon['name'], '.');
+        if ($extension_position === false) {
             header('Content-Type: text/plain');
             echo $this->helper->getLang('upload_errNoFileExtension');
             return false;
         }
-        $extension = substr($icon['name'], $extension+1);
+        $extension = substr($icon['name'], $extension_position+1);
         if (!in_array($extension, $this->extension)) {
             header('Content-Type: text/plain');
             echo $this->helper->getLang('upload_errWrongFileExtension');
             return false;
         }
 
-        $destination = $this->getImageDestination($key, $value, $extension, $icon['name']);
-        if (!@move_uploaded_file($icon['tmp_name'], $destination)) {
+        $upload_name = substr($icon['name'], 0, $extension_position);
+        $destination = $this->getImageFilename($key, $value, $upload_name, $extension);
+        if(empty($destination)) {
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errFilenameNotValid');
+            return false;
+        }
+
+        if (!@move_uploaded_file($icon['tmp_name'], DOKU_INC . $this->imageFolder . $destination)) {
             header('Content-Type: text/plain');
             echo $this->helper->getLang('upload_errCannotMoveUploadedFileToFolder');
+            return false;
+        }
+        if (!$this->updateValue($key, $destination)) {
+            header('Content-Type: text/plain');
+            echo $this->helper->getLang('upload_errUpdateOfConfigValueFailed');
             return false;
         }
 
@@ -132,13 +144,25 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
     /**
      * Build path to file location
      *
-     * @param string $key
-     * @param string $value
-     * @param string $extension
+     * @param string $key               key of entry
+     * @param string $value             value of entry
+     * @param string $upload_name       name of upload
+     * @param string $upload_extension  extension of upload
      * @return string
      */
-    protected function getImageDestination($key, $value, $extension, $filename) {
-         return DOKU_INC . $this->imageFolder . "$key." . $extension;
+    protected function getImageFilename($key, $value, $upload_name, $upload_extension) {
+         return "$key." . $upload_extension;
+    }
+
+    /**
+     * Left image path cannot change by upload
+     *
+     * @param string $key
+     * @param string $value
+     * @return bool success?
+     */
+    protected function updateValue($key, $value) {
+        return true;
     }
 
     /**

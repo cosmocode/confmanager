@@ -41,35 +41,58 @@ class ConfigManagerTwoLineRightImageConfigCascade extends ConfigManagerTwoLineLe
     /**
      * Build path to file location
      *
-     * @param string $key
-     * @param string $value
-     * @param string $extension
-     * @param string $filename  filename provided by upload
+     * @param string $key               key of entry
+     * @param string $value             value of entry
+     * @param string $upload_name       name of upload
+     * @param string $upload_extension  extension of upload
      * @return string
      */
-    protected function getImageDestination($key, $value, $extension, $filename) {
-        $use_form_value = true;
-        $ext_value    = strrpos($value, '.');
-        if ($ext_value === false) {
-            //no extension
-            $use_form_value = false;
+    protected function getImageFilename($key, $value, $upload_name, $upload_extension) {
+        $extension_position = strrpos($value, '.');
+        if($extension_position) {
+            $filename = substr($value, 0, $extension_position);
         } else {
-            $ext_value = strtolower(substr($value, $ext_value + 1));
-            if($ext_value != $extension) {
-                // image has different extension than predefined location
-                $use_form_value = false;
-            }
-        }
-
-        if($use_form_value) {
             $filename = $value;
         }
+        if(empty($filename)) {
+            $filename = $upload_name;
+        }
+
         $filename = trim($filename);
         if(substr($filename, 0, 6) !=  'local/') {
             $filename = 'local/' . $filename;
         }
 
-        return DOKU_INC . $this->imageFolder . $filename;
+        if(empty(substr($filename,6))) {
+            return '';
+        }
+
+        return "$filename.$upload_extension";
+    }
+
+    /**
+     * Update image path
+     *
+     * @param string $key
+     * @param string $value
+     * @return bool success?
+     */
+    protected function updateValue($key, $value) {
+        $config = $this->readConfig();
+
+        $haschanges = false;
+
+        foreach($config['local'] as $confkey => $confvalue) {
+            if($confkey == $key && $confvalue != $value) {
+                $config['local'][$confkey] = $value;
+                $haschanges = true;
+            }
+        }
+
+        if($haschanges) {
+            $this->saveToFile($config['local']);
+        }
+        return true;
     }
 
 
