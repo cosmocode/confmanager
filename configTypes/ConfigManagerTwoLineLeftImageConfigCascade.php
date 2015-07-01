@@ -8,6 +8,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
 
     protected $imageFolder;
     protected $extension;
+    protected $imageAlignment;
 
     /**
      * @param $name
@@ -18,23 +19,20 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         parent::__construct($name);
          $this->setImageFolder($imageFolder);
         $this->extension = explode(',',$extension);
-    }
-
-    public function display() {
-        $this->displayTpl(DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineLeftImage.php');
+        $this->imageAlignment = 'left';
     }
 
     /**
-     * @param string $tpl file path
+     * Parse template and display the form of the config manager
      */
-    protected function displayTpl($tpl) {
+    public function display() {
         $configs = $this->readConfig();
         $default = $configs['default'];
         $local = $configs['local'];
         $configs = array_merge($default, $local);
 
         uksort($configs, array($this->helper, '_sortHuman'));
-        include $tpl;
+        include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineLeftImage.php';
     }
 
     /**

@@ -6,10 +6,18 @@
  */
 class ConfigManagerTwoLineRightImageConfigCascade extends ConfigManagerTwoLineLeftImageConfigCascade {
 
-    public function display() {
-        $this->displayTpl(DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineRightImage.php');
-    }
+    /**
+     * Constructor
+     *
+     * @param string $name
+     * @param string $imageFolder
+     * @param string $extension
+     */
+    public function __construct($name, $imageFolder, $extension) {
+        parent::__construct($name, $imageFolder, $extension);
 
+        $this->imageAlignment = 'right';
+    }
     /**
      * Returns path to image file
      *
