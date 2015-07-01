@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class ConfigManagerAdminOverview
+ */
 class ConfigManagerAdminOverview implements ConfigManagerAdminAction {
 
     /**
@@ -7,6 +10,9 @@ class ConfigManagerAdminOverview implements ConfigManagerAdminAction {
      */
     private $helper;
 
+    /**
+     * Set helper
+     */
     public function __construct() {
         $this->helper = plugin_load('helper', 'confmanager');
     }

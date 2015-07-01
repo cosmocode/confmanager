@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Handle deleting of icons for config managers with uploadable content (implementation of ConfigManagerUploadable)
+ */
 class action_plugin_confmanager_deleteicon extends DokuWiki_Action_Plugin {
 
     /**
@@ -7,12 +10,23 @@ class action_plugin_confmanager_deleteicon extends DokuWiki_Action_Plugin {
      */
     var $helper;
 
-    public function register(Doku_Event_Handler &$controller) {
+    /**
+     * Registers a callback function for a given event
+     *
+     * @param Doku_Event_Handler $controller
+     */
+    public function register(Doku_Event_Handler $controller) {
         $controller->register_hook('AJAX_CALL_UNKNOWN', 'BEFORE',  $this, 'upload', array());
         $this->helper = plugin_load('helper', 'confmanager');
     }
 
-    public function upload(Doku_Event &$event, $param) {
+    /**
+     * Tries to delete an icon
+     *
+     * @param Doku_Event $event
+     * @param $param
+     */
+    public function upload(Doku_Event $event, $param) {
         if ($event->data !== 'confmanager_deleteIcon') {
             return;
         }
@@ -42,6 +56,8 @@ class action_plugin_confmanager_deleteicon extends DokuWiki_Action_Plugin {
     }
 
     /**
+     * Get an config manager in case of uploadable content
+     *
      * @return bool|ConfigManagerUploadable
      */
     private function getConfig() {

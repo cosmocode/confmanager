@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class ConfigManagerAdminShowConfig
+ */
 class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
 
     /**
@@ -13,6 +16,9 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
      */
     private $config;
 
+    /**
+     * Constructor
+     */
     public function __construct() {
         $this->helper = plugin_load('helper', 'confmanager');
     }
@@ -84,11 +90,11 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
             return;
         }
 
-        
+
         $configHeadLine = $this->config->getName();
         include DOKU_PLUGIN . 'confmanager/tpl/descriptionHeader.php';
         echo '<div class="description_wrapper" id="description">';
-        echo $this->helper->render($description);
+        echo $this->helper->render_text($description);
         echo '</div>';
     }
 }

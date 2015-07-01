@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class ConfigManagerTwoLine
+ */
 class ConfigManagerTwoLine implements ConfigManagerConfigType {
 
     private $name;
