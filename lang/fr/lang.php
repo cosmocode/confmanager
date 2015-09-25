@@ -4,6 +4,7 @@
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * 
  * @author Schplurtz le Déboulonné <schplurtz@laposte.net>
+ * @author Nicolas Friedli <nicolas@theologique.ch>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -55,6 +56,7 @@ $lang['Acronyms']              = 'Abréviations et acronymes';
 $lang['Entity replacements']   = 'Substitution d\'éléments';
 $lang['MIME configuration']    = 'configuration MIME';
 $lang['InterWiki Links']       = 'liens InterWikis';
+$lang['Smileys']               = 'Frimousses';
 $lang['invalid request csrf']  = 'Attention: tentative de cross site scripting détectée.';
 $lang['invalid save arguments'] = 'Une erreur est survenue lors de l\'enregistrement du fichier de configuration.';
 $lang['changes applied']       = 'Modifications appliquées avec succès.';
