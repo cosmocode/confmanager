@@ -1,0 +1,17 @@
+Die ursprüngliche Idee hinter InterWiki war es, ein großes, verbreitetes Wiki über das gesamte Netz bereitzustellen. Heute ist es eher eine leichte Art, mit einer einfachen Link-Syntax von einem Wiki zum nächsten zu verlinken.
+
+In [[doku>DokuWiki]] wird dies durch das Hinzufügen eines Präfixes zu Wiki [[doku>pagenames]] mit einer durch das Zeichen ''>'' getrennten Verknüpfung, durchgeführt.
+
+Beispiele:
+<code>
+[[wp>Wiki]] verweist auf Wikipedia, [[Meatball>TourBusStop]] verlinkt zum MeatBall wiki TourBusStop, [[google>Wiki]] verlinkt zur Google-Suche, [[doku>interwiki]] verlinkt auf diese Seite </code>
+
+Es gibt eine spezielle interwiki-Verknüpfung, die **"this"** genannt wird. Diese verklinkt immer zum Verzeichnis des Webservers in dem DokuWiki installiert ist.
+Sie können dies nutzen, um relative URLs zu erzeugen.
+Zum Beispiel verlinkt das Folgende immer zum lokalen [[doku>syndication|XML feed]]: [[this>feed.php]]
+
+<code> [[this>feed.php]] </code>
+
+**Mehr Informationen über InterWiki:**
+
+ * [[wp>InterWiki]] auf Wikipedia * [[MeatBall>InterWiki]] auf MeatBall * [[Wiki>InterWiki]] auf c2.com Wiki * [[doku>interwiki]]
