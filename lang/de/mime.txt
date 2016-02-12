@@ -1,0 +1,12 @@
+Welchen Dateityp Sie über den [[doku>media_manager]] hochladen können, ist durch die "conf/mime.conf"-Datei festgelegt. Diese legt ebenfalls die Zuordnung Dateierweiterung <-> Mimetype fest.
+
+Aus Sicherheitsgründen ist es nicht möglich, [[doku>DokuWiki]] so zu konfigurieren, dass alle Dateitypen zugelassen werden.
+
+:!: **Aktivieren Sie niemals HTML upload für ungeschützte Wikis**, da dies Cross Site Scripting-Schwachstellen durch JavaScript öffnet. Aktivieren Sie dies nur mit vertrauenswürdigen Benutzern. Sie müssen die [[doku>config:iexssprotect]] Option zusätzlich deaktivieren, um den HTML Mimetype in der Config-Datei hinzuzufügen.
+
+Zusätzliche Icons im ähnlichen Stil sind verfügbar unter:
+http://www.splitbrain.org/projects/file_icons
+
+Sie können jede Dateierweiterung mit dem zugehörigen Mime finden auf: http://filext.com/
+
+Mehr Informationen können unter [[doku>mime]].
