@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Dominik Eckelmann <deckelmann@gmail.com>
  * @author Thor Weinreich <thorweinreich@nefkom.net>
  * @author ParoTheParrot <parotheparrot@gmail.com>
@@ -74,3 +74,6 @@ $lang['upload_errNoFileExtension'] = 'Fehlende Datei-Erweiterung';
 $lang['upload_errWrongFileExtension'] = 'Falsche Dateiendung';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'Die hochgeladene Datei konnte nicht in den Bilder-Ordner verschoben werden. Möglicherweise fehlt dir dazu die Berechtigung.';
 $lang['iconDelete_error']      = 'Fehler beim Löschen des Icons. Möglicherweise fehlt dir dazu die Berechtigung.';
+$lang['error:saving failed not writable'] = 'Die Änderungen kopnnten nicht gespeichert werden. Die Konfigurationsdatei ist nicht schreibbar.';
+$lang['error:saving failed']              = 'Die Änderungen kopnnten nicht gespeichert werden.';
+$lang['warning:not writable']             = 'Die Konfigurationsdatei ist nicht schreibbar. Änderungen werden nicht gespeichert werden.';

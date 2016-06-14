@@ -67,6 +67,7 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
         $default = array();
         $configs = $local;
         uksort($configs, array($this->helper, '_sortHuman'));
+        if(!is_writable($this->configFile)) msg($this->helper->getLang('warning:not writable'),-1);
 
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLine.php';
     }
@@ -107,7 +108,6 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
             $content .= "$key\t$value\n";
         }
 
-        file_put_contents($this->configFile, $content);
-        msg($this->helper->getLang('changes applied'), 1);
+        $this->helper->actuallySaveFile($this->configFile, $content);
     }
 }

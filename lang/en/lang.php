@@ -71,3 +71,6 @@ $lang['upload_errNoFileExtension'] = 'Missing file extension';
 $lang['upload_errWrongFileExtension'] = 'Wrong file extension specified';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'Uploaded file could not be moved into images folder. This could be due to a lack of permissions';
 $lang['iconDelete_error']      = 'Error deleting the icon. This could be due to a lack of permissions';
+$lang['error:saving failed not writable'] = 'Applying the changes failed. The configuration file is not writable.';
+$lang['error:saving failed']              = 'Applying the changes failed.';
+$lang['warning:not writable']             = 'The configuration file is not writable. Changes will not be saved.';

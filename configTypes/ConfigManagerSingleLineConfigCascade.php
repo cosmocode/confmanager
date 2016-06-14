@@ -97,8 +97,7 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
             $content .= "$item\n";
         }
 
-        file_put_contents($file, $content);
-        msg($this->helper->getLang('changes applied'), 1);
+        $this->helper->actuallySaveFile($file, $content);
     }
 
 
