@@ -1,7 +1,17 @@
 <?php
 
+/**
+ * Every line is a config option. The config values are basically an array.
+ * I.e. the scheme or wordblock config.
+ */
 class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConfig {
 
+    /**
+     * Load file
+     *
+     * @param string $fileName
+     * @return array
+     */
     protected  function loadFile($fileName) {
         if (@!file_exists($fileName)) {
             return array();
@@ -33,6 +43,13 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
         $this->saveToFile($custom);
     }
 
+    /**
+     * Get the custom entries from the input
+     *
+     * @param array $input
+     * @param array $default
+     * @return array
+     */
     private function getCustomEntries($input, $default) {
         $save = array();
         foreach ($input as $line) {
@@ -50,6 +67,11 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
         return $save;
     }
 
+    /**
+     * Save config
+     *
+     * @param array $config
+     */
     private function saveToFile($config) {
         global $config_cascade;
         if (!isset($config_cascade[$this->internalName]['local'])

@@ -6,7 +6,9 @@ require_once DOKU_PLUGIN . 'confmanager/adminActions/ConfigManagerAdminAction.ph
 require_once DOKU_PLUGIN . 'confmanager/adminActions/ConfigManagerAdminOverview.php';
 require_once DOKU_PLUGIN . 'confmanager/adminActions/ConfigManagerAdminShowConfig.php';
 
-
+/**
+ * Class admin_plugin_confmanager
+ */
 class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
 
     /**
@@ -14,10 +16,19 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
      */
     private $adminAction;
 
+    /**
+     * Determine position in list in admin window
+     * Lower values are sorted up
+     *
+     * @return int
+     */
     public function getMenuSort() {
         return 101;
     }
 
+    /**
+     * Carry out required processing
+     */
     public function handle() {
         $this->determineAction();
         $this->adminAction->handle();
@@ -31,6 +42,9 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
         $this->adminAction = new ConfigManagerAdminShowConfig();
     }
 
+    /**
+     * Output html of the admin page
+     */
     public function html() {
         echo '<div id="confmanager">';
         $this->adminAction->html();

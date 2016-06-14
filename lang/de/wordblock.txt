@@ -1,0 +1,8 @@
+Das Internet ist nicht mehr der Ort, der es mal war.
+Alles Gute wird korrumpiert und so ist es auch mit Wikis. [[meatball>WikiSpam]], wie Spam in Blogs und in Email, wird mehr.
+Sollten Sie [[doku>DokuWiki]] in Ihrem Intranet nutzen, ist dies kein Problem für Sie. Aber sollten Sie beabsichtigen, es im offenen Internet zu nutzen, sollten sie einige bekannte Spam-Worte auf die Blacklist setzen.
+
+Um eine Blacklist im DokuWiki zu nutzen, aktivieren Sie die Option  ''$conf['usewordblock'] = 1;'' in "conf/local.php" (Standardmäßig ist diese auf 1 gesetzt) und passen Sie die "conf/wordblock.local.conf" Datei an. Für eine Liste existierender Wort-Blockaden können Sie in die Datei "conf/wordblock.conf" schauen.
+Die Datei enthält [[wp>Regular Expressions]] (kompatibel mit Perl) und wenn eine von diesen zutrifft, wird das Speichern verboten.
+
+Mehr Informationen unter [[doku>blacklist]].

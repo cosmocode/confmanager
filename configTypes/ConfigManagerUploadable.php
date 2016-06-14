@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Interface for ConfigManager which supports Uploadable images
+ */
 interface ConfigManagerUploadable {
 
     /**

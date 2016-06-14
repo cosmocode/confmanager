@@ -2,7 +2,7 @@
 
         <?php $this->helper->tplSaveButton() ?>
     </form>
-    
+
     <?php $helper = plugin_load('helper', 'confmanager'); ?>
     <div class="popup_mask"></div>
     <div class="popup">
@@ -19,7 +19,8 @@
 				<input type="hidden" name="call" value="confmanager_upload" />
 				<input type="hidden" name="configId" id="configIdParam" />
 				<input type="hidden" name="key" id="keyParam" />
-			</form>
+                <input type="hidden" name="value" id="valueParam" />
+            </form>
 		</div>
 		<div class="popupcontent" id="popup_show_progress" >
 			<p><?php echo $helper->getLang('uploading') ?></p>
@@ -37,5 +38,5 @@
         	<a class="button continue right"><?php echo $helper->getLang('continue') ?></a>
         </div>
 	</div>
-	
+
 </div>

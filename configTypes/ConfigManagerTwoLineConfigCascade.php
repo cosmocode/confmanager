@@ -1,7 +1,17 @@
 <?php
 
+/**
+ * Every line is a config option. The first word in the line is a config key .
+ * The config is a associative array. I.e. the acronyms or entities config
+ */
 class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConfig {
 
+    /**
+     * Load file
+     *
+     * @param string $fileName
+     * @return mixed
+     */
     protected function loadFile($fileName) {
         return confToHash($fileName);
     }
@@ -41,6 +51,13 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
 
     protected function handleSave() {}
 
+    /**
+     * Get the custom entries from the input
+     *
+     * @param array $input
+     * @param array $default
+     * @return array
+     */
     private function getCustomEntries($input, $default) {
         $save = array();
         foreach ($input as $key => $value) {
@@ -62,6 +79,9 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         return $save;
     }
 
+    /**
+     * @param $config
+     */
     private function saveToFile($config) {
         global $config_cascade;
         if (!isset($config_cascade[$this->internalName]['local'])
@@ -90,6 +110,11 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         $this->helper->actuallySaveFile($file, $content);
     }
 
+    /**
+     * Returns new values as associative array
+     *
+     * @return array
+     */
     private function getNewValues() {
         global $INPUT;
         $newKey = $INPUT->arr('newKey');

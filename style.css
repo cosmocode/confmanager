@@ -86,7 +86,7 @@ table.confmanager {
 	border: 1px solid #f00;
 	background-color: #faa;
 	border-radius: 			4px;
-	moz-border-radius: 		4px;
+	-moz-border-radius: 	4px;
 	-webkit-border-radius: 	4px;
 	-moz-box-shadow:    inset 0 0 15px #f00;
   	-webkit-box-shadow: inset 0 0 15px #f00;
@@ -159,8 +159,8 @@ table.confmanager {
 	display: none;
 	width: 100%;
 	position: fixed;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	z-index: 999;
 	background-color: black;
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
