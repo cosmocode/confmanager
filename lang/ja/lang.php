@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Hideaki SAWADA <chuno@live.jp>
  */
 $lang['encoding']              = 'utf-8';
@@ -71,3 +71,6 @@ $lang['upload_errNoFileExtension'] = 'ファイル拡張子がありません';
 $lang['upload_errWrongFileExtension'] = '間違ったファイル拡張子が指定されました';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'アップロードされたファイルは、画像フォルダに移動できませんでした。アクセス許可不足が原因の可能性があります。';
 $lang['iconDelete_error']      = 'アイコンの削除中にエラーが発生しました。アクセス許可不足が原因の可能性があります。';
+$lang['error:saving failed not writable'] = '変更を適用できませんでした。設定ファイルが書き込み不可です。';
+$lang['error:saving failed']   = '変更を適用できませんでした。';
+$lang['warning:not writable']  = '設定ファイルが書き込み不可です。変更は保存されません。';
