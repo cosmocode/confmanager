@@ -107,7 +107,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
             $content .= "$key\t$value\n";
         }
 
-        $this->helper->actuallySaveFile($file, $content);
+        $this->helper->saveFile($file, $content);
     }
 
     /**

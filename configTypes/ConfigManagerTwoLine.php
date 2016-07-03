@@ -108,6 +108,6 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
             $content .= "$key\t$value\n";
         }
 
-        $this->helper->actuallySaveFile($this->configFile, $content);
+        $this->helper->saveFile($this->configFile, $content);
     }
 }
