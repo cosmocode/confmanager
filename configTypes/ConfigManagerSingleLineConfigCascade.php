@@ -97,7 +97,7 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
             $content .= "$item\n";
         }
 
-        $this->helper->actuallySaveFile($file, $content);
+        $this->helper->saveFile($file, $content);
     }
 
 
