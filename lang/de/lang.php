@@ -2,10 +2,11 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Dominik Eckelmann <deckelmann@gmail.com>
  * @author Thor Weinreich <thorweinreich@nefkom.net>
  * @author ParoTheParrot <parotheparrot@gmail.com>
+ * @author Dana <dannax3@gmx.de>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -20,13 +21,13 @@ $lang['cannot change default file icon'] = 'Standardicons können nicht geänder
 $lang['delete_action']         = 'löschen';
 $lang['edit_key_action']       = 'editieren';
 $lang['edit_key_action_tooltip'] = 'Zum Umbenennen hier klicken';
-$lang['delete_action_tooltip'] = 'Zum löschen hier klicken';
+$lang['delete_action_tooltip'] = 'Zum Löschen hier klicken';
 $lang['delete_action_tooltip_disabled'] = 'Standardwerte können nicht gelöscht werden';
 $lang['edit_key_action_tooltip_disabled'] = 'Standardwerte können nicht editiert werden.';
 $lang['default_value_tooltip'] = 'Dies ist ein Standardwert und kann nicht verändert werden';
-$lang['edit_icon_action']      = 'editiere das Icon';
+$lang['edit_icon_action']      = 'Editiere das Icon';
 $lang['edit_icon_action_disabled'] = 'Icon kann nicht editiert werden';
-$lang['edit_icon_action_tooltip'] = 'Klicke hier um das Icon zu ändern';
+$lang['edit_icon_action_tooltip'] = 'Klicke hier, um das Icon zu ändern';
 $lang['edit_icon_action_tooltip_disabled'] = 'Standardicons können nicht verändert werden';
 $lang['toggle_description']    = 'Schalte Beschreibungen an/aus';
 $lang['toggle_defaults']       = 'Zeige/verstecke Standardwerte';
@@ -52,10 +53,12 @@ $lang['actions']               = 'Aktionen';
 $lang['user_defined_values']   = 'Benutzerdefinierte Werte';
 $lang['default_values']        = 'Standardwerte';
 $lang['URL Schemes']           = 'URL Schema';
+$lang['Blacklisting']          = 'Blacklisting';
 $lang['Acronyms']              = 'Abkürzungen und Akronyme';
 $lang['Entity replacements']   = 'Typografische Ersetzungen';
 $lang['MIME configuration']    = 'MIME Konfiguration';
 $lang['InterWiki Links']       = 'InterWiki Links';
+$lang['Smileys']               = 'Smileys';
 $lang['invalid request csrf']  = 'Warnung: Cross Site Scripting Angriff erkannt';
 $lang['invalid save arguments'] = 'Beim speichern der Konfiguration ist ein Fehler aufgetreten';
 $lang['changes applied']       = 'Änderungen erfolgreich gespeichert';
@@ -71,3 +74,6 @@ $lang['upload_errNoFileExtension'] = 'Fehlende Datei-Erweiterung';
 $lang['upload_errWrongFileExtension'] = 'Falsche Dateiendung';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'Die hochgeladene Datei konnte nicht in den Bilder-Ordner verschoben werden. Möglicherweise fehlt dir dazu die Berechtigung.';
 $lang['iconDelete_error']      = 'Fehler beim Löschen des Icons. Möglicherweise fehlt dir dazu die Berechtigung.';
+$lang['error:saving failed not writable'] = 'Die Änderungen kopnnten nicht gespeichert werden. Die Konfigurationsdatei ist nicht schreibbar.';
+$lang['error:saving failed']              = 'Die Änderungen kopnnten nicht gespeichert werden.';
+$lang['warning:not writable']             = 'Die Konfigurationsdatei ist nicht schreibbar. Änderungen werden nicht gespeichert werden.';

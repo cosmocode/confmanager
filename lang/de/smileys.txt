@@ -1,0 +1,25 @@
+DokuWiki kann Textsmileys in Ihr grafisches Äquivalent umwandeln.
+
+DokuWiki konvertiert gebräuchliche [[wp>emoticon]]s in ihr grafisches Äquivalent. Diese [[doku>Smileys]] und andere Abbildungen können konfiguriert und erweitert werden.
+Hier ist ein Überblick der in DokuWiki enthaltenen Smileys:
+
+* 8-) %% 8-) %% 
+* 8-O %% 8-O %% 
+* :-( %% :-( %% 
+* :-) %% :-) %% 
+* =) %% =) %% 
+* :-/ %% :-/ %% 
+* :-\ %% :-\ %% 
+* :-? %% :-? %% 
+* :-D %% :-D %% 
+* :-P %% :-P %% 
+* :-O %% :-O %% 
+* :-X %% :-X %% 
+* :-| %% :-| %% 
+* ;-) %% ;-) %% 
+* ^_^ %% ^_^ %% 
+* :?: %% :?: %% 
+* :!: %% :!: %% 
+* LOL %% LOL %% 
+* FIXME %% FIXME %% 
+* DELETEME %% DELETEME %%

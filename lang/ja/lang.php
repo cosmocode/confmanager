@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Hideaki SAWADA <chuno@live.jp>
  */
 $lang['encoding']              = 'utf-8';
@@ -55,6 +55,7 @@ $lang['Acronyms']              = '略字と頭字語';
 $lang['Entity replacements']   = '記号への変換';
 $lang['MIME configuration']    = 'MIME の設定';
 $lang['InterWiki Links']       = 'InterWiki リンク';
+$lang['Smileys']               = 'スマイリー';
 $lang['invalid request csrf']  = '警告：XXS 攻撃を検出しました';
 $lang['invalid save arguments'] = '設定ファイルを保存中にエラーが発生しました。';
 $lang['changes applied']       = '変更は正しく反映されました。';
@@ -68,8 +69,8 @@ $lang['upload_errCannotOverwriteDefaultKey'] = 'デフォルトアイコンは�
 $lang['upload_errUploadError'] = 'アップロード中にエラーが発生しました。';
 $lang['upload_errNoFileExtension'] = 'ファイル拡張子がありません';
 $lang['upload_errWrongFileExtension'] = '間違ったファイル拡張子が指定されました';
-$lang['upload_errCannotMoveUploadedFileToFolder'] = 'アップロードされたファイルは、画像フォルダに移動できませんでした。
-アクセス許可不足が原因の可能性があります。';
-$lang['iconDelete_error']      = 'アイコンの削除中にエラーが発生しました。
-アクセス許可不足が原因の可能性があります。
-';
+$lang['upload_errCannotMoveUploadedFileToFolder'] = 'アップロードされたファイルは、画像フォルダに移動できませんでした。アクセス許可不足が原因の可能性があります。';
+$lang['iconDelete_error']      = 'アイコンの削除中にエラーが発生しました。アクセス許可不足が原因の可能性があります。';
+$lang['error:saving failed not writable'] = '変更を適用できませんでした。設定ファイルが書き込み不可です。';
+$lang['error:saving failed']   = '変更を適用できませんでした。';
+$lang['warning:not writable']  = '設定ファイルが書き込み不可です。変更は保存されません。';

@@ -2,8 +2,9 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Gerrit Uitslag <klapinklapin@gmail.com>
+ * @author Mark C. Prins <mprins@users.sf.net>
  */
 $lang['encoding']              = 'utf-8';
 $lang['direction']             = 'ltr';
@@ -55,6 +56,7 @@ $lang['Acronyms']              = 'Afkortingen en acroniemen';
 $lang['Entity replacements']   = 'Entities vervangers';
 $lang['MIME configuration']    = 'MIME configuratie';
 $lang['InterWiki Links']       = 'InterWiki Links';
+$lang['Smileys']               = 'Smileys';
 $lang['invalid request csrf']  = 'Waarschuwing: cross site scripting poging ontdekt';
 $lang['invalid save arguments'] = 'Tijdens het opslaan van het configuratiebestand is een fout opgetreden';
 $lang['changes applied']       = 'Aanpassingen zijn met succes doorgevoerd';
@@ -70,3 +72,6 @@ $lang['upload_errNoFileExtension'] = 'Mist bestandsextensie';
 $lang['upload_errWrongFileExtension'] = 'Verkeerde bestandsextensie gespecificeerd';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'Geüploade bestand kan niet worden verplaatst naar de afbeeldingenmap. Dit kan komen door ontbrekende permissies.';
 $lang['iconDelete_error']      = 'Fout bij verwijderen van icoon. Dit kan komen door ontbrekende permissies.';
+$lang['error:saving failed not writable'] = 'Toepassen van aanpassingen is mislukt. Het configuratiebestand is niet beschrijfbaar.';
+$lang['error:saving failed']   = 'Toepassen van aanpassingen is mislukt.';
+$lang['warning:not writable']  = 'Het configuratiebestand is niet beschrijfbaar. Aanpassingen worden niet opgeslagen.';

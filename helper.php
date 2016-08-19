@@ -64,6 +64,22 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
     }
 
     /**
+     * @param string $file      filename path to file
+     * @param string $content
+     */
+    public function saveFile($file, $content) {
+        $success = io_saveFile($file, $content);
+        if ($success !== false ) {
+            msg($this->getLang('changes applied'), 1);
+        } elseif (!is_writable($file)) {
+            msg($this->getLang('error:saving failed not writable'), -1);
+        } else {
+            msg($this->getLang('error:saving failed'), -1);
+        }
+
+    }
+
+    /**
      * Get header for config files created by confmanager
      *
      * @return string
