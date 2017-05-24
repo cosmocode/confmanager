@@ -1,4 +1,4 @@
-L'idée originale d'InterWiki était d'avoir un grand Wiki réparti sur tout internet. Aujourd'hui c'est plutôt une façon  de lier facilement un wiki à un autre avec une syntaxe simple et facile à mettre en œuvre.
+L'idée originale d'InterWiki était d'avoir un grand Wiki réparti sur tout internet. Aujourd'hui c'est plutôt une façon de lier facilement un wiki à un autre avec une syntaxe simple et facile à mettre en œuvre.
 
 On fait cela dans [[doku>fr:dokuwiki|DokuWiki]] en préfixant les [[doku>fr:pagenames|noms de page]] avec un raccourci suivi du caractère ''>''.
 
