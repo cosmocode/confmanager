@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Schplurtz le Déboulonné <schplurtz@laposte.net>
  * @author Nicolas Friedli <nicolas@theologique.ch>
  */
@@ -72,3 +72,6 @@ $lang['upload_errNoFileExtension'] = 'extension de nom de fichier absente.';
 $lang['upload_errWrongFileExtension'] = 'Mauvaise extension de nom de fichier.';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'Impossible de déplacer le fichier téléversé vers le dossier des images. Ceci pourrait provenir d\'un manque de permissions sur le système de fichiers.';
 $lang['iconDelete_error']      = 'Erreur lors de la suppression de l\'icône. Ceci pourrait provenir d\'un manque de permissions sur le système de fichiers.';
+$lang['error:saving failed not writable'] = 'Échec lors de l\'application des changements. Le fichier de configuration est en lecture seule.';
+$lang['error:saving failed']   = 'Échec lors de l\'application des changements.';
+$lang['warning:not writable']  = 'Le fichier de configuration est en lecture seule. Les changements ne seront pas enregistrés.';

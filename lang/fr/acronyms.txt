@@ -2,4 +2,4 @@
 
 Note: Seuls les mots complets sont annotés. Un acronymes faisant partie d'un mot n'est pas reconnu comme tel. Ainsi, CMS est reconnu, mas pas myCMS.
 
-Pour de plus amples informations voir [[doku>fr::abbreviations|abréviations]].
+Pour de plus amples informations voir [[doku>fr:abbreviations|abréviations]].
