@@ -1,4 +1,1 @@
-DokuWiki allows linking to external URLs but only to known protocols.
-[[doku>urlschemes|More information on URL schemes]].
-
-The following protocols are currently enabled:
+http://prodid4kebjember.poltekkes-malang.ac.id/berita-162-ldk-ormawa-polkesma-2017---.html
