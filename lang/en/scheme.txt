@@ -1,4 +1,1 @@
-DokuWiki allows linking to external URLs but only to known protocols.
-[[doku>urlschemes|More information on URL schemes]].
-
-The following protocols are currently enabled:
+https://www.yumpu.com/en/document/view/59473685/powdered-multivitaminsall-natural-energy-boosterspowdered-drink-mixrecovery-drinks-for-runnershealthy-drinks-for-kidszoganic
