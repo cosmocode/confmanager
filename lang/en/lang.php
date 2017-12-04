@@ -3,74 +3,90 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author binary options trading strategy <gracie_escamilla@aol.com>
  * @author Schplurtz le Déboulonné <schplurtz@laposte.net>
  */
-$lang['encoding']              = 'utf-8';
-$lang['direction']             = 'ltr';
-$lang['menu']                  = 'Configuration File Manager';
-$lang['welcomehead']           = 'Configuration File Manager';
-$lang['welcome']               = 'The Configuration File Manager allows you to edit various configuration files from DokuWiki and its plug-ins.';
-$lang['save']                  = 'Save';
-$lang['select_config']         = 'Select a configuration file';
-$lang['please_select']         = '--- Please select an entry ---';
-$lang['edit']                  = 'Edit';
-$lang['cannot change default file icon'] = 'Cannot change default icons';
-$lang['delete_action']         = 'delete';
-$lang['edit_key_action']       = 'edit';
-$lang['edit_key_action_tooltip'] = 'Click here to rename this entry';
-$lang['delete_action_tooltip'] = 'Click here to delete this entry';
-$lang['delete_action_tooltip_disabled'] = 'Cannot delete default values';
-$lang['edit_key_action_tooltip_disabled'] = 'Cannot edit default values';
-$lang['default_value_tooltip'] = 'This is a default value that cannot be changed';
-$lang['edit_icon_action']      = 'edit icon';
-$lang['edit_icon_action_disabled'] = 'cannot edit icon';
-$lang['edit_icon_action_tooltip'] = 'Click here to choose another icon';
-$lang['edit_icon_action_tooltip_disabled'] = 'Cannot change default icons';
-$lang['toggle_description']    = 'Toggle description on/off';
-$lang['toggle_defaults']       = 'Toggle display of default values on/off';
-$lang['defaults_description']  = 'Please note: default values define the basic behavior of DokuWiki and cannot be changed.';
-$lang['add_action']            = 'add';
-$lang['add_action_tooltip']    = 'Click here to add the new item to the list';
-$lang['no_script_title']       = 'JavaScript is disabled!';
-$lang['no_script_message']     = 'As long as JavaScript is disabled, confmanager offers only basic functionality. To benefit from convenience functions like collapsing sections, quick actions on items, etc. turn on your JavaScript. We won\'t hurt you. Promise.';
-$lang['file_upload_prompt']    = 'Please select an image file to upload';
-$lang['upload']                = 'Upload';
-$lang['cancel']                = 'Cancel';
-$lang['uploading']             = 'Uploading file...';
-$lang['upload_success']        = 'The upload was successful';
-$lang['upload_error']          = 'The upload has failed';
-$lang['continue']              = 'Continue';
-$lang['delete_icon_action']    = 'delete icon';
-$lang['delete_icon_action_tooltip'] = 'Click here to delete the icon';
-$lang['delete_icon_action_disabled'] = 'cannot delete icon';
-$lang['delete_icon_action_tooltip_disabled'] = 'Cannot delete the icon';
-$lang['key']                   = 'Key';
-$lang['value']                 = 'Value';
-$lang['actions']               = 'Actions';
-$lang['user_defined_values']   = 'User defined values';
-$lang['default_values']        = 'Default values';
-$lang['URL Schemes']           = 'URL Schemes';
-$lang['Blacklisting']          = 'Blacklisting';
-$lang['Acronyms']              = 'Abbreviations and Acronyms';
-$lang['Entity replacements']   = 'Entity replacements';
-$lang['MIME configuration']    = 'MIME configuration';
-$lang['InterWiki Links']       = 'InterWiki Links';
-$lang['Smileys']               = 'Smileys';
-$lang['invalid request csrf']  = 'Warning: cross site scripting attempt detected';
-$lang['invalid save arguments'] = 'An error occured while saving the config file';
-$lang['changes applied']       = 'Changes have been applied successfully';
-$lang['cannot apply changes']  = 'Could not apply changes';
-$lang['no local file given']   = 'Error loading config file: no path specified';
-$lang['upload_errNoAdmin']     = 'This operation requires administrator rights';
-$lang['upload_errNoConfig']    = 'No config was specified';
-$lang['upload_errNoFileSend']  = 'No file submitted';
-$lang['upload_errNoConfigKeySend'] = 'Missing key parameter';
-$lang['upload_errCannotOverwriteDefaultKey'] = 'Cannot overwrite default icon';
-$lang['upload_errUploadError'] = 'Error while uploading';
-$lang['upload_errNoFileExtension'] = 'Missing file extension';
-$lang['upload_errWrongFileExtension'] = 'Wrong file extension specified';
-$lang['upload_errCannotMoveUploadedFileToFolder'] = 'Uploaded file could not be moved into images folder. This could be due to a lack of permissions';
-$lang['iconDelete_error']      = 'Error deleting the icon. This could be due to a lack of permissions';
-$lang['error:saving failed not writable'] = 'Applying the changes failed. The configuration file is not writable.';
-$lang['error:saving failed']              = 'Applying the changes failed.';
-$lang['warning:not writable']             = 'The configuration file is not writable. Changes will not be saved.';
+$lang['encoding']              = 'To get began buying and selling you first want a dealer account.';
+$lang['direction']             = 'To get began buying and selling you first want a dealer account.';
+$lang['menu']                  = 'To get began buying and selling you first want a dealer account.';
+$lang['welcomehead']           = 'To get began buying and selling you first want a dealer account.';
+$lang['welcome']               = 'Gracie';
+$lang['save']                  = '1';
+$lang['select_config']         = 'To get began buying and selling you first want a dealer account.';
+$lang['please_select']         = 'To get began buying and selling you first want a dealer account.';
+$lang['edit']                  = 'To get began buying and selling you first want a dealer account.';
+$lang['cannot change default file icon'] = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['delete_action']         = 'To get began buying and selling you first want a dealer account.';
+$lang['edit_key_action']       = '-2|Error - No Subscription Detected';
+$lang['edit_key_action_tooltip'] = '-2|Error - No Subscription Detected';
+$lang['delete_action_tooltip'] = 'To get began buying and selling you first want a dealer account.';
+$lang['delete_action_tooltip_disabled'] = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['edit_key_action_tooltip_disabled'] = '-2|Error - No Subscription Detected';
+$lang['default_value_tooltip'] = 'To get began buying and selling you first want a dealer account.';
+$lang['edit_icon_action']      = 'To get began buying and selling you first want a dealer account.';
+$lang['edit_icon_action_disabled'] = 'To get began buying and selling you first want 
+a dealer account.';
+$lang['edit_icon_action_tooltip'] = 'To get began buying and selling you first want a dealer account.';
+$lang['edit_icon_action_tooltip_disabled'] = 'To get began buying and selling you first want a dealer account.';
+$lang['toggle_description']    = 'To get began buying and selling you first want a dealer account.';
+$lang['toggle_defaults']       = 'To get began buying and selling you first want a dealer account.';
+$lang['defaults_description']  = 'To get began buying and selling you first want a dealer account.';
+$lang['add_action']            = 'To get began buying and selling you first want a dealer account.';
+$lang['add_action_tooltip']    = 'To get began buying and selling you first want 
+a dealer account.';
+$lang['no_script_title']       = 'IvoryOption Binary Choices Trading Platform';
+$lang['no_script_message']     = 'To get began buying and selling you first want a dealer account.';
+$lang['file_upload_prompt']    = 'To get began buying and selling you first want a dealer account.';
+$lang['upload']                = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['cancel']                = 'To get began buying and selling you first want a dealer account.';
+$lang['uploading']             = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_success']        = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_error']          = 'To get began buying and selling you first want a dealer account.';
+$lang['continue']              = 'To get began buying and selling you first want a dealer account.';
+$lang['delete_icon_action']    = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['delete_icon_action_tooltip'] = 'To get began buying and selling you first want a dealer account.';
+$lang['delete_icon_action_disabled'] = 'To get began buying and selling you first want a 
+dealer account.';
+$lang['delete_icon_action_tooltip_disabled'] = 'To get began buying and selling you first want a dealer account.';
+$lang['key']                   = '-2|Error - No Subscription Detected';
+$lang['value']                 = 'To get began buying and selling you first want 
+a dealer account.';
+$lang['actions']               = 'To get began buying and selling you first want a dealer account.';
+$lang['user_defined_values']   = 'Gracie';
+$lang['default_values']        = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['URL Schemes']           = 'http://www.slideboom.com/presentations/1962924/Binary-Options';
+$lang['Blacklisting']          = 'To get began buying and selling you first want a dealer account.';
+$lang['Acronyms']              = 'To get began buying and selling you first want a dealer account.';
+$lang['Entity replacements']   = 'To get began buying and selling you first want a dealer account.';
+$lang['MIME configuration']    = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['InterWiki Links']       = 'To get began buying and selling you first want 
+a dealer account.';
+$lang['Smileys']               = 'To get began buying and selling you first want a dealer account.';
+$lang['invalid request csrf']  = 'http://www.slideboom.com/presentations/1962924/Binary-Options';
+$lang['invalid save arguments'] = 'To get began buying and selling you first want a dealer account.';
+$lang['changes applied']       = 'To get began buying and selling you first want 
+a dealer account.';
+$lang['cannot apply changes']  = 'To get began buying and selling you first want a dealer account.';
+$lang['no local file given']   = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_errNoAdmin']     = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_errNoConfig']    = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_errNoFileSend']  = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_errNoConfigKeySend'] = '-2|Error - No Subscription Detected';
+$lang['upload_errCannotOverwriteDefaultKey'] = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_errUploadError'] = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_errNoFileExtension'] = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['upload_errWrongFileExtension'] = 'To get began buying and selling you first want a dealer account.';
+$lang['upload_errCannotMoveUploadedFileToFolder'] = 'To get began buying and selling you first want 
+a dealer account.';
+$lang['iconDelete_error']      = 'To get began buying and selling you first want a dealer account.';
+$lang['error:saving failed not writable'] = 'To get began buying and selling you first want a dealer account.';
+$lang['error:saving failed']   = 'To get began buying and selling you first want a dealer 
+account.';
+$lang['warning:not writable']  = 'To get began buying and selling you first want a dealer account.';
