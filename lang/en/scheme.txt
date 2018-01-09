@@ -1,4 +1,1 @@
-DokuWiki allows linking to external URLs but only to known protocols.
-[[doku>urlschemes|More information on URL schemes]].
-
-The following protocols are currently enabled:
+https://www.slideshare.net/smartfonbgcom/how-to-get-fit-at-home-with-eco-slim
