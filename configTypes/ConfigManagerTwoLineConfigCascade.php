@@ -82,7 +82,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
     /**
      * @param $config
      */
-    private function saveToFile($config) {
+    protected function saveToFile($config) {
         global $config_cascade;
         if (!isset($config_cascade[$this->internalName]['local'])
             || count($config_cascade[$this->internalName]['local']) === 0) {

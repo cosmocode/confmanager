@@ -1,7 +1,7 @@
 <?php $helper = plugin_load('helper', 'confmanager'); ?>
 <div class="table">
 	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
-	<table class="inline confmanager_twoLineLeftImage">
+	<table class="inline confmanager_twoLine<?php echo ucfirst($this->imageAlignment) ?>Image">
 		<tr>
             <th><?php echo $helper->getLang('key') ?></th>
             <th><?php echo $helper->getLang('value') ?></th>
@@ -11,12 +11,15 @@
         <?php $image = $this->getImage($key); ?>
         <tr>
                 <td>
-                	<?php if ($image !== ''): ?>
+                	<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
                 		<img src="<?php echo hsc($image) ?>" alt="" />
                 	<?php endif ?>
                 	<input name="keys[]" value="<?php echo hsc($key) ?>" />
                 </td>
                 <td>
+                    <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
+                        <img src="<?php echo hsc($image) ?>" alt="" />
+                    <?php endif ?>
                     <input
                         type="text"
                         name="values[]"
@@ -27,7 +30,7 @@
                 <td>
                 <?php $isDefault = array_key_exists($key, $default) ?>
                     <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
-                    
+
                     <?php if($isDefault) : ?>
 	                    <img class="upload_image_button"
 							src="<?php echo DOKU_PLUGIN_ICONS.'picture_edit_disabled.png' ?>"
@@ -39,8 +42,8 @@
 							alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
 							title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip')) ?>" />
                     <?php endif ?>
-					
-                        	 
+
+
 					<?php if($image !== '' && !$isDefault) : ?>
 						<img class="delete_image_button clickable"
                        		src="<?php echo DOKU_PLUGIN_ICONS.'picture_delete.png' ?>"
@@ -92,7 +95,7 @@
 	            <tr>
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
-	                		<?php if ($image !== ''): ?>
+	                		<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
 	                            <img src="<?php echo hsc($image) ?>" alt="" />
 	                        <?php endif ?>
 	                        <?php echo hsc($key) ?>
@@ -100,7 +103,10 @@
 	                </td>
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
-	                        <?php echo hsc($value) ?>
+	                        <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
+	                            <img src="<?php echo hsc($image) ?>" alt="" />
+	                        <?php endif ?>
+                            <?php echo hsc($value) ?>
 	                    </div>
 	                </td>
 	                <td class="default_value">
