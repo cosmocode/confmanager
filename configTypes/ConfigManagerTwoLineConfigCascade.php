@@ -70,7 +70,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
 
             $key = $this->prepareEntity($key);
             $value = $this->prepareEntity($value);
-            if ($key === '' || $value === '') {
+            if ($key === '') {
                 continue;
             }
             $save[$key] = $value;
