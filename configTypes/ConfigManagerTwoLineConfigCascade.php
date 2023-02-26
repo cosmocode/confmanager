@@ -32,7 +32,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         $keys = $INPUT->arr('keys');
         $values = $INPUT->arr('values');
         if (count($keys) !== count($values)) {
-            msg('invalid save arguments', -1);
+            msg($this->helper->getLang('invalid save arguments'), -1);
         }
 
         if (empty($keys)) {

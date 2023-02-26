@@ -86,7 +86,7 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
         $newValue = $INPUT->arr('newValue');
 
         if (count($keys) !== count($values) || count($newKey) !== count($newValue)) {
-            msg('invalid save arguments', -1);
+            msg($this->helper->getLang('invalid save arguments'), -1);
             return;
         }
 
