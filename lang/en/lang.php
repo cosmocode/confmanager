@@ -5,8 +5,8 @@
  *
  * @author Schplurtz le Déboulonné <schplurtz@laposte.net>
  */
-$lang['encoding']              = 'utf-8';
-$lang['direction']             = 'ltr';
+//$lang['encoding']              = 'utf-8';
+//$lang['direction']             = 'ltr';
 $lang['menu']                  = 'Configuration File Manager';
 $lang['welcomehead']           = 'Configuration File Manager';
 $lang['welcome']               = 'The Configuration File Manager allows you to edit various configuration files from DokuWiki and its plug-ins.';
@@ -14,13 +14,13 @@ $lang['save']                  = 'Save';
 $lang['select_config']         = 'Select a configuration file';
 $lang['please_select']         = '--- Please select an entry ---';
 $lang['edit']                  = 'Edit';
-$lang['cannot change default file icon'] = 'Cannot change default icons';
+//$lang['cannot change default file icon'] = 'Cannot change default icons';
 $lang['delete_action']         = 'delete';
-$lang['edit_key_action']       = 'edit';
-$lang['edit_key_action_tooltip'] = 'Click here to rename this entry';
 $lang['delete_action_tooltip'] = 'Click here to delete this entry';
-$lang['delete_action_tooltip_disabled'] = 'Cannot delete default values';
-$lang['edit_key_action_tooltip_disabled'] = 'Cannot edit default values';
+//$lang['delete_action_tooltip_disabled'] = 'Cannot delete default values';
+//$lang['edit_key_action']       = 'edit';
+//$lang['edit_key_action_tooltip'] = 'Click here to rename this entry';
+//$lang['edit_key_action_tooltip_disabled'] = 'Cannot edit default values';
 $lang['disable_action']        = 'disable';
 $lang['disable_action_tooltip'] = 'Click here to disable this entry';
 $lang['disable_action_tooltip_disabled'] = 'The default value is already disabled by a user defined value.';
@@ -36,8 +36,8 @@ $lang['modifiesdefault']       = 'Overrides a default value.';
 $lang['toggle_description']    = 'Toggle description on/off';
 $lang['toggle_defaults']       = 'Toggle display of default values on/off';
 $lang['defaults_description']  = 'Please note: default values define the basic behavior of DokuWiki and cannot be changed.';
-$lang['add_action']            = 'add';
-$lang['add_action_tooltip']    = 'Click here to add the new item to the list';
+//$lang['add_action']            = 'add';
+//$lang['add_action_tooltip']    = 'Click here to add the new item to the list';
 $lang['no_script_title']       = 'JavaScript is disabled!';
 $lang['no_script_message']     = 'As long as JavaScript is disabled, confmanager offers only basic functionality. To benefit from convenience functions like collapsing sections, quick actions on items, etc. turn on your JavaScript. We won\'t hurt you. Promise.';
 $lang['file_upload_prompt']    = 'Please select an image file to upload';
