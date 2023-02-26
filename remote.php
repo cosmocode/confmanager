@@ -1,5 +1,7 @@
 <?php
 
+use dokuwiki\Remote\AccessDeniedException;
+
 /**
  * Class remote_plugin_confmanager
  */
@@ -35,7 +37,7 @@ class remote_plugin_confmanager extends DokuWiki_Remote_Plugin {
 
     /**
      * @return mixed
-     * @throws RemoteAccessDeniedException
+     * @throws AccessDeniedException
      */
     public function getConfigs() {
         $this->ensureAdmin();
@@ -43,9 +45,12 @@ class remote_plugin_confmanager extends DokuWiki_Remote_Plugin {
         return $this->getApi()->toDate(time());
     }
 
+    /**
+     * @throws AccessDeniedException
+     */
     private function ensureAdmin() {
         if (!auth_isadmin()) {
-            throw new RemoteAccessDeniedException();
+            throw new AccessDeniedException();
         }
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use dokuwiki\Extension\Event;
 
 /**
  * Class helper_plugin_confmanager
@@ -14,8 +15,8 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
     public function getConfigFiles() {
         static $configs = null;
         if ($configs === null) {
-            trigger_event('CONFMANAGER_CONFIGFILES_REGISTER', $configs, null, false);
             $configs = [];
+            Event::createAndTrigger('CONFMANAGER_CONFIGFILES_REGISTER', $configs, null, false);
             usort($configs, [$this, '_sortByConfigName']);
         }
         return $configs;
