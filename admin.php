@@ -35,7 +35,8 @@ class admin_plugin_confmanager extends DokuWiki_Admin_Plugin {
     }
 
     private function determineAction() {
-        if (!isset($_REQUEST['configFile'])) {
+        global $INPUT;
+        if (!$INPUT->has('configFile')) {
             $this->adminAction = new ConfigManagerAdminOverview();
             return;
         }

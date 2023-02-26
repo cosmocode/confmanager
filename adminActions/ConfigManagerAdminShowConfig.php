@@ -38,7 +38,7 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
             send_redirect(wl($ID, $params, false, '&'));
         }
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (strtolower($INPUT->server->str('REQUEST_METHOD')) == 'post') {
             if (!checkSecurityToken()) {
                 msg($this->helper->getLang('invalid request csrf'), -1);
             }
