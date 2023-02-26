@@ -166,9 +166,11 @@ jQuery(document).ready(function(){
 		jQuery('.popup').css('cursor', 'default');
 	};
 
-	var onError = function() {
+	var onError = function(context) {
+
 		jQuery('#popup_show_progress').hide();
 		jQuery('#popup_error').show();
+        jQuery('<p>'+context.responseText+'</p>').insertAfter('#popup_error h3');
 		jQuery('.popup').css('cursor', 'default');
 	};
 
