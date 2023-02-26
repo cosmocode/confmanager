@@ -25,12 +25,12 @@ class remote_plugin_confmanager extends DokuWiki_Remote_Plugin {
      * @return array Information about all provided methods.
      */
     public function _getMethods() {
-        return array(
-            'getConfigs' => array(
-                'args' => array(),
+        return [
+            'getConfigs' => [
+                'args' => [],
                 'return' => 'array'
-            )
-        );
+            ]
+        ];
     }
 
     /**

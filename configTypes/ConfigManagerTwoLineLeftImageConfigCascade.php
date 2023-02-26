@@ -31,7 +31,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
         $local = $configs['local'];
         $configs = array_merge($default, $local);
 
-        uksort($configs, array($this->helper, '_sortHuman'));
+        uksort($configs, [$this->helper, '_sortHuman']);
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLineLeftImage.php';
     }
 

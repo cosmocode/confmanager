@@ -10,7 +10,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
      * Load file
      *
      * @param string $fileName
-     * @return mixed
+     * @return array
      */
     protected function loadFile($fileName) {
         return confToHash($fileName);
@@ -22,7 +22,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         $local = $configs['local'];
         $configs = array_merge($default, $local);
 
-        uksort($configs, array($this->helper, '_sortHuman'));
+        uksort($configs, [$this->helper, '_sortHuman']);
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLine.php';
     }
 
@@ -36,7 +36,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         }
 
         if (empty($keys)) {
-            $lines = array();
+            $lines = [];
         } else {
             $lines = array_combine($keys, $values);
         }
@@ -59,7 +59,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
      * @return array
      */
     private function getCustomEntries($input, $default) {
-        $save = array();
+        $save = [];
         foreach ($input as $key => $value) {
 
             if (array_key_exists($key, $default)) {
@@ -101,7 +101,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
             return;
         }
 
-        uksort($config, array($this->helper, '_sortConf'));
+        uksort($config, [$this->helper, '_sortConf']);
         $content = $this->helper->getCoreConfigHeader();
         foreach ($config as $key => $value) {
             $content .= "$key\t$value\n";
@@ -120,7 +120,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         $newKey = $INPUT->arr('newKey');
         $newValue = $INPUT->arr('newValue');
         if (count($newKey) !== count($newValue)) {
-            return array();
+            return [];
         }
 
         return array_combine($newKey, $newValue);

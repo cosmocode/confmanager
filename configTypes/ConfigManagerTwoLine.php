@@ -52,7 +52,7 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
      * @return array
      */
     function getPaths() {
-        return array($this->configFile);
+        return [$this->configFile];
     }
 
     /**
@@ -64,9 +64,9 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
      */
     function display() {
         $local = confToHash($this->configFile);
-        $default = array();
+        $default = [];
         $configs = $local;
-        uksort($configs, array($this->helper, '_sortHuman'));
+        uksort($configs, [$this->helper, '_sortHuman']);
         if(!is_writable($this->configFile)) msg($this->helper->getLang('warning:not writable'),-1);
 
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLine.php';
@@ -90,7 +90,7 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
             return;
         }
 
-        $lines = array();
+        $lines = [];
         if (!empty($keys)) {
             $lines = array_combine($keys, $values);
         }
@@ -98,7 +98,7 @@ class ConfigManagerTwoLine implements ConfigManagerConfigType {
             $lines = array_merge($lines, array_combine($newKey, $newValue));
         }
 
-        uksort($lines, array($this->helper, '_sortConf'));
+        uksort($lines, [$this->helper, '_sortConf']);
 
         $content = '';
         foreach ($lines as $key => $value) {
