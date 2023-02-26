@@ -105,6 +105,20 @@ jQuery(document).ready(function() {
 		submitForm('configForm');
 	});
 
+    //default value cannot be deleted, but disabled in local config
+    jQuery('.disableButton').on('click', function(nr) {
+        let $row = jQuery(this).parent().parent();
+        let defaultKey = $row.find('.default_key').text();
+
+        let $newItems = jQuery('.newItem');
+        $newItems.first().each(function(){
+            //single value entries negate with !, key-value entries with empty value
+            let prefix = $newItems.length === 1 ? '!' : '';
+            jQuery(this).val(prefix + defaultKey);
+        });
+        submitForm('configForm');
+    });
+
 	jQuery('#confmanager__config__files').on('change', function(){
 		submitForm('select_config_form');
 	});

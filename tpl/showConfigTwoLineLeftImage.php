@@ -9,12 +9,17 @@
         </tr>
         <?php foreach($local as $key => $value):?>
         <?php $image = $this->getImage('local', $key); ?>
+        <?php $isDefault = array_key_exists($key, $default) ?>
         <tr>
                 <td>
                 	<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
                 		<img src="<?php echo hsc($image) ?>" alt="" />
                 	<?php endif ?>
-                	<input name="keys[]" value="<?php echo hsc($key) ?>" />
+                	<input
+                        name="keys[]"
+                        value="<?php echo hsc($key) ?>"
+                        class="key"
+                    />
                 </td>
                 <td>
                     <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
@@ -24,11 +29,20 @@
                         type="text"
                         name="values[]"
                         value="<?php echo hsc($value) ?>"
-                        class="edit"
+                        class="edit value"
                         />
+                    <?php if($isDefault): ?>
+                        <br>
+                        <span class="overriddenValue">
+                            <?php if($local[$key] === ''): ?>
+                                <?php echo $helper->getLang('disablesdefault') ?>
+                            <?php else : ?>
+                                <?php echo $helper->getLang('modifiesdefault') ?>
+                            <?php endif ?>
+                        </span>
+                    <?php endif ?>
                 </td>
                 <td>
-                <?php $isDefault = array_key_exists($key, $default) ?>
                     <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
 
                     <?php if($isDefault) : ?>
@@ -59,10 +73,10 @@
         <?php endforeach ?>
         <tr>
             <td>
-                <input class="newItem" type="text" name="newKey[]">
+                <input class="newItem key" type="text" name="newKey[]">
             </td>
             <td>
-                <input class="newItem submitOnTab" type="text" name="newValue[]" />
+                <input class="newItem value submitOnTab" type="text" name="newValue[]" />
             </td>
             <td/>
         </tr>
@@ -86,19 +100,15 @@
 	            <th><?php echo $helper->getLang('actions') ?></th>
 	        </tr>
 	        <?php foreach ($default as $key => $value): ?>
-	        	<?php
-	        		if(array_key_exists($key, $local)) {
-	        			continue;
-	        		}
-	        	?>
-	            <tr>
+	        	<?php $isOverridden = array_key_exists($key, $local) ?>
 	            <?php $image = $this->getImage('default', $key); ?>
+	            <tr<?php if($isOverridden): ?> class="overridden"<?php endif ?>>
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
 	                		<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
 	                            <img src="<?php echo hsc($image) ?>" alt="" />
 	                        <?php endif ?>
-	                        <?php echo hsc($key) ?>
+                            <span class="default_key"><?php echo hsc($key) ?></span>
 	                	</div>
 	                </td>
 	                <td>
@@ -106,16 +116,25 @@
 	                        <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
 	                            <img src="<?php echo hsc($image) ?>" alt="" />
 	                        <?php endif ?>
-                            <?php echo hsc($value) ?>
+                            <span class="default_value"><?php echo hsc($value) ?></span>
+                            <?php if($isOverridden): ?>
+                                <br>
+                                <span class="overriddenValue">
+                                    <?php if($local[$key] === ''): ?>
+                                        <?php echo $helper->getLang('disabledbylocal') ?>
+                                    <?php else : ?>
+                                        <?php echo $helper->getLang('modifiedbylocal') ?>
+                                    <?php endif ?>
+                                </span>
+                            <?php endif ?>
 	                    </div>
 	                </td>
-	                <td class="default_value">
-	                       <img src="<?php echo DOKU_PLUGIN_ICONS?>delete_disabled.png"
-	                        	alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-	                        	title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
-	                       <img src="<?php echo DOKU_PLUGIN_ICONS.'picture_edit_disabled.png' ?>"
-	                        	alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
-	                        	title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip_disabled')) ?>" />
+	                <td class="defaultValue">
+                        <?php include DOKU_PLUGIN . 'confmanager/tpl/disableButton.php' ?>
+
+                        <img src="<?php echo DOKU_PLUGIN_ICONS.'picture_edit_disabled.png' ?>"
+                            alt="<?php echo hsc($helper->getLang('edit_icon_action')) ?>"
+                            title="<?php echo hsc($helper->getLang('edit_icon_action_tooltip_disabled')) ?>" />
 	                </td>
 	            </tr>
 	        <?php endforeach ?>

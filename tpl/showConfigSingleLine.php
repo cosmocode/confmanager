@@ -9,20 +9,24 @@
         <?php $lineCounter = 0; ?>
         <?php foreach ($local as $config): ?>
             <?php
-            $defaultValue = false;
-            if (in_array($config, $default)) {
-                $defaultValue = true;
-            }
+            $isDefault = substr($config,0,1) == DOKU_CONF_NEGATION
+                        && in_array(trim(substr($config,1)), $default)
             ?>
             <tr>
                 <td>
-                <input
-                		id="value<?php echo $lineCounter ?>"
-                        type="text"
-                        name="line[]"
-                        value="<?php echo hsc($config) ?>"
-                        class="<?php echo $class ?>"
- 				/>
+                    <input
+                            id="value<?php echo $lineCounter ?>"
+                            type="text"
+                            name="line[]"
+                            value="<?php echo hsc($config) ?>"
+                            class="value"
+                    />
+                    <?php if($isDefault): ?>
+                        <br>
+                        <span class="overriddenValue">
+                            <?php echo $helper->getLang('disablesdefault') ?>
+                        </span>
+                    <?php endif ?>
                 </td>
                 <td>
                     <?php include DOKU_PLUGIN . 'confmanager/tpl/deleteButton.php' ?>
@@ -32,7 +36,7 @@
         <?php endforeach ?>
         <tr>
             <td>
-                <input type="text" name="line[]" class="newItem submitOnTab" />
+                <input type="text" name="line[]" class="newItem value submitOnTab" />
             </td>
             <td/>
         </tr>
@@ -54,16 +58,22 @@
 	            <th><?php echo $helper->getLang('actions') ?></th>
 			</tr>
 			<?php foreach($default as $item): ?>
-				<tr>
+                <?php $isOverridden = in_array('!' . $item, $local) ?>
+
+                <tr<?php if($isOverridden): ?> class="overridden"<?php endif ?>>
 					<td>
 						<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
-	                    <?php echo hsc($item) ?>
+                            <span class="default_key"><?php echo hsc($item) ?></span>
 	                    </div>
+                        <?php if($isOverridden): ?>
+                            <br>
+                            <span class="overriddenValue">
+                                <?php echo $helper->getLang('disabledbylocal') ?>
+                            </span>
+                        <?php endif ?>
 					</td>
 					<td>
-						<img src="<?php echo DOKU_PLUGIN_ICONS.'delete_disabled.png' ?>"
-	                        alt="<?php echo hsc($helper->getLang('delete_action')) ?>"
-	                        title="<?php echo hsc($helper->getLang('delete_action_tooltip_disabled')) ?>" />
+                        <?php include DOKU_PLUGIN . 'confmanager/tpl/disableButton.php' ?>
 	                </td>
 				</tr>
 			<?php endforeach ?>
