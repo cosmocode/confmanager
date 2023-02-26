@@ -38,10 +38,11 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
     /**
      * Returns path to image file
      *
+     * @param string $configtype 'local' or 'default'
      * @param string $key
      * @return string
      */
-    protected function getImagePath($key) {
+    protected function getImagePath($configtype, $key) {
         foreach($this->extension as $ext){
             $path = $this->imageFolder . "$key." . $ext;
              if (is_file(DOKU_INC . $path)) {
@@ -54,11 +55,12 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
     /**
      * Returns url to image file
      *
+     * @param string $configtype 'local' or 'default'
      * @param string $key
      * @return string
      */
-    protected function getImage($key) {
-        $path = $this->getImagePath($key);
+    protected function getImage($configtype, $key) {
+        $path = $this->getImagePath($configtype, $key);
         if($path) {
             return DOKU_BASE . $path;
         }
@@ -185,7 +187,7 @@ class ConfigManagerTwoLineLeftImageConfigCascade extends ConfigManagerTwoLineCas
             return false;
         }
 
-        $path = $this->getImagePath($key);
+        $path = $this->getImagePath('local', $key);
         if (!@unlink(DOKU_INC . $path)) {
             echo $this->helper->getLang('iconDelete_error');
             return false;

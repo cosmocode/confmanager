@@ -8,7 +8,7 @@
             <th><?php echo $helper->getLang('actions') ?></th>
         </tr>
         <?php foreach($local as $key => $value):?>
-        <?php $image = $this->getImage($key); ?>
+        <?php $image = $this->getImage('local', $key); ?>
         <tr>
                 <td>
                 	<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
@@ -91,8 +91,8 @@
 	        			continue;
 	        		}
 	        	?>
-	            <?php $image = $this->getImage($key); ?>
 	            <tr>
+	            <?php $image = $this->getImage('default', $key); ?>
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
 	                		<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
