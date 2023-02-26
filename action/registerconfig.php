@@ -56,17 +56,17 @@ class action_plugin_confmanager_registerconfig extends DokuWiki_Action_Plugin {
         $entities->setDescription($this->getDescription('entities'));
         $event->data[] = $entities;
 
-        $mime = new ConfigManagerTwoLineLeftImageConfigCascade('mime', 'lib/images/fileicons/', 'png');
+        $mime = new ConfigManagerTwoLineLeftImageConfigCascade('mime', 'lib/images/fileicons/svg/', 'svg');
         $mime->setName($this->getLang('MIME configuration'));
         $mime->setDescription($this->getDescription('mime'));
         $event->data[] = $mime;
 
-        $interWiki = new ConfigManagerTwoLineLeftImageConfigCascade('interwiki', 'lib/images/interwiki', 'gif,png');
+        $interWiki = new ConfigManagerTwoLineLeftImageConfigCascade('interwiki', 'lib/images/interwiki/', 'svg,gif,png');
         $interWiki->setName($this->getLang('InterWiki Links'));
         $interWiki->setDescription($this->getDescription('interwiki'));
         $event->data[] = $interWiki;
 
-        $smileys = new ConfigManagerTwoLineRightImageConfigCascade('smileys', 'lib/images/smileys/', 'png,jpg,gif');
+        $smileys = new ConfigManagerTwoLineRightImageConfigCascade('smileys', 'lib/images/smileys/', 'svg,png,jpg,gif');
         $smileys->setName($this->getLang('Smileys'));
         $smileys->setDescription($this->getDescription('smileys'));
         $event->data[] = $smileys;
