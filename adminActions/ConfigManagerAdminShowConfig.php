@@ -31,14 +31,14 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
         $this->configId = $INPUT->str('configFile');
         $this->config = $this->helper->getConfigById($this->configId);
         if ($this->config === false) {
-            $params = array(
+            $params = [
                 'do' => 'admin',
                 'page' => 'confmanager'
-            );
+            ];
             send_redirect(wl($ID, $params, false, '&'));
         }
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (strtolower($INPUT->server->str('REQUEST_METHOD')) == 'post') {
             if (!checkSecurityToken()) {
                 msg($this->helper->getLang('invalid request csrf'), -1);
             }
@@ -46,11 +46,11 @@ class ConfigManagerAdminShowConfig implements ConfigManagerAdminAction {
             $this->config->save();
             @touch(DOKU_INC . 'conf/local.php');
 
-            $params = array(
+            $params = [
                 'do' => 'admin',
                 'page' => 'confmanager',
                 'configFile' => $this->configId
-            );
+            ];
             send_redirect(wl($ID, $params, false, '&'));
         }
         $JSINFO['configId'] = $this->configId;

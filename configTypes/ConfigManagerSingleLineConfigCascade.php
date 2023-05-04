@@ -14,14 +14,13 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
      */
     protected  function loadFile($fileName) {
         if (@!file_exists($fileName)) {
-            return array();
+            return [];
         }
         $config = file($fileName);
         $config = array_map('trim', $config);
         $config = preg_replace('/^#.*/', '', $config);
         $config = str_replace('\\#', '#', $config);
-        $config = array_filter($config);
-        return $config;
+        return array_filter($config);
     }
 
     public function display() {
@@ -30,7 +29,7 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
         $local = $configs['local'];
         $configs = array_merge($default, $local);
 
-        usort($configs, array($this->helper, '_sortHuman'));
+        usort($configs, [$this->helper, '_sortHuman']);
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigSingleLine.php';
     }
 
@@ -51,7 +50,7 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
      * @return array
      */
     private function getCustomEntries($input, $default) {
-        $save = array();
+        $save = [];
         foreach ($input as $line) {
             if (in_array($line, $default)) {
                 continue;
@@ -91,7 +90,7 @@ class ConfigManagerSingleLineCoreConfig extends ConfigManagerAbstractCascadeConf
             return;
         }
 
-        uksort($config, array($this->helper, '_sortConf'));
+        uksort($config, [$this->helper, '_sortConf']);
         $content = $this->helper->getCoreConfigHeader();
         foreach ($config as $item) {
             $content .= "$item\n";

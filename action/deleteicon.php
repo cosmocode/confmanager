@@ -16,7 +16,7 @@ class action_plugin_confmanager_deleteicon extends DokuWiki_Action_Plugin {
      * @param Doku_Event_Handler $controller
      */
     public function register(Doku_Event_Handler $controller) {
-        $controller->register_hook('AJAX_CALL_UNKNOWN', 'BEFORE',  $this, 'upload', array());
+        $controller->register_hook('AJAX_CALL_UNKNOWN', 'BEFORE',  $this, 'upload', []);
         $this->helper = plugin_load('helper', 'confmanager');
     }
 

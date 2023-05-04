@@ -38,10 +38,10 @@ abstract class ConfigManagerAbstractCascadeConfig implements ConfigManagerConfig
      */
     protected function readConfig() {
         global $config_cascade;
-        $config = array();
+        $config = [];
 
-        foreach (array('default', 'local', 'protected') as $type) {
-            $config[$type] = array();
+        foreach (['default', 'local', 'protected'] as $type) {
+            $config[$type] = [];
 
             if (!isset($config_cascade[$this->internalName][$type])) {
                 continue;

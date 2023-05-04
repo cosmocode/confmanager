@@ -1,5 +1,7 @@
 <?php
 
+use dokuwiki\Extension\Event;
+
 /**
  * Class helper_plugin_confmanager
  */
@@ -13,9 +15,9 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
     public function getConfigFiles() {
         static $configs = null;
         if ($configs === null) {
-            $configs = array();
-            trigger_event('CONFMANAGER_CONFIGFILES_REGISTER', $configs, null, false);
-            usort($configs, array($this, '_sortByConfigName'));
+            $configs = [];
+            Event::createAndTrigger('CONFMANAGER_CONFIGFILES_REGISTER', $configs, null, false);
+            usort($configs, [$this, '_sortByConfigName']);
         }
         return $configs;
     }
@@ -24,7 +26,7 @@ class helper_plugin_confmanager extends DokuWiki_Plugin {
      * Get a specific config manager
      *
      * @param string $id Config ID
-     * @return ConfigManagerConfigType
+     * @return ConfigManagerConfigType|false
      */
     public function getConfigById($id) {
         foreach ($this->getConfigFiles() as $config) {

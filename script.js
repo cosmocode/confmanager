@@ -10,19 +10,19 @@ jQuery(document).ready(function() {
 	var expand_icon = ICON_BASE_URL+'expand.png';
 
 	var readCookie = function(cookieKey) {
-		var ARRcookies=document.cookie.split(";");
-		for (var i=0;i<ARRcookies.length;i++) {
-			var key = ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-			var value = ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+		let ARRcookies=document.cookie.split(";");
+		for (let i=0;i<ARRcookies.length;i++) {
+			let key = ARRcookies[i].substring(0,ARRcookies[i].indexOf("=")+1);
+			let value = ARRcookies[i].substring(ARRcookies[i].indexOf("=")+1);
 			key = key.replace(/^\s+|\s+$/g,"");
-			if (key == cookieKey) {
+			if (key === cookieKey) {
 				return decodeURIComponent(value);
 			}
 		}
 	};
 
 	var setCookie = function(key, value) {
-		var expirationDate = new Date();
+		let expirationDate = new Date();
 		expirationDate.setDate(expirationDate.getDate()+365);
 		document.cookie = encodeURIComponent(key) + '=' + encodeURIComponent(value) + '; expires=' + expirationDate.toUTCString();
 	};
@@ -32,11 +32,11 @@ jQuery(document).ready(function() {
 	 * returns false if cookie is undefined and defaultValue not specified
 	 */
 	var getBooleanFromCookie = function(key, defaultValue) {
-		var cookie = readCookie(key);
-		if(cookie == null || cookie == undefined) {
-			return defaultValue == undefined ? false : defaultValue;
+        let cookie = readCookie(key);
+        if(cookie === null || cookie === undefined) {
+			return defaultValue === undefined ? false : defaultValue;
 		}
-		return cookie == 'true';
+		return cookie === 'true';
 	};
 
 	var setDescriptionVisible = function(show) {
@@ -65,14 +65,14 @@ jQuery(document).ready(function() {
 	setDescriptionVisible(showDescription);
 	setDefaultsVisible(showDefaults);
 
-	jQuery('#toggleDescription').click(function() {
+	jQuery('#toggleDescription').on('click', function() {
 		showDescription = !showDescription;
 		setDescriptionVisible(showDescription);
 		setCookie(COOKIE_DESCRIPTION_NAME, showDescription);
 		return false;
 	});
 
-	jQuery('#toggleDefaults').click(function() {
+	jQuery('#toggleDefaults').on('click', function() {
 		showDefaults = !showDefaults;
 		setDefaultsVisible(showDefaults);
 		setCookie(COOKIE_DEFAULTS_NAME, showDefaults);
@@ -83,10 +83,10 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
 
 	var isInputValid = function() {
-		var result = true;
+        let result = true;
 		jQuery('.newItem').each(function(){
-			var inputString = jQuery(this).val();
-			if(inputString == null || inputString == '') {
+			let inputString = jQuery(this).val();
+			if(inputString == null || inputString === '') {
 				result = false;
 			}
 		});
@@ -97,7 +97,7 @@ jQuery(document).ready(function() {
 		document.forms[id].submit();
 	};
 
-	jQuery('.deleteButton').click(function(nr) {
+	jQuery('.deleteButton').on('click', function(nr) {
 		jQuery(this).parent().parent().remove();
 		jQuery('.newItem').each(function(){
 			jQuery(this).val('');
@@ -105,12 +105,26 @@ jQuery(document).ready(function() {
 		submitForm('configForm');
 	});
 
-	jQuery('#confmanager__config__files').change(function(){
+    //default value cannot be deleted, but disabled in local config
+    jQuery('.disableButton').on('click', function(nr) {
+        let $row = jQuery(this).parent().parent();
+        let defaultKey = $row.find('.default_key').text();
+
+        let $newItems = jQuery('.newItem');
+        $newItems.first().each(function(){
+            //single value entries negate with !, key-value entries with empty value
+            let prefix = $newItems.length === 1 ? '!' : '';
+            jQuery(this).val(prefix + defaultKey);
+        });
+        submitForm('configForm');
+    });
+
+	jQuery('#confmanager__config__files').on('change', function(){
 		submitForm('select_config_form');
 	});
 
-	jQuery('.submitOnTab').keydown(function(event){
-		if(event.which != 9) {
+	jQuery('.submitOnTab').on('keydown', function(event){
+		if(event.which !== 9) {
 			return true;
 		}
 		if(!isInputValid()) {
@@ -129,15 +143,15 @@ jQuery(document).ready(function(){
 	var popupVisible = false;
 
 	var getEntryKey = function(element) {
-		var parent = jQuery(element).parent().parent().children().first();
-		var input = jQuery(parent).children('input').first();
-		var value = jQuery(input).attr('value');
+        let parent = jQuery(element).parent().parent().children().first();
+        let input = jQuery(parent).children('input').first();
+        let value = jQuery(input).attr('value');
 		return value;
 	};
     var getEntryValue = function(element) {
-        var parent = jQuery(element).parent().parent().children().first().next();
-        var input = jQuery(parent).children('input').first();
-        var value = jQuery(input).attr('value');
+        let parent = jQuery(element).parent().parent().children().first().next();
+        let input = jQuery(parent).children('input').first();
+        let value = jQuery(input).attr('value');
         return value;
     };
 
@@ -150,8 +164,8 @@ jQuery(document).ready(function(){
 	};
 
 	var validate = function() {
-		var file = jQuery('#file_upload_input').val();
-		if(file == '' || file == null || file == undefined) {
+		let file = jQuery('#file_upload_input').val();
+		if(file === '' || file === null || file === undefined) {
 			return false;
 		}
 		jQuery('#popup_select_file').hide();
@@ -166,26 +180,29 @@ jQuery(document).ready(function(){
 		jQuery('.popup').css('cursor', 'default');
 	};
 
-	var onError = function() {
+	var onError = function(context) {
+
 		jQuery('#popup_show_progress').hide();
 		jQuery('#popup_error').show();
+        jQuery('<p>'+context.responseText+'</p>').insertAfter('#popup_error h3');
 		jQuery('.popup').css('cursor', 'default');
 	};
 
 	var showPopup = function() {
-		var width = jQuery('.popup').width();
-		var height = jQuery('.popup').height();
-		jQuery('.popup').css('left', jQuery(window).width() / 2 - width / 2);
-		jQuery('.popup').css('top', jQuery(window).height() / 2 - height / 2);
-		jQuery('.popup').show();
+        let $popup = jQuery('.popup');
+		let width = $popup.width();
+		let height = $popup.height();
+        $popup.css('left', jQuery(window).width() / 2 - width / 2);
+        $popup.css('top', jQuery(window).height() / 2 - height / 2);
+        $popup.show();
 		popupVisible = true;
 	};
 
 	var showPopupMask = function() {
-		var width = jQuery(window).width();
-		jQuery('.popup_mask').css('width', jQuery(window).width());
-		jQuery('.popup_mask').css('height', jQuery(window).height());
-		jQuery('.popup_mask').show();
+		let $popupmask = jQuery('.popup_mask');
+        $popupmask.css('width', jQuery(window).width());
+        $popupmask.css('height', jQuery(window).height());
+        $popupmask.show();
 	};
 
 	var options = {
@@ -195,9 +212,9 @@ jQuery(document).ready(function(){
 	};
 	jQuery('#fileuploadform').ajaxForm(options);
 
-	jQuery('.upload_image_button').click(function(){
-		var key = getEntryKey(this);
-        var value = getEntryValue(this);
+	jQuery('.upload_image_button').on('click', function(){
+		let key = getEntryKey(this);
+        let value = getEntryValue(this);
 		jQuery('#keyParam').val(key);
         jQuery('#valueParam').val(value);
         jQuery('#configIdParam').val(JSINFO.configId);
@@ -213,7 +230,7 @@ jQuery(document).ready(function(){
 		alert(errorThrown);
 	};
 
-	jQuery('.delete_image_button').click(function() {
+	jQuery('.delete_image_button').on('click', function() {
 		jQuery.ajax({
 			url : DOKU_BASE + 'lib/exe/ajax.php',
 			type : 'POST',
@@ -227,12 +244,12 @@ jQuery(document).ready(function(){
 		});
 	});
 
-	jQuery('#popup_cancel').click(function() {
+	jQuery('#popup_cancel').on('click',function() {
 		unloadPopup();
 		return false;
 	});
 
-	jQuery(window).resize(function() {
+	jQuery(window).on('resize', function() {
 		if(!popupVisible) {
 			return true;
 		}

@@ -10,7 +10,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
      * Load file
      *
      * @param string $fileName
-     * @return mixed
+     * @return array
      */
     protected function loadFile($fileName) {
         return confToHash($fileName);
@@ -22,7 +22,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         $local = $configs['local'];
         $configs = array_merge($default, $local);
 
-        uksort($configs, array($this->helper, '_sortHuman'));
+        uksort($configs, [$this->helper, '_sortHuman']);
         include DOKU_PLUGIN . 'confmanager/tpl/showConfigTwoLine.php';
     }
 
@@ -32,11 +32,11 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         $keys = $INPUT->arr('keys');
         $values = $INPUT->arr('values');
         if (count($keys) !== count($values)) {
-            msg('invalid save arguments', -1);
+            msg($this->helper->getLang('invalid save arguments'), -1);
         }
 
         if (empty($keys)) {
-            $lines = array();
+            $lines = [];
         } else {
             $lines = array_combine($keys, $values);
         }
@@ -59,7 +59,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
      * @return array
      */
     private function getCustomEntries($input, $default) {
-        $save = array();
+        $save = [];
         foreach ($input as $key => $value) {
 
             if (array_key_exists($key, $default)) {
@@ -70,7 +70,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
 
             $key = $this->prepareEntity($key);
             $value = $this->prepareEntity($value);
-            if ($key === '' || $value === '') {
+            if ($key === '') {
                 continue;
             }
             $save[$key] = $value;
@@ -82,7 +82,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
     /**
      * @param $config
      */
-    private function saveToFile($config) {
+    protected function saveToFile($config) {
         global $config_cascade;
         if (!isset($config_cascade[$this->internalName]['local'])
             || count($config_cascade[$this->internalName]['local']) === 0) {
@@ -101,7 +101,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
             return;
         }
 
-        uksort($config, array($this->helper, '_sortConf'));
+        uksort($config, [$this->helper, '_sortConf']);
         $content = $this->helper->getCoreConfigHeader();
         foreach ($config as $key => $value) {
             $content .= "$key\t$value\n";
@@ -120,7 +120,7 @@ class ConfigManagerTwoLineCascadeConfig extends ConfigManagerAbstractCascadeConf
         $newKey = $INPUT->arr('newKey');
         $newValue = $INPUT->arr('newValue');
         if (count($newKey) !== count($newValue)) {
-            return array();
+            return [];
         }
 
         return array_combine($newKey, $newValue);

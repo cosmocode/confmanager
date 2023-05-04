@@ -3,20 +3,28 @@ table.confmanager td {
     padding-right:5px;
 }
 
-input.key {
-    width:100px;
+#confmanager input.key {
+    width: 100%;
 }
 
-input.val {
-    width:600px;
-}
-
-.default_value {
-	color:#777;
+#confmanager input.value {
+    width: 100%;
 }
 
 #confmanager .defaultValue {
 	color: gray;
+}
+#confmanager .overriddenValue {
+    color: @ini_text_alt;
+}
+#confmanager tr.overridden {
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        @ini_background_alt 10px,
+        @ini_background_alt 20px
+    );
 }
 
 table.confmanager {
