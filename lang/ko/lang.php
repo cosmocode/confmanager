@@ -5,8 +5,6 @@
  * 
  * @author relue2718 <webmaster@relue2718.com>
  */
-$lang['encoding']              = 'utf-8';
-$lang['direction']             = 'itr';
 $lang['menu']                  = '설정 파일 관리자';
 $lang['welcomehead']           = '설정 파일 관리자';
 $lang['welcome']               = '설정 파일 관리자는 DokuWiki와 plug-in들의 다양한 설정 파일을 관리할 수 있도록 도와줍니다.';
@@ -14,13 +12,8 @@ $lang['save']                  = '저장하기';
 $lang['select_config']         = '설정 파일 선택';
 $lang['please_select']         = '--- 항목을 선택하세요 ---';
 $lang['edit']                  = '편지';
-$lang['cannot change default file icon'] = '기본 아이콘은 변경할 수 없습니다';
 $lang['delete_action']         = '삭제';
-$lang['edit_key_action']       = '편집';
-$lang['edit_key_action_tooltip'] = '이 항목의 이름을 바꾸려면 여기를 클릭하세요';
 $lang['delete_action_tooltip'] = '이 항목을 지우려면 여기를 클릭하세요';
-$lang['delete_action_tooltip_disabled'] = '기본값은 지울 수 없습니다';
-$lang['edit_key_action_tooltip_disabled'] = '기본값은 바꿀 수 없습니다';
 $lang['default_value_tooltip'] = '변경이 허용되지 않는 기본값입니다.';
 $lang['edit_icon_action']      = '아이콘 편집';
 $lang['edit_icon_action_disabled'] = '아이콘 편집할 수 없음';
@@ -29,8 +22,6 @@ $lang['edit_icon_action_tooltip_disabled'] = '기본 아이콘을 변경할 수 
 $lang['toggle_description']    = '설명 켜기/끄기';
 $lang['toggle_defaults']       = '기본값 표시 켜기/끄기';
 $lang['defaults_description']  = '기본값은 DokuWiki의 기본적인 동작을 정의하고 변경될 수 없습니다.';
-$lang['add_action']            = '추가';
-$lang['add_action_tooltip']    = '새로운 항목 추가하기';
 $lang['no_script_title']       = '자바스크립트가 비활성화 되어 있습니다!';
 $lang['no_script_message']     = '자바스크립트가 비활성화 되었기 때문에 confmanager는 일부 기능만을 제공합니다. 섹션을 접거나 아이템의 빠른 동작을 실행하기 위해서는 자바스크립트를 켜야 합니다. 컴퓨터를 망치지 않아요. 약속합니다.';
 $lang['file_upload_prompt']    = '업로드할 이미지 파일을 선택하세요';

@@ -5,8 +5,6 @@
  *
  * @author Hideaki SAWADA <chuno@live.jp>
  */
-$lang['encoding']              = 'utf-8';
-$lang['direction']             = 'ltr';
 $lang['menu']                  = '設定ファイル管理';
 $lang['welcomehead']           = '設定ファイル管理';
 $lang['welcome']               = '設定ファイル管理では、DokuWiki とプラグイン用のいくつかの設定ファイルを編集することができます。';
@@ -14,13 +12,8 @@ $lang['save']                  = '保存';
 $lang['select_config']         = '設定ファイルの選択';
 $lang['please_select']         = '--- 選択して下さい ---';
 $lang['edit']                  = '編集';
-$lang['cannot change default file icon'] = 'デフォルトアイコンは変更不可';
 $lang['delete_action']         = '削除';
-$lang['edit_key_action']       = '編集';
-$lang['edit_key_action_tooltip'] = 'この項目名を変更するにはここをクリック';
 $lang['delete_action_tooltip'] = 'この項目を削除するにはここをクリック';
-$lang['delete_action_tooltip_disabled'] = 'デフォルト値の削除不可';
-$lang['edit_key_action_tooltip_disabled'] = 'デフォルト値の編集不可';
 $lang['default_value_tooltip'] = 'これは変更不可なデフォルト値です';
 $lang['edit_icon_action']      = 'アイコンの編集';
 $lang['edit_icon_action_disabled'] = 'アイコンの編集不可';
@@ -29,8 +22,6 @@ $lang['edit_icon_action_tooltip_disabled'] = 'デフォルトアイコンの変�
 $lang['toggle_description']    = '説明の表示／非表示';
 $lang['toggle_defaults']       = 'デフォルト値の表示／非表示';
 $lang['defaults_description']  = '注意：デフォルト値は、DokuWikiの基本的な動作を定義しており、変更することはできません。';
-$lang['add_action']            = '追加';
-$lang['add_action_tooltip']    = '一覧への新規項目の追加にはここをクリック';
 $lang['no_script_title']       = 'JavaScriptが無効です！';
 $lang['no_script_message']     = 'JavaScriptが無効な間、設定ファイル管理は基本的な機能しか提供しません。節の折りたたみ・項目の迅速な操作といった便利な機能を使用するには、JavaScriptを有効にして下さい。';
 $lang['file_upload_prompt']    = 'アップロードする画像ファイルを選択して下さい。';

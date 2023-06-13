@@ -8,8 +8,6 @@
  * @author ParoTheParrot <parotheparrot@gmail.com>
  * @author Dana <dannax3@gmx.de>
  */
-$lang['encoding']              = 'utf-8';
-$lang['direction']             = 'ltr';
 $lang['menu']                  = 'Konfigurationsdateimanager';
 $lang['welcomehead']           = 'Konfigurationsdateimanager';
 $lang['welcome']               = 'Der Konfigurationsdateimanager lässt dich verschiedene Konfigurationen an DokuWiki und DokuWiki Plugins vornehmen.';
@@ -17,13 +15,8 @@ $lang['save']                  = 'Speichern';
 $lang['select_config']         = 'Wähle eine Konfigurationsdatei';
 $lang['please_select']         = '--- Bitte wähle einen Eintrag aus ---';
 $lang['edit']                  = 'Editieren';
-$lang['cannot change default file icon'] = 'Standardicons können nicht geändert werden';
 $lang['delete_action']         = 'löschen';
-$lang['edit_key_action']       = 'editieren';
-$lang['edit_key_action_tooltip'] = 'Zum Umbenennen hier klicken';
 $lang['delete_action_tooltip'] = 'Zum Löschen hier klicken';
-$lang['delete_action_tooltip_disabled'] = 'Standardwerte können nicht gelöscht werden';
-$lang['edit_key_action_tooltip_disabled'] = 'Standardwerte können nicht editiert werden.';
 $lang['default_value_tooltip'] = 'Dies ist ein Standardwert und kann nicht verändert werden';
 $lang['edit_icon_action']      = 'Editiere das Icon';
 $lang['edit_icon_action_disabled'] = 'Icon kann nicht editiert werden';
@@ -32,8 +25,6 @@ $lang['edit_icon_action_tooltip_disabled'] = 'Standardicons können nicht verän
 $lang['toggle_description']    = 'Schalte Beschreibungen an/aus';
 $lang['toggle_defaults']       = 'Zeige/verstecke Standardwerte';
 $lang['defaults_description']  = 'Bitte beachte: Standardwerte legen das grundlegende verhalten von DokuWiki fest und können nicht geändert werden.';
-$lang['add_action']            = 'Hinzufügen';
-$lang['add_action_tooltip']    = 'Klicke hier um ein neues Element hinzuzufügen';
 $lang['no_script_title']       = 'Du hast dein JavaScript deaktiviert!';
 $lang['no_script_message']     = 'Nur mit JavaScript kannst du alle Funktionen des Konfigurationsdateimanagers verwenden.';
 $lang['file_upload_prompt']    = 'Bitte wähle ein Icon aus';
