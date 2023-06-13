@@ -3,8 +3,6 @@
 
 // These settings must be present and set appropriately for the language.
 // Do not change, if you don't know what it does!
-$lang['encoding']   = 'utf-8';
-$lang['direction']  = 'ltr';
 
 
 // For admin plugins, the menu prompt to be displayed in the admin menu.
@@ -22,13 +20,8 @@ $lang['save'] = '保存';
 $lang['select_config'] = '选择一个配置文件';
 $lang['please_select'] = '--- 请选择一个条目 ---';
 $lang['edit'] = '编辑';
-$lang['cannot change default file icon'] = '不能改变默认图标';
 $lang['delete_action'] = '删除';
-$lang['edit_key_action'] = '编辑';
-$lang['edit_key_action_tooltip'] = '点击重命名这一条目';
 $lang['delete_action_tooltip'] = '点击删除这一条目';
-$lang['delete_action_tooltip_disabled'] = '不能删除默认值';
-$lang['edit_key_action_tooltip_disabled'] = '不能编辑默认值';
 $lang['default_value_tooltip'] = '这是一个默认值，不能被改变';
 $lang['edit_icon_action'] = '编辑图标';
 $lang['edit_icon_action_disabled'] = '不能编辑图标';
@@ -37,8 +30,6 @@ $lang['edit_icon_action_tooltip_disabled'] = '不能改变默认图标';
 $lang['toggle_description'] = '切换显示和隐藏描述';
 $lang['toggle_defaults'] = '切换显示和隐藏默认值';
 $lang['defaults_description'] = '请注意：默认值定义了 Dokuwiki 的基础行为，不能被改变。';
-$lang['add_action'] = '添加';
-$lang['add_action_tooltip'] = '点击添加新的条目到这个列表';
 $lang['no_script_title'] = 'JavaScript 被禁用了！';
 $lang['no_script_message'] = '由于 JavaScript 被禁用了，confmanager 只提供一些基础功能。为了方便地使用像折叠，条目上的快捷操作等等。请打开你的 JavaScript 支持。我们保证不会伤害你的，亲。';
 $lang['file_upload_prompt'] = '请选择要上传的图片文件';

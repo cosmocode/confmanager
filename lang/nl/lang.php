@@ -6,8 +6,6 @@
  * @author Gerrit Uitslag <klapinklapin@gmail.com>
  * @author Mark C. Prins <mprins@users.sf.net>
  */
-$lang['encoding']              = 'utf-8';
-$lang['direction']             = 'ltr';
 $lang['menu']                  = 'Configuratiebestandenbeheerder';
 $lang['welcomehead']           = 'Configuratiebestandenbeheerder';
 $lang['welcome']               = 'De configuratiebestandenbeheerder laat je verschillende configuratie bestanden van DokuWiki en zijn plugins aanpassen.';
@@ -15,13 +13,8 @@ $lang['save']                  = 'Opslaan';
 $lang['select_config']         = 'Selecteer een configuratiebestand';
 $lang['please_select']         = '-- Selecteer alsjeblieft een bestand --';
 $lang['edit']                  = 'Bewerken';
-$lang['cannot change default file icon'] = 'Standaard iconen kunnen niet gewijzigd worden';
 $lang['delete_action']         = 'verwijderen';
-$lang['edit_key_action']       = 'bewerken';
-$lang['edit_key_action_tooltip'] = 'Klik hier om de regel te hernoemen';
 $lang['delete_action_tooltip'] = 'Klik hier om de regel te verwijderen';
-$lang['delete_action_tooltip_disabled'] = 'Standaardwaardes kunnen niet verwijderd worden';
-$lang['edit_key_action_tooltip_disabled'] = 'Standaardwaardes kunnen niet gewijzigd worden';
 $lang['default_value_tooltip'] = 'Dit is een standaardwaarde die niet gewijzigd kan worden';
 $lang['edit_icon_action']      = 'icoon aanpassen';
 $lang['edit_icon_action_disabled'] = 'kan icoon niet aanpassen';
@@ -30,8 +23,6 @@ $lang['edit_icon_action_tooltip_disabled'] = 'Standaard icoon kan niet gewijzigd
 $lang['toggle_description']    = 'Beschrijving weergeven/verbergen';
 $lang['toggle_defaults']       = 'Standaardwaardes weergeven/verbergen';
 $lang['defaults_description']  = 'Merk op: standaardwaardes definiëren het standaardgedrag van DokuWiki en kunnen hier niet aangepast worden.';
-$lang['add_action']            = 'toevoegen';
-$lang['add_action_tooltip']    = 'Klik hier om een nieuw item aan de lijst toe te voegen';
 $lang['no_script_title']       = 'JavaScript is uitgeschakeld!';
 $lang['no_script_message']     = 'Zolang Javascript is uitgeschakeld biedt ConfManager alleen basisfunctionaliteit. Om te profiteren van meer gemak zoals in/uitklappende alinea\'s, snelle acties op items, etc. zet je Javascript aan.';
 $lang['file_upload_prompt']    = 'Selecteer alsjeblieft een afbeeldingsbestand om te uploaden';

@@ -6,8 +6,6 @@
  * @author Schplurtz le Déboulonné <schplurtz@laposte.net>
  * @author Nicolas Friedli <nicolas@theologique.ch>
  */
-$lang['encoding']              = 'utf-8';
-$lang['direction']             = 'ltr';
 $lang['menu']                  = 'Gestionnaire de fichiers de configuration';
 $lang['welcomehead']           = 'Gestionnaire de fichiers de configuration';
 $lang['welcome']               = 'Le gestionnaire de fichiers de configuration permet d\'éditer divers fichiers de configuration de DokuWiki et de ses extensions.';
@@ -15,13 +13,8 @@ $lang['save']                  = 'Enregistrer';
 $lang['select_config']         = 'Sélection d\'un fichier de configuration';
 $lang['please_select']         = '--- Veuillez choisir ---';
 $lang['edit']                  = 'Modifier';
-$lang['cannot change default file icon'] = 'Impossible de changer les icônes par défaut.';
 $lang['delete_action']         = 'Supprimer';
-$lang['edit_key_action']       = 'modifier';
-$lang['edit_key_action_tooltip'] = 'Cliquez ici pour renommer';
 $lang['delete_action_tooltip'] = 'Cliquer ici pour supprimer.';
-$lang['delete_action_tooltip_disabled'] = 'Impossible de supprimer les valeurs par défaut.';
-$lang['edit_key_action_tooltip_disabled'] = 'Impossible de modifier les valeurs par défaut.';
 $lang['default_value_tooltip'] = 'Valeur par défaut qu\'on ne peut pas modifier.';
 $lang['edit_icon_action']      = 'Modifier l\'icône';
 $lang['edit_icon_action_disabled'] = 'Impossible de modifier l\'icône.';
@@ -30,8 +23,6 @@ $lang['edit_icon_action_tooltip_disabled'] = 'Impossible de changer les icônes 
 $lang['toggle_description']    = '(dé)activer les descriptions.';
 $lang['toggle_defaults']       = '(dé)activer l\'affichage des valeurs par défaut.';
 $lang['defaults_description']  = 'Les valeurs par défaut définissent le comportement de base de DokuWiki et ne peuvent être changées.';
-$lang['add_action']            = 'ajouter';
-$lang['add_action_tooltip']    = 'Cliquer pour ajouter un nouvel article à la liste.';
 $lang['no_script_title']       = 'JavaScript est désactivé.';
 $lang['no_script_message']     = 'Tant que JavaScript est désactivé, le gestionnaire de configuration n\'offre que des fonctionnalités de base. Pour bénéficier des fonctions d\'agrément, comme le repli de sections, les actions rapides, etc… veuillez activer JavaScript. On ne vous fera pas mal, promis.';
 $lang['file_upload_prompt']    = 'Veuillez choisir une image à téléverser.';
