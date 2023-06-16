@@ -3,7 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
- * @author Gerrit Uitslag <klapinklapin@gmail.com>
+ * @author G. Uitslag <klapinklapin@gmail.com>
  * @author Mark C. Prins <mprins@users.sf.net>
  */
 $lang['menu']                  = 'Configuratiebestandenbeheerder';
@@ -15,11 +15,18 @@ $lang['please_select']         = '-- Selecteer alsjeblieft een bestand --';
 $lang['edit']                  = 'Bewerken';
 $lang['delete_action']         = 'verwijderen';
 $lang['delete_action_tooltip'] = 'Klik hier om de regel te verwijderen';
+$lang['disable_action']        = 'uitschakelen';
+$lang['disable_action_tooltip'] = 'Klink hier om deze waarde uit te schakelen';
+$lang['disable_action_tooltip_disabled'] = 'Deze waarde is al uitgeschakeld door een door gebruiker ingevoerde waarde.';
 $lang['default_value_tooltip'] = 'Dit is een standaardwaarde die niet gewijzigd kan worden';
 $lang['edit_icon_action']      = 'icoon aanpassen';
 $lang['edit_icon_action_disabled'] = 'kan icoon niet aanpassen';
 $lang['edit_icon_action_tooltip'] = 'Klik hier om een ander icoon te kiezen';
 $lang['edit_icon_action_tooltip_disabled'] = 'Standaard icoon kan niet gewijzigd worden';
+$lang['disabledbylocal']       = 'Uitgeschakeld door een door gebruiker ingevoerde waarde.';
+$lang['modifiedbylocal']       = 'Overschreven door een door gebruiker ingevoerde waarde.';
+$lang['disablesdefault']       = 'Schakelt een standaard waarde uit.';
+$lang['modifiesdefault']       = 'Overschrijft een standaard waarde.';
 $lang['toggle_description']    = 'Beschrijving weergeven/verbergen';
 $lang['toggle_defaults']       = 'Standaardwaardes weergeven/verbergen';
 $lang['defaults_description']  = 'Merk op: standaardwaardes definiëren het standaardgedrag van DokuWiki en kunnen hier niet aangepast worden.';
