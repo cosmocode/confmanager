@@ -13,7 +13,7 @@
         <tr>
                 <td>
                 	<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
-                		<img src="<?php echo hsc($image) ?>" alt="" />
+                		<img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
                 	<?php endif ?>
                 	<input
                         name="keys[]"
@@ -23,7 +23,7 @@
                 </td>
                 <td>
                     <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
-                        <img src="<?php echo hsc($image) ?>" alt="" />
+                        <img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
                     <?php endif ?>
                     <input
                         type="text"
@@ -106,7 +106,7 @@
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
 	                		<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
-	                            <img src="<?php echo hsc($image) ?>" alt="" />
+	                            <img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
 	                        <?php endif ?>
                             <span class="default_key"><?php echo hsc($key) ?></span>
 	                	</div>
@@ -114,7 +114,7 @@
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
 	                        <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
-	                            <img src="<?php echo hsc($image) ?>" alt="" />
+	                            <img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
 	                        <?php endif ?>
                             <span class="default_value"><?php echo hsc($value) ?></span>
                             <?php if($isOverridden): ?>

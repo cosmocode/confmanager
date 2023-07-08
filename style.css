@@ -178,3 +178,12 @@ table.confmanager {
 	opacity: 0.5;
 	cursor: wait;
 }
+#confmanager img.exampleimage.mime {
+	height: 1.2em;
+}
+#confmanager img.exampleimage.interwiki {
+	height: 1.2em;
+}
+#confmanager img.exampleimage.smileys {
+	height: 1.2em;
+}
