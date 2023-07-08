@@ -1,4 +1,10 @@
-<?php $helper = plugin_load('helper', 'confmanager'); ?>
+<?php $helper = plugin_load('helper', 'confmanager');
+/**
+ * @var ConfigManagerTwoLineLeftImageConfigCascade|ConfigManagerTwoLineRightImageConfigCascade $this
+ * @var array $local
+ * @var array $default
+ * @var array[] $configs
+ */ ?>
 <div class="table">
 	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
 	<table class="inline confmanager_twoLine<?php echo ucfirst($this->imageAlignment) ?>Image">
@@ -34,7 +40,7 @@
                     <?php if($isDefault): ?>
                         <br>
                         <span class="overriddenValue">
-                            <?php if($local[$key] === ''): ?>
+                            <?php if($value === ''): ?>
                                 <?php echo $helper->getLang('disablesdefault') ?>
                             <?php else : ?>
                                 <?php echo $helper->getLang('modifiesdefault') ?>

@@ -1,4 +1,10 @@
-<?php $helper = plugin_load('helper', 'confmanager'); ?>
+<?php $helper = plugin_load('helper', 'confmanager');
+/**
+ * @var ConfigManagerSingleLineCoreConfig $this
+ * @var array $local
+ * @var array $default
+ * @var array[] $configs
+ */ ?>
 <div class="table">
 	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
 	<table class="inline confmanager_singleLine" id="local">
