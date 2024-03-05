@@ -1,6 +1,6 @@
 [[doku>fr:dokuwiki|DokuWiki]] peut remplacer certains caractères ou mots par d'autres définis dans un fichier de configuration. Par défaut, ce mécanisme est utilisé pour convertir diverses combinaisons de caractères en leur équivallent typographique
 
-Par exemple, 
+Par exemple,
 <code>
 << en «
 >> en »
