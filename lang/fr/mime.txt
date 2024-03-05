@@ -6,6 +6,6 @@ Par mesure de sécurité, on ne peut pas configurer [[doku>fr:dokuwiki|DokuWiki]
 
 Si vous avez besoin d'icône pour un type mime, vous pourrez en trouver dans le style de DokuWiki sur [[http://www.splitbrain.org/projects/file_icons]].
 
-La liste de toutes les extensions avec leur type mime est disponible sur [[http://filext.com/].
+La liste de toutes les extensions avec leur type mime est disponible sur [[http://filext.com/]].
 
 Voir [[doku>fr:mime]] pour de plus amples informations.
