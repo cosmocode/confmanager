@@ -1,4 +1,10 @@
-<?php $helper = plugin_load('helper', 'confmanager'); ?>
+<?php $helper = plugin_load('helper', 'confmanager');
+/**
+ * @var ConfigManagerTwoLineLeftImageConfigCascade|ConfigManagerTwoLineRightImageConfigCascade $this
+ * @var array $local
+ * @var array $default
+ * @var array[] $configs
+ */ ?>
 <div class="table">
 	<h3><?php echo $helper->getLang('user_defined_values') ?></h3>
 	<table class="inline confmanager_twoLine<?php echo ucfirst($this->imageAlignment) ?>Image">
@@ -13,7 +19,7 @@
         <tr>
                 <td>
                 	<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
-                		<img src="<?php echo hsc($image) ?>" alt="" />
+                		<img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
                 	<?php endif ?>
                 	<input
                         name="keys[]"
@@ -23,7 +29,7 @@
                 </td>
                 <td>
                     <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
-                        <img src="<?php echo hsc($image) ?>" alt="" />
+                        <img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
                     <?php endif ?>
                     <input
                         type="text"
@@ -34,7 +40,7 @@
                     <?php if($isDefault): ?>
                         <br>
                         <span class="overriddenValue">
-                            <?php if($local[$key] === ''): ?>
+                            <?php if($value === ''): ?>
                                 <?php echo $helper->getLang('disablesdefault') ?>
                             <?php else : ?>
                                 <?php echo $helper->getLang('modifiesdefault') ?>
@@ -106,7 +112,7 @@
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
 	                		<?php if ($image !== '' && $this->imageAlignment == 'left'): ?>
-	                            <img src="<?php echo hsc($image) ?>" alt="" />
+	                            <img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
 	                        <?php endif ?>
                             <span class="default_key"><?php echo hsc($key) ?></span>
 	                	</div>
@@ -114,7 +120,7 @@
 	                <td>
 	                	<div class="defaultValue" title="<?php echo hsc($helper->getLang('default_value_tooltip')) ?>">
 	                        <?php if ($image !== '' && $this->imageAlignment == 'right'): ?>
-	                            <img src="<?php echo hsc($image) ?>" alt="" />
+	                            <img src="<?php echo hsc($image) ?>" alt="" class="exampleimage <?php echo hsc($this->internalName) ?>" />
 	                        <?php endif ?>
                             <span class="default_value"><?php echo hsc($value) ?></span>
                             <?php if($isOverridden): ?>
