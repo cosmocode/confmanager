@@ -3,6 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Andreas Heil <aeheil@gmail.com>
  * @author Dominik Eckelmann <deckelmann@gmail.com>
  * @author Thor Weinreich <thorweinreich@nefkom.net>
  * @author ParoTheParrot <parotheparrot@gmail.com>
@@ -17,11 +18,18 @@ $lang['please_select']         = '--- Bitte wähle einen Eintrag aus ---';
 $lang['edit']                  = 'Editieren';
 $lang['delete_action']         = 'löschen';
 $lang['delete_action_tooltip'] = 'Zum Löschen hier klicken';
+$lang['disable_action']        = 'deaktivieren';
+$lang['disable_action_tooltip'] = 'Hier klicken, um den Eintrag zu deaktivieren.';
+$lang['disable_action_tooltip_disabled'] = 'Der Standardwert ist bereits durch einen benutzerdefinierten Wert deaktiviert.';
 $lang['default_value_tooltip'] = 'Dies ist ein Standardwert und kann nicht verändert werden';
 $lang['edit_icon_action']      = 'Editiere das Icon';
 $lang['edit_icon_action_disabled'] = 'Icon kann nicht editiert werden';
 $lang['edit_icon_action_tooltip'] = 'Klicke hier, um das Icon zu ändern';
 $lang['edit_icon_action_tooltip_disabled'] = 'Standardicons können nicht verändert werden';
+$lang['disabledbylocal']       = 'Deaktiviert durch einen benutzerdefinierten Wert.';
+$lang['modifiedbylocal']       = 'Überschrieben durch einen benutzerdefinierten Wert.';
+$lang['disablesdefault']       = 'Deaktiviert einen Standardwert.';
+$lang['modifiesdefault']       = 'Überschreibt einen Standardwert.';
 $lang['toggle_description']    = 'Schalte Beschreibungen an/aus';
 $lang['toggle_defaults']       = 'Zeige/verstecke Standardwerte';
 $lang['defaults_description']  = 'Bitte beachte: Standardwerte legen das grundlegende verhalten von DokuWiki fest und können nicht geändert werden.';
@@ -66,5 +74,5 @@ $lang['upload_errWrongFileExtension'] = 'Falsche Dateiendung';
 $lang['upload_errCannotMoveUploadedFileToFolder'] = 'Die hochgeladene Datei konnte nicht in den Bilder-Ordner verschoben werden. Möglicherweise fehlt dir dazu die Berechtigung.';
 $lang['iconDelete_error']      = 'Fehler beim Löschen des Icons. Möglicherweise fehlt dir dazu die Berechtigung.';
 $lang['error:saving failed not writable'] = 'Die Änderungen kopnnten nicht gespeichert werden. Die Konfigurationsdatei ist nicht schreibbar.';
-$lang['error:saving failed']              = 'Die Änderungen kopnnten nicht gespeichert werden.';
-$lang['warning:not writable']             = 'Die Konfigurationsdatei ist nicht schreibbar. Änderungen werden nicht gespeichert werden.';
+$lang['error:saving failed']   = 'Die Änderungen kopnnten nicht gespeichert werden.';
+$lang['warning:not writable']  = 'Die Konfigurationsdatei ist nicht schreibbar. Änderungen werden nicht gespeichert werden.';
