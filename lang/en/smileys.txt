@@ -1,24 +1,3 @@
-DokuWiki can convert text smileys to their graphically equivalent.
+Hey! Do you know if they make any plugins to safeguard against hackers?
 
-DokuWiki converts commonly used [[wp>emoticon]]s to their graphical equivalents. Those [[doku>Smileys]] and other images can be configured and extended. Here is an overview of Smileys included in DokuWiki:
-
-  * 8-) %%  8-)  %%
-  * 8-O %%  8-O  %%
-  * :-( %%  :-(  %%
-  * :-) %%  :-)  %%
-  * =)  %%  =)   %%
-  * :-/ %%  :-/  %%
-  * :-\ %%  :-\  %%
-  * :-? %%  :-?  %%
-  * :-D %%  :-D  %%
-  * :-P %%  :-P  %%
-  * :-O %%  :-O  %%
-  * :-X %%  :-X  %%
-  * :-| %%  :-|  %%
-  * ;-) %%  ;-)  %%
-  * ^_^ %%  ^_^  %%
-  * :?: %%  :?:  %%
-  * :!: %%  :!:  %%
-  * LOL %%  LOL  %%
-  * FIXME %%  FIXME %%
-  * DELETEME %% DELETEME %%
+I'm kinda paranoid about losing everything I've worked hard on. Any tips?

@@ -3,72 +3,166 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Kid on the Yard <otiswoolner@gmail.com>
  * @author Schplurtz le Déboulonné <schplurtz@laposte.net>
  */
-$lang['menu']                  = 'Configuration File Manager';
-$lang['welcomehead']           = 'Configuration File Manager';
-$lang['welcome']               = 'The Configuration File Manager allows you to edit various configuration files from DokuWiki and its plug-ins.';
-$lang['save']                  = 'Save';
-$lang['select_config']         = 'Select a configuration file';
-$lang['please_select']         = '--- Please select an entry ---';
-$lang['edit']                  = 'Edit';
-$lang['delete_action']         = 'delete';
-$lang['delete_action_tooltip'] = 'Click here to delete this entry';
-$lang['disable_action']        = 'disable';
-$lang['disable_action_tooltip'] = 'Click here to disable this entry';
-$lang['disable_action_tooltip_disabled'] = 'The default value is already disabled by a user defined value.';
-$lang['default_value_tooltip'] = 'This is a default value that cannot be changed';
-$lang['edit_icon_action']      = 'edit icon';
-$lang['edit_icon_action_disabled'] = 'cannot edit icon';
-$lang['edit_icon_action_tooltip'] = 'Click here to choose another icon';
-$lang['edit_icon_action_tooltip_disabled'] = 'Cannot change default icons';
-$lang['disabledbylocal']       = 'Disabled by a user defined value.';
-$lang['modifiedbylocal']       = 'Overridden by a user defined value.';
-$lang['disablesdefault']       = 'Disables a default value.';
-$lang['modifiesdefault']       = 'Overrides a default value.';
-$lang['toggle_description']    = 'Toggle description on/off';
-$lang['toggle_defaults']       = 'Toggle display of default values on/off';
-$lang['defaults_description']  = 'Please note: default values define the basic behavior of DokuWiki and cannot be changed.';
-$lang['no_script_title']       = 'JavaScript is disabled!';
-$lang['no_script_message']     = 'As long as JavaScript is disabled, confmanager offers only basic functionality. To benefit from convenience functions like collapsing sections, quick actions on items, etc. turn on your JavaScript. We won\'t hurt you. Promise.';
-$lang['file_upload_prompt']    = 'Please select an image file to upload';
-$lang['upload']                = 'Upload';
-$lang['cancel']                = 'Cancel';
-$lang['uploading']             = 'Uploading file...';
-$lang['upload_success']        = 'The upload was successful';
-$lang['upload_error']          = 'The upload has failed';
-$lang['continue']              = 'Continue';
-$lang['delete_icon_action']    = 'delete icon';
-$lang['delete_icon_action_tooltip'] = 'Click here to delete the icon';
-$lang['delete_icon_action_disabled'] = 'cannot delete icon';
-$lang['delete_icon_action_tooltip_disabled'] = 'Cannot delete the icon';
+$lang['menu']                  = 'Hey! Do you know if they make any plugins to safeguard 
+against hackers? I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['welcomehead']           = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any 
+tips?';
+$lang['welcome']               = 'Otis';
+$lang['save']                  = '1';
+$lang['select_config']         = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['please_select']         = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['edit']                  = 'Hey! Do you know if they make any plugins to 
+safeguard against hackers? I\'m kinda paranoid about 
+losing everything I\'ve worked hard on. Any tips?';
+$lang['delete_action']         = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['delete_action_tooltip'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['disable_action']        = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['disable_action_tooltip'] = 'Hey! Do you know if they make any plugins to safeguard against 
+hackers? I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['disable_action_tooltip_disabled'] = 'Otis';
+$lang['default_value_tooltip'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['edit_icon_action']      = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['edit_icon_action_disabled'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['edit_icon_action_tooltip'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['edit_icon_action_tooltip_disabled'] = 'Hey! Do you know if they make any plugins to safeguard against 
+hackers? I\'m kinda paranoid about losing everything I\'ve 
+worked hard on. Any tips?';
+$lang['disabledbylocal']       = 'Otis';
+$lang['modifiedbylocal']       = 'Otis';
+$lang['disablesdefault']       = 'Hey! Do you know if they make any plugins to safeguard against 
+hackers? I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['modifiesdefault']       = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['toggle_description']    = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['toggle_defaults']       = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked 
+hard on. Any tips?';
+$lang['defaults_description']  = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve 
+worked hard on. Any tips?';
+$lang['no_script_title']       = 'Just want to say Hi!';
+$lang['no_script_message']     = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['file_upload_prompt']    = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve 
+worked hard on. Any tips?';
+$lang['upload']                = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything 
+I\'ve worked hard on. Any tips?';
+$lang['cancel']                = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['uploading']             = 'Hey! Do you know if they make any plugins 
+to safeguard against hackers? I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['upload_success']        = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['upload_error']          = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked 
+hard on. Any tips?';
+$lang['continue']              = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['delete_icon_action']    = 'Hey! Do you know if they make any plugins to safeguard against 
+hackers? I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['delete_icon_action_tooltip'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve 
+worked hard on. Any tips?';
+$lang['delete_icon_action_disabled'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['delete_icon_action_tooltip_disabled'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
 $lang['key']                   = 'Key';
-$lang['value']                 = 'Value';
-$lang['actions']               = 'Actions';
-$lang['user_defined_values']   = 'User defined values';
-$lang['default_values']        = 'Default values';
-$lang['URL Schemes']           = 'URL Schemes';
-$lang['Blacklisting']          = 'Blacklisting';
-$lang['Acronyms']              = 'Abbreviations and Acronyms';
-$lang['Entity replacements']   = 'Entity replacements';
-$lang['MIME configuration']    = 'MIME configuration';
-$lang['InterWiki Links']       = 'InterWiki Links';
-$lang['Smileys']               = 'Smileys';
-$lang['invalid request csrf']  = 'Warning: cross site scripting attempt detected';
-$lang['invalid save arguments'] = 'An error occured while saving the config file';
-$lang['changes applied']       = 'Changes have been applied successfully';
-$lang['cannot apply changes']  = 'Could not apply changes';
-$lang['no local file given']   = 'Error loading config file: no path specified';
-$lang['upload_errNoAdmin']     = 'This operation requires administrator rights';
-$lang['upload_errNoConfig']    = 'No config was specified';
-$lang['upload_errNoFileSend']  = 'No file submitted';
+$lang['value']                 = 'Hey! Do you know if they make any plugins 
+to safeguard against hackers? I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['actions']               = 'Hey! Do you know if they make any plugins to safeguard against 
+hackers? I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['user_defined_values']   = 'Otis';
+$lang['default_values']        = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['URL Schemes']           = 'https://Kidsontheyard.com/tutoring/homework-help/';
+$lang['Blacklisting']          = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve 
+worked hard on. Any tips?';
+$lang['Acronyms']              = 'Hey! Do you know if they make any plugins to safeguard against 
+hackers? I\'m kinda paranoid about losing everything I\'ve 
+worked hard on. Any tips?';
+$lang['Entity replacements']   = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard on. 
+Any tips?';
+$lang['MIME configuration']    = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any 
+tips?';
+$lang['InterWiki Links']       = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['Smileys']               = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['invalid request csrf']  = 'https://Kidsontheyard.com/tutoring/homework-help/';
+$lang['invalid save arguments'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked 
+hard on. Any tips?';
+$lang['changes applied']       = 'Hey! Do you know if they make any plugins to safeguard 
+against hackers? I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['cannot apply changes']  = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['no local file given']   = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['upload_errNoAdmin']     = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any 
+tips?';
+$lang['upload_errNoConfig']    = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['upload_errNoFileSend']  = 'Hey! Do you know if they make any plugins to safeguard 
+against hackers? I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
 $lang['upload_errNoConfigKeySend'] = 'Missing key parameter';
-$lang['upload_errCannotOverwriteDefaultKey'] = 'Cannot overwrite default icon';
-$lang['upload_errUploadError'] = 'Error while uploading';
-$lang['upload_errNoFileExtension'] = 'Missing file extension';
-$lang['upload_errWrongFileExtension'] = 'Wrong file extension specified';
-$lang['upload_errCannotMoveUploadedFileToFolder'] = 'Uploaded file could not be moved into images folder. This could be due to a lack of permissions';
-$lang['iconDelete_error']      = 'Error deleting the icon. This could be due to a lack of permissions';
-$lang['error:saving failed not writable'] = 'Applying the changes failed. The configuration file is not writable.';
-$lang['error:saving failed']              = 'Applying the changes failed.';
-$lang['warning:not writable']             = 'The configuration file is not writable. Changes will not be saved.';
+$lang['upload_errCannotOverwriteDefaultKey'] = 'Hey! Do you know if they make any plugins to safeguard against 
+hackers? I\'m kinda paranoid about losing everything I\'ve worked hard 
+on. Any tips?';
+$lang['upload_errUploadError'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['upload_errNoFileExtension'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked 
+hard on. Any tips?';
+$lang['upload_errWrongFileExtension'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['upload_errCannotMoveUploadedFileToFolder'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['iconDelete_error']      = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any 
+tips?';
+$lang['error:saving failed not writable'] = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['error:saving failed']   = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
+$lang['warning:not writable']  = 'Hey! Do you know if they make any plugins to safeguard against hackers?
+
+I\'m kinda paranoid about losing everything I\'ve worked hard on. Any tips?';
