@@ -1,0 +1,11 @@
+Ktoré typy súborov môžete nahrávať cez [[doku>media_manager|Správcu médií]], sa konfiguruje súborom ''conf/mime.conf''. Ten konfiguruje aj priradenie prípona súboru <-> mimetype.
+
+Z bezpečnostných dôvodov nie je možné nakonfigurovať [[doku>DokuWiki]] tak, aby povolila ľubovoľný typ súboru.
+
+:!: **Nikdy nepovoľujte nahrávanie HTML na nechránených wiki**, pretože to otvára Cross Site Scripting zraniteľnosti cez JavaScript. Povoľte to iba s dôveryhodnými používateľmi. Okrem pridania HTML mime typu do konfiguračného súboru musíte navyše vypnúť voľbu [[doku>config:iexssprotect]].
+
+Ďalšie ikony v podobnom štýle sú dostupné na http://www.splitbrain.org/projects/file_icons
+
+Ľubovoľnú príponu súboru s jej mime typom nájdete na http://filext.com/
+
+Viac informácií nájdete na [[doku>mime]].

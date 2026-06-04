@@ -1,0 +1,24 @@
+DokuWiki dokáže konvertovať textové smajlíky na ich grafické ekvivalenty.
+
+DokuWiki konvertuje bežne používané [[wp>emoticon|emotikony]] na ich grafické ekvivalenty. Tieto [[doku>Smileys|smajlíky]] a ďalšie obrázky možno konfigurovať a rozširovať. Tu je prehľad smajlíkov zahrnutých v DokuWiki:
+
+  * 8-) %%  8-)  %%
+  * 8-O %%  8-O  %%
+  * :-( %%  :-(  %%
+  * :-) %%  :-)  %%
+  * =)  %%  =)   %%
+  * :-/ %%  :-/  %%
+  * :-\\ %%  :-\\  %%
+  * :-? %%  :-?  %%
+  * :-D %%  :-D  %%
+  * :-P %%  :-P  %%
+  * :-O %%  :-O  %%
+  * :-X %%  :-X  %%
+  * :-| %%  :-|  %%
+  * ;-) %%  ;-)  %%
+  * ^_^ %%  ^_^  %%
+  * :?: %%  :?:  %%
+  * :!: %%  :!:  %%
+  * LOL %%  LOL  %%
+  * FIXME %%  FIXME %%
+  * DELETEME %% DELETEME %%

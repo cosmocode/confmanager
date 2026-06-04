@@ -1,0 +1,27 @@
+Pôvodnou myšlienkou InterWiki bola jedna veľká distribuovaná [[wp>Wiki]] cez celý internet. Dnes je to skôr jednoduchý spôsob odkazovania z jednej wiki na druhú pomocou jednoduchej syntaxe odkazov.
+
+V [[doku>DokuWiki]] sa to robí pridaním skratky pred wiki [[doku>pagenames|názvy stránok]] oddelenej znakom ''>''.
+
+Príklady:
+<code>
+[[wp>Wiki]] odkazuje na Wikipédiu,
+[[Meatball>TourBusStop]] odkazuje na TourBusStop na MeatBall wiki,
+[[google>Wiki]] odkazuje na vyhľadávanie Google,
+[[doku>interwiki]] odkazuje na túto stránku
+</code>
+
+[[wp>Wiki]] odkazuje na Wikipédiu, [[Meatball>TourBusStop]] odkazuje na TourBusStop na MeatBall wiki, [[google>Wiki]] odkazuje na vyhľadávanie Google.
+[[doku>interwiki]] odkazuje na túto stránku.
+
+Existuje jedna špeciálna interwiki skratka **''this''**. Vždy odkazuje na adresár webservera, v ktorom je DokuWiki nainštalovaná. Môžete ju použiť na vytváranie relatívnych URL. Napríklad nasledujúce vždy odkazuje na lokálny [[doku>syndication|XML feed]]: [[this>feed.php]]
+
+<code>
+[[this>feed.php]]
+</code>
+
+**Viac informácií o InterWiki:**
+
+  * [[wp>InterWiki]] na Wikipédii
+  * [[MeatBall>InterWiki]] na MeatBall
+  * [[Wiki>InterWiki]] na c2.com Wiki
+  * [[doku>interwiki]]
