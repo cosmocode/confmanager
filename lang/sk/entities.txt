@@ -1,0 +1,15 @@
+[[doku>DokuWiki]] dokáže nahrádzať určité znaky alebo reťazce inými reťazcami na základe konfiguračného súboru. Predvolene sa to používa na konverziu rôznych kombinácií znakov na ich typografické ekvivalenty.
+
+napr.
+
+<code>
+<<  na «
+>>  na »
+=>  na ⇒
+</code>
+
+pozri aj [[doku>syntax#text_to_html_conversions]].
+
+Hoci sa predvolene používa iba na jednoduché nahrádzanie znakov, systém entít možno použiť aj na vkladanie zložitejších konštrukcií do stránok, vrátane HTML. Majte však na pamäti, že to prestane fungovať v kombinácii s inými ako HTML renderermi.
+
+Viac informácií nájdete na [[doku>entities]].

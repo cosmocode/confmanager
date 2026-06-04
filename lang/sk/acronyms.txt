@@ -1,0 +1,5 @@
+[[doku>DokuWiki]] dokáže automaticky označovať skratky a akronymy (terminológiu). Ak váš prehliadač podporuje tag <acronym>, podržaním myši nad skratkou uvidíte krátke vysvetlenie zobrazené ako tooltip. Napríklad ak je myš nad ''CMS'' (ktoré je v predvolenom zozname akronymov), tooltip zobrazí ''Content Management System''.
+
+Poznámka: označujú sa iba celé slová. Napr. akronym použitý vo vnútri slova tooltip nevyvolá. Príklad: CMS je akronym, myCMS nie.
+
+Viac informácií nájdete na [[doku>abbreviations]].

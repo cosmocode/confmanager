@@ -1,0 +1,5 @@
+Internet už nie je tým miestom, čo býval. Všetko dobré sa skazí a tak je to aj s wiki. [[meatball>WikiSpam]], podobne ako spam v blogoch a e-mailoch, je na vzostupe. Ak používate [[doku>DokuWiki]] v intranete, nie je to pre vás problém. Ak ju však plánujete prevádzkovať na otvorenom internete, možno budete chcieť zablokovať niektoré známe spamové slová.
+
+Pre použitie blacklistu v DokuWiki povoľte voľbu ''$conf['usewordblock'] = 1;'' v ''conf/local.php'' (predvolene je nastavená na 1) a upravte súbor ''conf/wordblock.local.conf''. Zoznam existujúcich blokovaných slov si môžete pozrieť v súbore ''conf/wordblock.conf''. Súbor obsahuje [[wp>Regular Expressions|regulárne výrazy]] (kompatibilné s Perl) — ak niektorý z nich zodpovedá, uloženie nie je povolené.
+
+Viac informácií nájdete na [[doku>blacklist]].

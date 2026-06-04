@@ -1,0 +1,4 @@
+DokuWiki umožňuje odkazovať na externé URL, ale iba na známe protokoly.
+[[doku>urlschemes|Viac informácií o URL schémach]].
+
+Momentálne sú povolené nasledujúce protokoly:
